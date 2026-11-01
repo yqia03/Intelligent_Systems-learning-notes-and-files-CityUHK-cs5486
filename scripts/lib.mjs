@@ -17,6 +17,11 @@ export const sha = value => crypto.createHash('sha256').update(value).digest('he
 // Keep the original relative path spelling (including percent encoding) after
 // dropping only leading ./ or ../ segments, so existing published IDs survive.
 export const sourceReferenceId = href => 'ref-' + sha(href.replace(/^(?:\.\.?\/)+/, '')).slice(0, 12);
+// Both source layouts remain valid targets for links from older review notes.
+export function weekForFilename(weeks, filename) {
+  const name = decodeURIComponent(filename);
+  return weeks.find(week => [path.posix.basename(week.filename), `week${week.id}.html`, `CS5486-Week${week.id}-学习教材.html`].includes(name));
+}
 export function all(node, predicate = () => true) {
   const result = [];
   function visit(n) { if (n.tagName && predicate(n)) result.push(n); for (const c of n.childNodes || []) visit(c); }

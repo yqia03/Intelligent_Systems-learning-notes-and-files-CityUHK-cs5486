@@ -8,6 +8,7 @@
   },
   "scripts": {
     "import": "node scripts/import.mjs",
+    "sync:textbook": "node scripts/sync-textbook.mjs",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/preview.mjs",
     "check": "node scripts/check-suite.mjs",

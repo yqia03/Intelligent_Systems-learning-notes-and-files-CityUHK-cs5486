@@ -1,0 +1,4834 @@
+{
+  "schema_version": 1,
+  "generated_by": "learning-notes",
+  "entry": "index.html",
+  "scope_root": "..",
+  "coverage": "partial",
+  "limitations": [
+    "Week 01: 两份讲义对应页码不同，所有引用均以各自 PDF 第一页为实际页序；新版以逐页主题和文字比对为主，新增图页重点核图，重复图页沿用旧正文的审阅记录。",
+    "Week 01: 独立教学审阅重点覆盖核心推理和新增例题；并未重新逐字审阅四篇长正文或重新核验全部旧正文中的外部链接。",
+    "Week 01: 涉及大型论文时仅采用列出的章节和页面；Broomhead–Lowe 的群论、奇异值分解详推及后续实验附录超出本周目标，Nature 同页的非BP文章排除。",
+    "Week 02: 两份讲义对应页码不同，所有引用均以各自 PDF 第一页为实际页序；新版以逐页主题和文字比对为主，新增图页重点核图，重复图页沿用旧正文的审阅记录。",
+    "Week 02: 独立教学审阅重点覆盖核心推理和新增例题；并未重新逐字审阅四篇长正文或重新核验全部旧正文中的外部链接。",
+    "Week 02: 涉及大型论文时仅采用列出的章节和页面；Broomhead–Lowe 的群论、奇异值分解详推及后续实验附录超出本周目标，Nature 同页的非BP文章排除。",
+    "Week 03: 两份讲义对应页码不同，所有引用均以各自 PDF 第一页为实际页序；新版以逐页主题和文字比对为主，新增图页重点核图，重复图页沿用旧正文的审阅记录。",
+    "Week 03: 独立教学审阅重点覆盖核心推理和新增例题；并未重新逐字审阅四篇长正文或重新核验全部旧正文中的外部链接。",
+    "Week 03: 涉及大型论文时仅采用列出的章节和页面；Broomhead–Lowe 的群论、奇异值分解详推及后续实验附录超出本周目标，Nature 同页的非BP文章排除。",
+    "Week 04: 两份讲义对应页码不同，所有引用均以各自 PDF 第一页为实际页序；新版以逐页主题和文字比对为主，新增图页重点核图，重复图页沿用旧正文的审阅记录。",
+    "Week 04: 独立教学审阅重点覆盖核心推理和新增例题；并未重新逐字审阅四篇长正文或重新核验全部旧正文中的外部链接。",
+    "Week 04: 涉及大型论文时仅采用列出的章节和页面；Broomhead–Lowe 的群论、奇异值分解详推及后续实验附录超出本周目标，Nature 同页的非BP文章排除。",
+    "Week 05: No raw datasets or complete application code; experiments cannot be reproduced. Load-paper Eq. 25 normalization, Table 2 scaling and time-fold splitting remain unresolved.",
+    "Week 05: Research-level SVR appendix not audited equation by equation; MATLAB examples not run locally.",
+    "Week 05: 本轮核读主课件对应范围全文提取；公式或图像文本不可提取处仅代表页视觉抽查，继承正文中既有的逐页核查记录，未在本轮逐页复审。",
+    "Week 06: ART lecture example omits intermediate candidate scores; textbook supplies a full search and notes differences.",
+    "Week 06: kWTA proof assumptions and zero convention cannot be reconstructed completely from slides; illustrative figures do not establish general convergence.",
+    "Week 06: 本轮核读主课件对应范围全文提取；公式或图像文本不可提取处仅代表页视觉抽查，继承正文中既有的逐页核查记录，未在本轮逐页复审。",
+    "Week 07: Slides do not specify zero-field convention, full digit matrices or update order; no claim of reproducing their experiment.",
+    "Week 07: Capacity results apply under stated distribution and asymptotic criteria, not arbitrary stored patterns.",
+    "Week 07: 本轮核读主课件对应范围全文提取；公式或图像文本不可提取处仅代表页视觉抽查，继承正文中既有的逐页核查记录，未在本轮逐页复审。",
+    "Week 08: Parameter values in slides differ from original 1985 experiment; relationship unverified.",
+    "Week 08: Missing city coordinates, initial conditions and integration settings preclude reproducing the ten-city experiment.",
+    "Week 08: 本轮核读主课件对应范围全文提取；公式或图像文本不可提取处仅代表页视觉抽查，继承正文中既有的逐页核查记录，未在本轮逐页复审。",
+    "Week 09: PDF 231 transition signs conflict; text derives the convention from the energy rather than repeating inconsistent labels.",
+    "Week 09: ESN slide 244 gives equations but not a full training experiment; added calculations are teaching examples.",
+    "Week 10: The heater figure labels centroid 70 but does not supply sufficiently precise output geometry to reconstruct it uniquely.",
+    "Week 10: PDF 265 conflates center-average and mean-of-maxima terminology; methods are distinguished explicitly.",
+    "Week 11: Figures do not provide a complete experiment specification; the worked examples are labeled teaching examples.",
+    "Week 12: PDF 323 reports positive fitness but does not define its relationship to PDF 314’s negative minimization function.",
+    "Week 12: PDF 322 says 500 iterations whereas PDF 323 lists 5000; their relation is not established."
+  ],
+  "sources": [
+    {
+      "path": "materials/lectures/CS5486a-2026.pdf",
+      "sha256": "356313954fe7b8e3449c94c877ca5aa1c74ee00d482b5ffbda8878fb7be94697"
+    },
+    {
+      "path": "materials/lectures/Lecture_slides_full semester.pdf",
+      "sha256": "fb01c2a5a8967520263c37c7dc0e4f8c85e552dc2908044257f5d3334fd86ec7"
+    },
+    {
+      "path": "materials/papers/ASSPM-Lippmann1987.pdf",
+      "sha256": "287a70f602123c8c1d15dfc8b9eba6a812b8282e6f46170e5e839ea8d7f279cb"
+    },
+    {
+      "path": "materials/papers/CS-Broomhead-Lowe1988.pdf",
+      "sha256": "35c53de0663759607a24361b1b3a51e073cbb7688640fc78d17bd3b6dfdac4a1"
+    },
+    {
+      "path": "materials/lectures/CS5486-2026.pdf",
+      "sha256": "e4aedaf610f9e662be19f52fb31f03e648f7128f3ec949b46548af9a8755af10"
+    },
+    {
+      "path": "materials/papers/Nature1986.pdf",
+      "sha256": "1f7b0339d34bb6dac27d6433a7b271e161251c641d1ca67242284f0a5d6ac19e"
+    },
+    {
+      "path": "materials/papers/TLU.pdf",
+      "sha256": "1bbf7abd15cabed62064cc8d72cd0cf1139ee4fbfc55494a1259b1dd96d7175f"
+    },
+    {
+      "path": "materials/tutorials/Perceptron_Adaline.pdf",
+      "sha256": "40c4ba9f8f3df7416485941f640148995831a6db866e68eb30ec3ec11a9b9592"
+    },
+    {
+      "path": "materials/tutorials/Tutorial 1.pdf",
+      "sha256": "d55223574b7b59be7f34e15a86dafa9f37e4b1c37f8e4bf63da979d08143f009"
+    },
+    {
+      "path": "materials/tutorials/Tutorial 2- M-P neuron.pdf",
+      "sha256": "5c90916d84b6fdb872f36312991a380a8dc41324fdf7675b94626f906e43b560"
+    },
+    {
+      "path": "materials/tutorials/Tutorial 7 - SVM and LS-SVM_1.pdf",
+      "sha256": "b3623015e119fa69d8e3a6eef30f6eca894f06b62988950469b875bbf5df9d62"
+    },
+    {
+      "path": "materials/papers/Adaptive Resonance Theory.pdf",
+      "sha256": "253b0ddc2683c58bf355906921597acda5e640c7824f5efcaff7c9e66acc602e"
+    },
+    {
+      "path": "materials/papers/LS-SVM-load.pdf",
+      "sha256": "b3b3ca21d2979d440c5472556bf2b1015c8fcf78e6242275b5ff71b424a76071"
+    },
+    {
+      "path": "materials/papers/NPL-LS_SVM.pdf",
+      "sha256": "21807ca59512bbea3789160a7ff3d1a27bc1687de0f624b27acd08bfa41cc2ba"
+    },
+    {
+      "path": "materials/papers/SVR-tutorial.pdf",
+      "sha256": "acc07921ddf2ccb24ff354e3b4f6cfd9ceac92af29edfa9520bfa1b0d545e636"
+    },
+    {
+      "path": "materials/papers/SVR.pdf",
+      "sha256": "927bb29c0c306eba333d94378ed57c47670ddaf54c915cbed5f1308e4765ce63"
+    }
+  ],
+  "pages": [
+    {
+      "path": "index.html",
+      "sha256": "502aebc754444593c77d7d2d215113fb276345d9854b0070172e6c4a7575e76d"
+    },
+    {
+      "path": "chapters/week01.html",
+      "sha256": "b883b02726bba557d95b01f2884f9ab49cac17f1ba172222071f8d194b3f383d"
+    },
+    {
+      "path": "chapters/week02.html",
+      "sha256": "8f8a772ffcf573d6aee825482f647466a8eb4b30c3c7bcc7ba94641bd0bd1968"
+    },
+    {
+      "path": "chapters/week03.html",
+      "sha256": "e49040c8aa6463a0102a1427d94bb92682ccf52753b227bde236ea2d00734676"
+    },
+    {
+      "path": "chapters/week04.html",
+      "sha256": "49357180df1c6ca02d0c87679e55b8113e37b8534c96284b7565f3542820b02b"
+    },
+    {
+      "path": "chapters/week05.html",
+      "sha256": "591b795a02bdb54d1298d22f83f9f0cfce77608d9c12b9231da87e23e87c4d63"
+    },
+    {
+      "path": "chapters/week06.html",
+      "sha256": "26b109c14a7138b66d715e8047a9f27519ef7fd4434e2342cd3a4850fb847e6b"
+    },
+    {
+      "path": "chapters/week07.html",
+      "sha256": "61e70700b306c867c7f921d1257eaf8e8b1cfc6809ded7f6553bfef85c8fa337"
+    },
+    {
+      "path": "chapters/week08.html",
+      "sha256": "be6188a0bbd695ce39d2c6c29f878f6baa53a9b44655e4ae5b4db9dea737d428"
+    },
+    {
+      "path": "chapters/week09.html",
+      "sha256": "c64e2f26085cd957997171277ad537c21255bb224f0a8cea3c1a42d815330ebc"
+    },
+    {
+      "path": "chapters/week10.html",
+      "sha256": "f6a5b99656435eab7444add684af19a0b6dcd79a7f87df943a9b46be951c3a88"
+    },
+    {
+      "path": "chapters/week11.html",
+      "sha256": "fcfe17e4f7041e24a46a699c2d9e3b7b7ea4cccbef9955168887b38839a15d2a"
+    },
+    {
+      "path": "chapters/week12.html",
+      "sha256": "73e0a674078cc1191e739edd1caee96cb8b744931807c45a6fcac4bf97efb2b8"
+    }
+  ],
+  "sections": [
+    {
+      "path": "index.html",
+      "anchor": "reading-route",
+      "title": "Learning route（阅读路线）",
+      "aliases": [],
+      "source_ids": [
+        4
+      ]
+    },
+    {
+      "path": "index.html",
+      "anchor": "reading-conventions",
+      "title": "Reading conventions（阅读约定）",
+      "aliases": [],
+      "source_ids": []
+    },
+    {
+      "path": "index.html",
+      "anchor": "source-coverage",
+      "title": "Source coverage（来源覆盖）",
+      "aliases": [],
+      "source_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "index.html",
+      "anchor": "material-limits",
+      "title": "Material limitations（资料限制）",
+      "aliases": [],
+      "source_ids": []
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "start",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "course-map",
+      "title": "Course map（课程地图）：同一个目标，多种解题工具",
+      "aliases": [],
+      "source_ids": [
+        1,
+        4
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "basics",
+      "title": "Required foundations（必要前置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "function",
+      "title": "Function（函数）与 Mapping（映射）：输入如何变成输出",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "vectors",
+      "title": "Vector（向量）、Feature（特征）与 Training sample（训练样本）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "weighted-sum",
+      "title": "Weighted sum（加权和）：每个输入贡献多少",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "intelligence",
+      "title": "Intelligent systems（智能系统）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "system",
+      "title": "System（系统）与 Intelligent system（智能系统）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "inference",
+      "title": "Inference（推理）：Deduction（演绎）与 Induction（归纳）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "adapt-create",
+      "title": "Learning and adaptation（学习与适应）及 Planning（规划）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "approaches",
+      "title": "AI and CI approaches（人工智能与计算智能方法）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "ai-ci",
+      "title": "Artificial Intelligence（人工智能，AI）与 Computational Intelligence（计算智能，CI）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "hard-soft",
+      "title": "Hard computing（硬计算）与 Soft computing（软计算）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "three-paradigms",
+      "title": "NN、Fuzzy Logic 与 Evolutionary Computation：各自改变什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "rules-data-search",
+      "title": "Rule-based reasoning（规则推理）、Learning from data（数据学习）与 Search（搜索）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "history",
+      "title": "History and applications（历史与应用）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "milestones",
+      "title": "Milestones（里程碑）：提出问题、实现方法与验证效果",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "applications",
+      "title": "Applications（应用）：先问输入与输出，再看算法名称",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "modern-context",
+      "title": "Modern context（现代背景）：能力增长与评价问题并存",
+      "aliases": [],
+      "source_ids": [
+        8,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "ann-architecture",
+      "title": "ANN architecture（人工神经网络结构）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "ann",
+      "title": "Artificial neural network（人工神经网络，ANN）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "arch",
+      "title": "ARCH（结构表述）：把部件与变量列清楚",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "neuron-diagram",
+      "title": "Artificial neuron（人工神经元）结构图：从箭头读出计算",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "weights",
+      "title": "Weights（权重）与 Distributed representation（分布式表示）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "rules",
+      "title": "ARCH and RULE（结构与规则）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "aggregation",
+      "title": "Aggregation rule（聚合规则，G）：形成净输入",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "activation",
+      "title": "Activation rule（激活规则，F）：净输入如何变成节点状态",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "output",
+      "title": "Output rule（输出规则，H）：网络内部状态怎样交给外部",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "evaluation",
+      "title": "Evaluation rule（评价规则，E）：把表现变成可比较的数",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "learning-rule",
+      "title": "Learning rule（学习规则，L）：根据评价改变参数",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "unified-example",
+      "title": "ARCH/RULE（结构与规则）完整对照：现在能复现什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "learning-dynamics",
+      "title": "Learning and dynamics（学习与动力学）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "supervision",
+      "title": "Supervised learning（监督学习）与 Unsupervised learning（无监督学习）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "generalization",
+      "title": "Generalization（泛化）：对新输入是否仍然有效",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "discrete-continuous",
+      "title": "Discrete-time learning（离散时间学习）与 Continuous-time learning（连续时间学习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "two-timescales",
+      "title": "Two-time-scale dynamics（双时间尺度动力学）：状态快，权重慢",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "categories",
+      "title": "Network categories（网络分类）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "deterministic",
+      "title": "Deterministic（确定性）与 Stochastic（随机性）：固定条件后响应是否唯一",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "feedforward",
+      "title": "Feedforward（前馈）与 Recurrent（循环）：信号是否沿连接返回",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "semilinear",
+      "title": "Semilinear（半线性）与 Higher-order（高阶）：聚合是否包含输入间的乘积",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "taxonomy",
+      "title": "Taxonomy（分类体系）：输入形式、学习信息与实现并非同一件事",
+      "aliases": [],
+      "source_ids": [
+        2,
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "properties",
+      "title": "Network properties（网络性质）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "nonlinearity",
+      "title": "Nonlinearity（非线性）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "io-property",
+      "title": "Input-output mapping（输入输出映射）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "adaptivity-property",
+      "title": "Adaptivity（适应性）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "context-property",
+      "title": "Contextual information（上下文信息）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "fault-tolerance",
+      "title": "Fault tolerance（容错性）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "hardware-property",
+      "title": "Hardware implementability（硬件可实现性）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "uniformity-property",
+      "title": "Uniformity of analysis and design（分析与设计的统一性）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "biological-property",
+      "title": "Neurobiological analogy and plausibility（神经生物学类比与合理性）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice",
+      "title": "Integrated practice（综合练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice-calculate",
+      "title": "Worked practice A（从数据到评价）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice-activation",
+      "title": "Worked practice B（净输入与输出）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice-update",
+      "title": "Worked practice C（更新量与变化率）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice-structure",
+      "title": "Worked practice D（结构、维度与监督信息）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice-interpret",
+      "title": "Worked practice E（检查条件）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "practice-design",
+      "title": "Worked practice F（系统设计）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week01.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8,
+        4,
+        2,
+        5,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "route",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "prereq",
+      "title": "Required foundations（必要前置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "learning-basics",
+      "title": "1.1 Input、Weight 与 Supervised learning（输入、权重与监督学习）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "truth",
+      "title": "1.2 Truth table 与 Boolean function（真值表与布尔函数）",
+      "aliases": [],
+      "source_ids": [
+        9,
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "dot-product",
+      "title": "1.3 Dot product 与 Hyperplane（向量内积与超平面）",
+      "aliases": [],
+      "source_ids": [
+        6,
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "inequality",
+      "title": "1.4 Inequality 与 Proof by contradiction（不等式与反证法）",
+      "aliases": [],
+      "source_ids": [
+        9,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "mp",
+      "title": "2. M-P Neuron 与 Threshold logic（M-P 神经元与阈值逻辑）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "biology",
+      "title": "2.1 Biological neuron（生物神经元）：模型借用了什么",
+      "aliases": [],
+      "source_ids": [
+        9,
+        1,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "veto",
+      "title": "2.2 Excitation、Inhibition 与 Veto（兴奋、抑制与一票否决）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "step",
+      "title": "2.3 Step function 与 Threshold design（阶跃函数与阈值设计）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "gates",
+      "title": "2.4 Logic gates（逻辑门）：从要求设计权重",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "logic-networks",
+      "title": "Logic networks（逻辑网络）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "decoder",
+      "title": "3.1 Decoder（解码器）：只认出一个输入模式",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "two-layers",
+      "title": "3.2 Two-layer Boolean construction（两层布尔函数构造）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "monotone",
+      "title": "3.3 Monotonicity（单调性）：没有抑制会失去什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "weighted",
+      "title": "3.4 Weighted connections（带权连接）：把重复连线压成一个数",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "recurrent",
+      "title": "4. Recurrent network 与 Finite automaton（循环网络与有限状态自动机）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "binary-scaler",
+      "title": "4.1 Stored state 与 Binary scaler（存储状态与二进制计数示例）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "automaton",
+      "title": "4.2 Finite automaton（有限状态自动机）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "perceptron",
+      "title": "5. Perceptron 与 Bias（感知机与偏置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "classic",
+      "title": "5.1 Classical perceptron 与 Simple perceptron（经典与简化感知机）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "bias",
+      "title": "5.2 Bias 与 Augmented vector（偏置与增广向量）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "geometry",
+      "title": "6. Input space 与 Linear separability（输入空间与线性可分）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "input-space",
+      "title": "6.1 Decision boundary（决策边界）：固定参数，观察输入",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "cube",
+      "title": "6.2 Boolean cube 与三维平面（布尔立方体）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "separability",
+      "title": "6.3 Linear 与 Absolute linear separability（线性可分与绝对线性可分）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "training",
+      "title": "7. Perceptron learning rule（感知机学习规则）：一步一步把错分修正",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "update",
+      "title": "7.1 Error correction（误差纠正）：为什么这样更新",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "epoch",
+      "title": "7.2 Online learning、Batch learning 与 Epoch（在线学习、批学习与轮次）",
+      "aliases": [],
+      "source_ids": [
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "and-training",
+      "title": "7.3 Worked training example（完整训练示范）：从零学会 AND",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2,
+        6,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "landscape",
+      "title": "7.4 Error landscape（误差景观）：阶梯、斜坡与纠错方向",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "weight-space",
+      "title": "Weight space and duality（权重空间与对偶视角）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "dual",
+      "title": "Input space and weight space（输入空间与权重空间）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "feasible",
+      "title": "Feasible weights for AND（AND 的可行权重）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "convergence",
+      "title": "9. Perceptron convergence theorem（感知机收敛定理）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "theorem",
+      "title": "Perceptron convergence theorem（感知机收敛定理）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "proof",
+      "title": "Convergence proof（收敛证明）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "limits",
+      "title": "10. XOR 与 Representation limits（异或与表示能力限制）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "sixteen",
+      "title": "Boolean function count（布尔函数计数）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "xor-geometry",
+      "title": "Geometric proof for XOR（XOR 的几何证明）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9,
+        7,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "xor-algebra",
+      "title": "Algebraic proof for XOR（XOR 的不等式证明）",
+      "aliases": [],
+      "source_ids": [
+        9,
+        7,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "nonconverge",
+      "title": "Nonconvergence（不收敛的含义）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "coding",
+      "title": "11. Unipolar、Bipolar 与 Monte Carlo tests（编码与蒙特卡洛比较）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "bipolar",
+      "title": "Unipolar and bipolar coding（单极与双极编码）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "monte-carlo",
+      "title": "11.2 Monte Carlo tests（蒙特卡洛试验）：第82页到底在比较什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "practice",
+      "title": "Integrated practice（综合练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "integrated",
+      "title": "Transfer exercises（迁移练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week02.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9,
+        7,
+        6,
+        2,
+        8,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "roadmap",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "prerequisites",
+      "title": "Required foundations（必要前置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "linear",
+      "title": "1.1 Linear separability（线性可分性）与 Bias（偏置）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "loss-gradient",
+      "title": "1.2 Squared error（平方误差）、Partial derivative（偏导数）与 Gradient descent（梯度下降）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "chain",
+      "title": "1.3 Chain rule（链式法则）：沿路径相乘，遇分支相加",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "adaline",
+      "title": "2 ADALINE：先学习连续分数，再作类别判定",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "adaline-model",
+      "title": "2.1 Linear output（线性输出）与 Perceptron 的区别",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "lms",
+      "title": "2.2 Least mean squares（最小均方，LMS）与 Delta rule（Delta学习规则）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "training-modes",
+      "title": "2.3 Online learning（在线学习）与 Batch learning（批量学习）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7,
+        5,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "adaline-example",
+      "title": "ADALINE worked example（ADALINE 完整计算）",
+      "aliases": [],
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "capacity",
+      "title": "Capacity and weight space（容量与权重空间）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "weight-space",
+      "title": "3.1 Weight space（权重空间）与 Input space（输入空间）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "region-count",
+      "title": "3.2 Hyperplane arrangement（超平面排列）的计数条件",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "boolean",
+      "title": "3.3 Boolean function（布尔函数）与 Threshold function（阈值函数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "mlp-xor",
+      "title": "MLP and XOR（多层感知机与异或）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "architecture",
+      "title": "4.1 Feedforward network（前馈网络）与 Hidden layer（隐藏层）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "xor-three",
+      "title": "Three-unit XOR（三计算单元异或）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "xor-alternatives",
+      "title": "4.3 Alternative representations（替代表示）：AND/OR 与跨层连接",
+      "aliases": [],
+      "source_ids": [
+        1,
+        9
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "parity-xnor",
+      "title": "4.4 Parity（奇偶性）与 XNOR（同或）",
+      "aliases": [],
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "boolean-construction",
+      "title": "4.5 Boolean network construction（布尔网络构造）",
+      "aliases": [],
+      "source_ids": [
+        9,
+        6,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "differentiable",
+      "title": "Differentiable networks（可微网络）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "credit",
+      "title": "5.1 Credit assignment（贡献分配）：隐藏层没有答案怎么办？",
+      "aliases": [],
+      "source_ids": [
+        6,
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "activation",
+      "title": "5.2 Sigmoid（S形函数）与 Hyperbolic tangent（双曲正切）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "representation",
+      "title": "5.3 Learned representation（学习得到的表示）：原论文在展示什么？",
+      "aliases": [],
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "bp",
+      "title": "Backpropagation derivation（反向传播推导）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "bp-notation",
+      "title": "6.1 Forward pass（前向传播）：先固定符号和维度",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "bp-output",
+      "title": "6.2 Output-layer gradient（输出层梯度）：三个局部因子",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "bp-hidden",
+      "title": "6.3 Hidden-layer gradient（隐藏层梯度）：把所有下游贡献加起来",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "bp-first",
+      "title": "6.4 First trainable layer（第一可训练层）、矩阵写法与跨层路径",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "bp-procedure",
+      "title": "6.5 Training loop（训练循环）：计算导数与改变参数是两件事",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "mlp-calculation",
+      "title": "A 2–2–1 MLP update（2–2–1 多层感知机的一次更新）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "numeric-forward",
+      "title": "7.1 Forward computation（前向计算）：先建立可核对的起点",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "numeric-backward",
+      "title": "7.2 Backward computation（反向计算）：逐层算完9个梯度",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "numeric-update",
+      "title": "7.3 Parameter update（参数更新）与独立检查",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "gradient-check",
+      "title": "7.4 Gradient check（梯度检查）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "optimization",
+      "title": "Optimization and momentum（优化与动量）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "local-minimum",
+      "title": "8.1 Local minimum（局部极小）与训练困难",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "momentum",
+      "title": "8.2 Momentum（动量）：积累方向，但不保证跳出所有谷底",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "limits",
+      "title": "Representation, optimization and generalization（表示、优化与泛化）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "kolmogorov",
+      "title": "9.1 Kolmogorov representation（Kolmogorov表示思想）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "universal",
+      "title": "9.2 Universal approximation（通用逼近）到底保证什么？",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "overfitting",
+      "title": "9.3 Overfitting（过拟合）：训练点之间发生了什么？",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "regularization",
+      "title": "9.4 Early stopping（提前停止）与 Weight decay（权重衰减）",
+      "aliases": [],
+      "source_ids": [
+        5,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "practice",
+      "title": "Integrated practice（综合练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week03.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7,
+        9,
+        6,
+        5,
+        2,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "start",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "pre",
+      "title": "Required foundations（必要前置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "distance",
+      "title": "1.1 Vector and Euclidean distance（向量与欧氏距离）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "feature",
+      "title": "1.2 Feature map and linear classifier（特征映射与线性分类器）",
+      "aliases": [],
+      "source_ids": [
+        6
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "least-squares",
+      "title": "1.3 Least squares and matrix solve（最小二乘与矩阵求解）",
+      "aliases": [],
+      "source_ids": [
+        7,
+        3
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "rbf",
+      "title": "Radial Basis Function（径向基函数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "radial",
+      "title": "2.1 Radial Basis Function（径向基函数）与 Gaussian（高斯函数）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "families",
+      "title": "2.2 Common radial functions（常见径向函数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "architecture",
+      "title": "2.3 RBF network（径向基函数网络）：非线性隐藏层、线性输出层",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "interpolation",
+      "title": "2.4 Interpolation and approximation（插值与近似）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "xor",
+      "title": "XOR and feature mapping（异或与特征映射）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "separability",
+      "title": "3.1 φ-separability（φ 可分性）与 Cover 思想",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "xor-original",
+      "title": "3.2 XOR in input space（原空间中的 XOR）为何不能用一条直线分开？",
+      "aliases": [],
+      "source_ids": [
+        9
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "xor-rbf",
+      "title": "3.3 Two-center RBF map（两中心 RBF 映射）：逐点计算",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "xor-bias",
+      "title": "3.4 Output bias（输出偏置）：分类正确与精确插值的区别",
+      "aliases": [],
+      "source_ids": [
+        3
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "xor-exact",
+      "title": "3.5 Exact RBF interpolation（精确 RBF 插值）：论文的四中心例子",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "fln-elm",
+      "title": "FLN and ELM（函数连接网络与极限学习机）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "fln",
+      "title": "4.1 Functional Link Network（函数连接网络，FLN）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "elm",
+      "title": "4.2 Extreme Learning Machine（极限学习机，ELM）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "compare",
+      "title": "4.3 Explicit feature expansion（显式特征展开）的共同结构",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "margin",
+      "title": "SVM geometry（支持向量机几何）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "hyperplane",
+      "title": "5.1 Hyperplane and normal vector（超平面与法向量）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "two-margins",
+      "title": "5.2 Functional margin and geometric margin（函数间隔与几何间隔）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "canonical",
+      "title": "5.3 Canonical scaling and margin width（规范化与间隔宽度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "why-margin",
+      "title": "5.4 Maximum margin（最大间隔）的依据与边界",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "optimization",
+      "title": "Primal and dual problems（原始问题与对偶问题）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "primal",
+      "title": "6.1 Hard-margin primal problem（硬间隔原始问题）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "lagrange",
+      "title": "6.2 Lagrange multiplier（拉格朗日乘子）为什么出现？",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "dual",
+      "title": "6.3 Dual problem（对偶问题）：完整消元",
+      "aliases": [],
+      "source_ids": [
+        1,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "kkt",
+      "title": "6.4 Karush–Kuhn–Tucker conditions（KKT 条件）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "decision",
+      "title": "Support vectors and decision function（支持向量与决策函数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "support-vectors",
+      "title": "7.1 Support vector（支持向量）与 bias 的恢复",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "decision-function",
+      "title": "7.2 Linear discriminant function（线性判别函数）：检查标签系数",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "worked-svm",
+      "title": "Worked SVM example（支持向量机完整示范）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "small-svm",
+      "title": "8.1 A complete hard-margin example（完整硬间隔小例题）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "practice",
+      "title": "8.2 MATLAB practice（MATLAB 实践）：分清读图与硬间隔求解",
+      "aliases": [],
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "exercises",
+      "title": "8.3 Transfer exercises（迁移练习）与完整解析",
+      "aliases": [],
+      "source_ids": [
+        10
+      ]
+    },
+    {
+      "path": "chapters/week04.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        10,
+        3,
+        6,
+        7,
+        9,
+        8,
+        2,
+        5,
+        4,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "start",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        10
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "foundations",
+      "title": "Foundations（必要前置） · 1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "notation",
+      "title": "Classification / Regression（分类与回归）及维度 · 1.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "hard-review",
+      "title": "Hard margin / KKT（硬间隔与最优性条件）短回顾 · 1.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "regularization",
+      "title": "Regularization / Validation（正则化与验证） · 1.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "soft",
+      "title": "Soft-margin SVM（软间隔支持向量机） · 2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "slack",
+      "title": "Slack variable（松弛变量）不是错误计数 · 2.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "soft-primal",
+      "title": "Primal objective / C（原始目标与惩罚权重） · 2.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "soft-dual",
+      "title": "Dual / KKT（对偶与支持向量的三种状态） · 2.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "kernels",
+      "title": "Kernel trick（核技巧） · 3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        15,
+        13,
+        3
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "feature-map",
+      "title": "Feature map（特征映射）为什么能改变可分性 · 3.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "kernel-inner-product",
+      "title": "Kernel function（核函数）省掉什么计算 · 3.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "polynomial",
+      "title": "Polynomial kernel（多项式核）：亲手展开六维特征 · 3.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "gram",
+      "title": "Positive semidefinite / Gram matrix（半正定与格拉姆矩阵） · 3.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "common-kernels",
+      "title": "Common kernels（常见核）与适用条件 · 3.5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        13
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "width",
+      "title": "Kernel width（核宽度）：局部影响能扩散多远 · 3.6",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "rbf-network",
+      "title": "RBF network / RBF kernel SVM（径向基网络与核 SVM） · 3.7",
+      "aliases": [],
+      "source_ids": [
+        1,
+        3
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "kernel-training",
+      "title": "Kernel training（核模型训练） · 4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "kernel-qp",
+      "title": "Kernelized dual（核化对偶）与预测流程 · 4.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "selection",
+      "title": "Model selection（模型选择）是训练流程的一部分 · 4.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "svr",
+      "title": "Support Vector Regression（支持向量回归） · 5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "epsilon",
+      "title": "ε-insensitive loss（ε不敏感损失）与管道 · 5.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "svr-primal",
+      "title": "Two slack variables（两类松弛）与 SVR primal · 5.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "svr-dual",
+      "title": "SVR dual（回归对偶）：为什么系数是 α−α* · 5.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "svr-bias-bounds",
+      "title": "Bias interval（偏置区间）：把两类 KKT 分开推 · 5.4",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14,
+        15
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "svr-kernel-example",
+      "title": "Kernel SVR worked example（核 SVR 完整手算） · 5.5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "svr-reading-bridge",
+      "title": "Loss and further reading（损失比较与选读衔接） · 5.6",
+      "aliases": [],
+      "source_ids": [
+        1,
+        14
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "lssvm",
+      "title": "Least-Squares SVM（最小二乘支持向量机） · 6",
+      "aliases": [],
+      "source_ids": [
+        1,
+        13
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "ls-primal",
+      "title": "Squared error / Equality constraint（平方误差与等式约束） · 6.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "ls-derivation",
+      "title": "Linear KKT system（线性 KKT 系统）的逐步推导 · 6.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "ls-example",
+      "title": "LS-SVM worked example（完整手算：一个 3×3 的 LS-SVM 回归系统） · 6.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "ls-sparsity",
+      "title": "Sparsity / Classification variant（稀疏性与分类形式的区别） · 6.4",
+      "aliases": [],
+      "source_ids": [
+        1,
+        13
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "matlab",
+      "title": "MATLAB practice（MATLAB 实践） · 7",
+      "aliases": [],
+      "source_ids": [
+        1,
+        10
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "matlab-classification",
+      "title": "Binary / Multiclass classification（二分类与多分类） · 7.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "matlab-svr",
+      "title": "fitrsvm（回归训练）：收敛、损失和泛化是三件事 · 7.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        10
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "matlab-ls",
+      "title": "LS-SVM from scratch（从零组装 LS-SVM） · 7.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        10
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "leakage",
+      "title": "Fold-local preprocessing（Fold-local preprocessing（逐折预处理）：防止数据泄漏） · 7.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "applications",
+      "title": "Applications（应用） · 8",
+      "aliases": [],
+      "source_ids": [
+        1,
+        13,
+        12,
+        0
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "spiral",
+      "title": "Two-spiral classification（双螺旋分类） · 8.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        13
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "load",
+      "title": "Short-term prediction（短期负荷预测） · 8.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        12
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "comparison",
+      "title": "Model comparison（模型比较） · 9",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "model-comparison",
+      "title": "Objective / Constraint / Output（目标、约束与输出）的比较 · 9.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "practice",
+      "title": "Practice and transfer（理解检查与迁移练习） · 9.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week05.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制） · 10",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2,
+        14,
+        15,
+        13,
+        12,
+        10,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "start",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        11,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "foundations",
+      "title": "Foundations（必要前置） · 1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "unsupervised",
+      "title": "Unsupervised learning（无监督学习）与 Clustering（聚类） · 1.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "prototype",
+      "title": "Prototype vector（原型向量）与 Vector quantization（向量量化） · 1.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "distance",
+      "title": "Distance（距离）与 Binary overlap（二值重叠） · 1.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "dynamics",
+      "title": "Discrete iteration（离散迭代）与 Differential equation（微分方程）直觉 · 1.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "maxnet",
+      "title": "MAXNET（最大值竞争网络） · 2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "maxnet-connections",
+      "title": "Winner-take-all（胜者全得）与 Lateral inhibition（侧向抑制） · 2.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "maxnet-calc",
+      "title": "Synchronous MAXNET update（同步更新：一步步算到单一赢家） · 2.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "maxnet-limits",
+      "title": "Ties and output interpretation（并列、最大值与最大位置：停止前要看清输出） · 2.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "kwta",
+      "title": "kWTA（k 个获胜者竞争） · 3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "kwta-model",
+      "title": "Threshold state（阈值状态）与动态方程 · 3.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "kwta-conditions",
+      "title": "Finite-time convergence（有限时间收敛）：条件先于结论 · 3.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "kwta-example",
+      "title": "Piecewise simulation（从分段计算到 Simulation（仿真）读图） · 3.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art",
+      "title": "ART1（自适应共振理论第一类模型） · 4",
+      "aliases": [],
+      "source_ids": [
+        1,
+        11,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art-structure",
+      "title": "ART1 architecture（ART1 的双向结构与增量聚类问题） · 4.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        11,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art-algorithm",
+      "title": "Choice、Vigilance、Reset：把五步算法拆开 · 4.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art-update",
+      "title": "Fast learning（快速学习）：模板取交集，评分重新归一 · 4.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art-worked",
+      "title": "ART1 worked example（从空网络到三类：完整二值算例） · 4.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art-vigilance",
+      "title": "Vigilance（警戒性）、输入顺序与 C/E/F 原例 · 4.5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "art-five-bit",
+      "title": "Five-bit comparison（五位输入对照）：两种警戒值，完整候选竞争 · 4.6",
+      "aliases": [],
+      "source_ids": [
+        1,
+        11
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som",
+      "title": "SOM（自组织映射） · 5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som-spaces",
+      "title": "Input space（输入空间）与 Map space（地图空间） · 5.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som-algorithm",
+      "title": "Kohonen learning algorithm（Kohonen 学习算法） · 5.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som-neighborhood",
+      "title": "Neighborhood（邻域）：竞争之后为什么还要合作 · 5.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som-worked",
+      "title": "SOM worked example（一次获胜与邻域更新：四个单元的完整计算） · 5.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som-topology",
+      "title": "Topology preservation（拓扑保持）：读懂原图与它的限度 · 5.5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "som-dot",
+      "title": "Minimum distance and maximum dot product（最小距离与最大点积） · 5.6",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "compare",
+      "title": "Method comparison（方法比较） · 6",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "compare-methods",
+      "title": "ART1 vs. SOM（ART1 与 SOM）：相似的竞争，不同的学习目标 · 6.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "practice",
+      "title": "Practice（迁移练习） · 7",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week06.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制） · 8",
+      "aliases": [],
+      "source_ids": [
+        1,
+        11,
+        2,
+        10,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "start",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "prerequisites",
+      "title": "Prerequisites（必要前置） · 1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "encoding",
+      "title": "Binary / bipolar encoding（二值／双极性编码） · 1.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "linear-algebra",
+      "title": "Transpose / inner product / outer product（转置／内积／外积） · 1.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "symmetric-quadratic",
+      "title": "Symmetric matrix / quadratic form（对称矩阵／二次型） · 1.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "dynamics",
+      "title": "Discrete Hopfield dynamics（离散 Hopfield 动力学） · 2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "recurrent",
+      "title": "Recurrent network（循环网络）与 State（状态） · 2.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "field",
+      "title": "Local field（局部场）、Bias（偏置）与 Threshold（阈值） · 2.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        6
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "schedules",
+      "title": "Asynchronous / synchronous update（异步／同步更新） · 2.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "energy",
+      "title": "Energy function（能量函数） · 3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "energy-definition",
+      "title": "Energy definition（用一个数评价整个状态） · 3.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "delta-energy",
+      "title": "Energy difference derivation（单节点更新的能量差推导） · 3.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "stability",
+      "title": "Fixed point（不动点）、收敛与条件边界 · 3.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "synchronous-cycle",
+      "title": "Synchronous two-cycle（同步二周期）反例 · 3.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "memory",
+      "title": "Associative memory（联想记忆） · 4",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "content-address",
+      "title": "Content-addressable memory（内容寻址记忆） · 4.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "brain-context",
+      "title": "Biological inspiration（生物学启发）的角色 · 4.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "auto-hetero",
+      "title": "Auto-association / hetero-association（自联想／异联想） · 4.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "storage-retrieval",
+      "title": "Storage / retrieval（存储／检索）：两个阶段，不是两套记忆 · 4.4",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "learning",
+      "title": "Outer-product learning（外积学习） · 5",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "hebb-storage",
+      "title": "Hebbian storage（用成对关系写入权重） · 5.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "crosstalk",
+      "title": "Cross-talk（串扰）：为什么写入不等于精确恢复？ · 5.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "orthogonality",
+      "title": "Orthogonal / orthonormal（正交／标准正交）：第 195 页的核实纠正 · 5.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "worked-hopfield",
+      "title": "Hopfield worked example（完整教学示例：五节点网络的写入、含噪回忆与每步能量） · 5.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "limits",
+      "title": "Memory limits（记忆容量与局限） · 6",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "basins",
+      "title": "Attractor / basin of attraction（吸引子／吸引盆地） · 6.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "digit-recovery",
+      "title": "Noise recovery（噪声恢复）：带着条件读原图 · 6.2",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "spurious",
+      "title": "Spurious state（伪稳定状态）与误恢复 · 6.3",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "capacity",
+      "title": "Storage capacity（存储容量）：一个公式对应一种成功标准 · 6.4",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "optimization",
+      "title": "Optimization motivation（优化动机） · 7",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "optimization-motive",
+      "title": "Objective as network energy（把目标函数写成网络能量） · 7.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "bam",
+      "title": "Bidirectional Associative Memory（双向联想记忆） · 8",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "bam-architecture",
+      "title": "BAM architecture（两层结构：从一组状态回想另一组） · 8.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "bam-storage",
+      "title": "Hetero-associative outer product（异联想外积）写入 · 8.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "bam-retrieval",
+      "title": "Bidirectional recall（双向回忆）的操作顺序 · 8.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "bam-example",
+      "title": "BAM worked example（完整教学示例：两对模式写入与两向回忆） · 8.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "bam-conditions",
+      "title": "Exact recall（精确回忆）的串扰条件：核查第 201 页 · 8.5",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "practice",
+      "title": "Practice（综合练习） · 9",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week07.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制） · 10",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2,
+        10,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "start",
+      "title": "Learning route（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "prerequisites",
+      "title": "Prerequisites（必要前置） · 1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "energy-recap",
+      "title": "Energy and stability（能量与稳定性） · 1.1",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "derivatives",
+      "title": "Derivative and differential equation（导数与微分方程） · 1.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "quadratic",
+      "title": "Quadratic energy and penalty（二次能量与惩罚项） · 1.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "continuous",
+      "title": "Continuous-time Hopfield network（连续时间 Hopfield 网络） · 2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "state-equation",
+      "title": "State equation（状态方程）：泄漏、反馈与偏置 · 2.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "sigmoid",
+      "title": "Sigmoid（S 形激活）：连续值为什么有用？ · 2.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "circuit",
+      "title": "Analog circuit（模拟电路）：方程里的变量从哪里来？ · 2.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "lyapunov",
+      "title": "Lyapunov function（Lyapunov 函数） · 3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "energy-proof",
+      "title": "Energy descent proof（完整能量及非增性的逐步证明） · 3.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "convergence-limits",
+      "title": "Equilibrium（平衡点）不自动等于好答案 · 3.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "high-gain",
+      "title": "High-gain approximation（高增益近似）的条件与极限 · 3.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "tsp-encoding",
+      "title": "Traveling Salesman Problem encoding（旅行商问题编码） · 4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "tsp-count",
+      "title": "Tour count（路线问题与组合规模） · 4.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "city-position",
+      "title": "City-position encoding（城市－位置编码） · 4.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "four-city",
+      "title": "Four-city encoding example（四城市的完整编码示范） · 4.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "tsp-energy",
+      "title": "Penalty energy（惩罚能量） · 5",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "constraints",
+      "title": "Assignment constraints（一城一次、一位一城与总访问数） · 5.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "tour-length",
+      "title": "Tour length（Tour length（路线长度）：相邻位置如何找到城市？） · 5.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "full-energy",
+      "title": "Full TSP energy（完整的 TSP 二次目标与它的适用域） · 5.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "energy-example",
+      "title": "Energy worked example（同一张四城市地图：合法与非法编码的能量账本） · 5.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "weights",
+      "title": "Network synthesis（网络构造） · 6",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "matching",
+      "title": "Coefficient matching（系数对应）的准备 · 6.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "delta-weights",
+      "title": "Kronecker delta（Kronecker 指示符）与行列抑制 · 6.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "distance-weight",
+      "title": "Distance weights（相邻位置的距离连接与完整权重） · 6.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "diagonal",
+      "title": "Self-connection（自连接）与二值化简的边界 · 6.4",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "tsp-dynamics",
+      "title": "TSP dynamics and decoding（从连接返回 Dynamics（动力学），再解码） · 6.5",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "experiments",
+      "title": "Parameter selection（参数选择） · 7",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "parameters",
+      "title": "Parameter trade-offs（参数控制的是不同目标之间的权衡） · 7.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "ten-city",
+      "title": "Ten-city example（十城市示例）：从输出图读到路线图 · 7.2",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "results",
+      "title": "Ten-city results（如何读“约 50%”与 181,440 条路线） · 7.3",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "local-minima",
+      "title": "Local minima（局部极小） · 8",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "landscape",
+      "title": "Energy landscape（能量景观）与障碍 · 8.1",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "practice",
+      "title": "Practice（练习） · 9",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week08.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制） · 10",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2,
+        10,
+        3,
+        6,
+        8
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "roadmap",
+      "title": "Learning roadmap（学习路线）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "pre",
+      "title": "Prerequisites（必要前置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "energy-pre",
+      "title": "Energy 与 Local minimum（能量与局部极小）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "prob-pre",
+      "title": "Probability 与 Conditional probability（概率与条件概率）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "exp-pre",
+      "title": "Exponential function 与 Expectation（指数函数与期望）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "state-pre",
+      "title": "Time-series state 与 Linear readout（时序状态与线性读出）",
+      "aliases": [],
+      "source_ids": [
+        1,
+        7
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "unit-a",
+      "title": "Simulated annealing（模拟退火）与热平衡网络",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "annealing",
+      "title": "Simulated annealing（模拟退火）：暂时变差为什么有用",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "accept",
+      "title": "Acceptance rules（接受规则）：两页课件、两种概率",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "tangent",
+      "title": "Tangent（切线）：课件中的 T 和 2T 从哪里来",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "cooling",
+      "title": "Cooling schedule（冷却计划）与一轮完整搜索",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "tsp",
+      "title": "Traveling Salesman Problem（旅行商问题，TSP）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "thermal",
+      "title": "Boltzmann machine and mean field（玻尔兹曼机与均值场）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "boltzmann",
+      "title": "Boltzmann machine（玻尔兹曼机）：用能量偏好分配状态概率",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "flip",
+      "title": "Flip energy 与 Conditional update（翻转能量与条件更新）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "mean-field",
+      "title": "Mean field approximation（均值场近似）：用平均倾向代替随机翻转",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "mfa",
+      "title": "Mean field annealing（均值场退火）：软决策如何逐渐变硬",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "unit-b",
+      "title": "Echo State Network（回声状态网络）与时序建模",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "esn-idea",
+      "title": "Echo State Network（回声状态网络，ESN）为什么需要一个储备池",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "esn-history",
+      "title": "Origin 与 Reservoir computing（起源与储备池计算框架）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "esn-flow",
+      "title": "Architecture（结构）：沿四条路径读懂信号流",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "esn-equations",
+      "title": "State equations（状态方程）：先更新储备池，再计算读出",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "esp",
+      "title": "Echo state property（回声状态性质）：忘记初值，保留输入历史",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "readout",
+      "title": "Readout training（读出训练）：固定动态特征，再做最小二乘",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "ridge",
+      "title": "Ridge regression（岭回归）：约束过大的读出权重",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "feedback-training",
+      "title": "Teacher forcing（教师强制）与预测时的反馈",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "compare",
+      "title": "Model comparison（模型比较）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "four-networks",
+      "title": "Model comparison（模型比较）：看任务、状态、学习和运行",
+      "aliases": [],
+      "source_ids": [
+        1,
+        2
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "practice",
+      "title": "Practice（巩固练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week09.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "start",
+      "title": "Learning goals（学习目标）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "prereq-set",
+      "title": "Set and function（集合与函数）｜前置补充",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "prereq-logic",
+      "title": "AND / OR / NOT（与、或、非）｜前置补充",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "prereq-average",
+      "title": "Weighted mean and area（加权平均与面积）｜前置补充",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "unit1",
+      "title": "Fuzzy sets（模糊集）与隶属度",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "background",
+      "title": "Historical context（历史背景）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "fuzziness",
+      "title": "Fuzziness and randomness（模糊性与随机性）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "membership",
+      "title": "Membership function and crisp set（隶属函数与清晰集）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "shapes",
+      "title": "Triangular and trapezoidal membership functions（三角形与梯形隶属函数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "notation",
+      "title": "Fuzzy set notation（模糊集记号）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "geometry",
+      "title": "Geometric view（模糊集的几何表示）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "cuts",
+      "title": "Fuzzy set structure（模糊集结构）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "landmarks",
+      "title": "Support, kernel and height（支撑集、核与高度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "singleton",
+      "title": "Fuzzy singleton and crossover point（模糊单点集与交越点）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "alpha",
+      "title": "α-cut（α 截集）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "convex",
+      "title": "Convex fuzzy set（凸模糊集）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "operations",
+      "title": "Fuzzy operations（模糊运算）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "union",
+      "title": "Union, intersection and complement（并、交与补）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "laws",
+      "title": "Set identities（集合运算性质）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "cardinality",
+      "title": "Cardinality and normalized cardinality（基数与归一化基数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "entropy",
+      "title": "Fuzzy entropy（模糊熵）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "similarity",
+      "title": "Equality, similarity and subsethood（相等、相似与包含度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "relations",
+      "title": "Fuzzy relations（模糊关系）与合成",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "relation-definition",
+      "title": "Fuzzy relation（模糊关系）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "composition",
+      "title": "Max–min composition（最大–最小合成）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "transitivity",
+      "title": "Max–min transitivity（最大–最小传递性）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "unit2",
+      "title": "Fuzzy inference（模糊推理）与控制",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "linguistic",
+      "title": "Linguistic variable（语言变量）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "fuzzification",
+      "title": "Fuzzification（模糊化）与知识库",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "rules",
+      "title": "Fuzzy rule and firing strength（模糊规则与激活强度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "mamdani",
+      "title": "Clipping and aggregation（截断与聚合）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "defuzzification",
+      "title": "Defuzzification（去模糊化）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "centroid",
+      "title": "Centroid（质心法）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "defuzz-methods",
+      "title": "Center-average and mean-of-maxima（中心平均法与最大值均值法）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "heater",
+      "title": "Electrical heater example（电加热器案例）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "heater-evidence",
+      "title": "Reading the original example（读懂原课件案例）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "heater-input",
+      "title": "Step 1–2: input and firing（输入、模糊化与规则激活）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "heater-output",
+      "title": "Step 3–4: clipping and aggregation（后件截断与输出聚合）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "heater-centroid",
+      "title": "Step 5: centroid calculation（质心计算与动作解释）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "type2",
+      "title": "Type-2 fuzzy system（二型模糊系统）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "type2-motivation",
+      "title": "Uncertain membership（不确定隶属度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "type2-view",
+      "title": "Primary and secondary membership（主隶属度与次隶属度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "type-reduction",
+      "title": "Type reduction and architecture（降型与系统架构）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "practice",
+      "title": "Practice（综合练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week10.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "start",
+      "title": "Learning goals（学习目标）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "basics",
+      "title": "Optimization basics（优化基础）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "optimization",
+      "title": "Optimization（优化）：目标、空间与局部最优",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "binary",
+      "title": "Binary encoding（二进制编码）：一串位如何代表答案",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "probability",
+      "title": "Random sampling（随机抽样）：概率不是固定配额",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "ec",
+      "title": "Evolutionary computation（进化计算）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "population",
+      "title": "Population（种群）与 Natural selection（自然选择）的启发",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "family",
+      "title": "Evolutionary algorithms（进化算法）：本周聚焦的位置",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "ga-framework",
+      "title": "Genetic algorithm（遗传算法）：先评价，再产生变化",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "representation",
+      "title": "Representation and fitness（表示与适应度）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "genotype",
+      "title": "Genotype（基因型）与 Phenotype（表现型）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "fitness",
+      "title": "Objective function（目标函数）与 Fitness function（适应度函数）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "feasibility",
+      "title": "Feasibility（可行性）与 Penalty（惩罚）：评分不能改变规则",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "selection",
+      "title": "Selection and genetic operators（选择与遗传算子）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "roulette",
+      "title": "Roulette-wheel selection（轮盘赌选择）：按适应度分配区间",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "crossover",
+      "title": "Crossover（交叉）：在相同位置交换片段",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "mutation",
+      "title": "Mutation（变异）：改变位值，而不是只重新拼接",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "inversion",
+      "title": "Inversion（倒位）：先把“反转”说具体",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "generation",
+      "title": "One generation（一代演化）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "generation-example",
+      "title": "One generation（一代演化）：从四条父代到四条子代",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "flow",
+      "title": "GA flow（完整流程）：循环何时结束，最好解放在哪里",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "elitism",
+      "title": "Elitism（精英保留）与 Diversity（多样性）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "hanoi",
+      "title": "Towers of Hanoi（汉诺塔）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "hanoi-rules",
+      "title": "Legal move（合法移动）：每次只操作最上面的盘",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "hanoi-state",
+      "title": "State graph（状态图）：节点是摆法，边是合法动作",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "hanoi-path",
+      "title": "Move-sequence encoding（移动序列编码）：逐步检查七步解",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "hanoi-optimal",
+      "title": "Optimal path（最短路径）：为什么三盘至少需要七步",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "hanoi-ga",
+      "title": "Encoding design（编码设计）：把汉诺塔接入GA",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "network",
+      "title": "Encoder-decoder design（编码器—解码器设计）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "mlp-review",
+      "title": "Multilayer perceptron（多层感知机，MLP）的最小回顾",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "network-shape",
+      "title": "8-bit encoder-decoder（八位编码器—解码器）：读懂8–3–8结构",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "network-parameters",
+      "title": "Parameter encoding（参数编码）：一条染色体是一整套网络参数",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "network-error",
+      "title": "Reconstruction error（重建误差）：网络好坏怎样变成一个数",
+      "aliases": [],
+      "source_ids": [
+        1,
+        5
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "curve",
+      "title": "Learning curve（学习曲线）：群体平均与最优网络分别怎么看",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "practice",
+      "title": "Practice（综合练习）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "practice-selection",
+      "title": "Fitness scaling（适应度缩放）练习",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "practice-operators",
+      "title": "Crossover and mutation（交叉与变异）练习",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "practice-applications",
+      "title": "Application design（应用设计）练习",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week11.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "start",
+      "title": "Learning goals（学习目标）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "prerequisites",
+      "title": "Prerequisites（必要前置）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "objective",
+      "title": "Objective function（目标函数）：先约定什么叫“更好”",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "vectors",
+      "title": "Position / Velocity vector（位置／速度向量）：一组参数怎样移动",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "random-record",
+      "title": "Random number / Iteration record（随机数／迭代记录）：变化与记忆",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "previous",
+      "title": "Stochastic / Population search（随机／种群搜索）：接上第 9、11 周",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "swarm",
+      "title": "Swarm intelligence（群体智能）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "swarm-idea",
+      "title": "Swarm Intelligence（群体智能）：简单个体如何共享线索",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "history",
+      "title": "Historical context（历史背景）：两个时间点",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "best-states",
+      "title": "Personal best / Neighborhood best（个体最好／邻域最好）：记住的是位置",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "update",
+      "title": "PSO update（粒子群更新）",
+      "aliases": [
+        "PSO",
+        "Particle swarm optimization",
+        "粒子群优化"
+      ],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "equations",
+      "title": "Velocity / Position update（速度／位置更新）：三项共同决定下一步",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "geometry",
+      "title": "Inertia / Cognitive / Social terms（惯性／认知／社会项）：看懂三根箭头",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "sampling",
+      "title": "Randomness inside the loop（循环内随机性）：逐维随机会改变方向",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "algorithm",
+      "title": "Synchronous iteration（同步迭代）：冻结、移动、评价、再记忆",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "bounds-stop",
+      "title": "Boundary handling / Stopping（边界处理／停止）：公式以外还要规定什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "worked",
+      "title": "Worked example（两只二维粒子的一轮搜索）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "search-story",
+      "title": "Global optimization（全局优化）图像解读",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "landscape",
+      "title": "Fitness landscape（适应度地形）：分散、聚集与信息传播",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "convergence",
+      "title": "Convergence / Stagnation（收敛／停滞）：四种“没有变化”",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "schwefel",
+      "title": "Schwefel’s function（Schwefel 函数）示例",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "schwefel-function",
+      "title": "Schwefel’s function（Schwefel 函数）：先固定这一页的定义",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "scatter",
+      "title": "Swarm snapshots（粒子分布快照）：点聚在哪里，能说明什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "results",
+      "title": "Search results / Convergence curve（搜索结果／收敛曲线）：把读数和结论分开",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "integration",
+      "title": "Course integration（全课程整合）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "compare-search",
+      "title": "GA / PSO / SA（遗传算法／粒子群／模拟退火）：随机用在哪里",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "hopfield",
+      "title": "Hopfield optimization（Hopfield 优化）：先把问题写进能量",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "model-selection",
+      "title": "Task → Model selection（任务 → 模型选择）：先问要输出什么",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "hybrid",
+      "title": "Model + Optimizer（模型加优化器）：层次组合而非互相替换",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "practice",
+      "title": "Practice（练习与讲解答案）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "practice-pso",
+      "title": "PSO checks（PSO 理解检查）：随机、记忆与预算",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "practice-integrated",
+      "title": "Integrated problems（跨周综合题）：从任务到可检验方案",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "sources",
+      "title": "Sources and limitations（来源与资料限制）",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    },
+    {
+      "path": "chapters/week12.html",
+      "anchor": "limits",
+      "title": "Evidence limits（证据限制）：哪些已查清，哪些仍未知",
+      "aliases": [],
+      "source_ids": [
+        1
+      ]
+    }
+  ]
+}

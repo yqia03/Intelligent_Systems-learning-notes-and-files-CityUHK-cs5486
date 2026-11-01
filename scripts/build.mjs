@@ -1,7 +1,8 @@
 import postcss from 'postcss';
 import { buildMidterm } from './build-midterm.mjs';
 import { buildAssignments } from './build-assignments.mjs';
-import { root, read, json, write, sha, sourceReferenceId, all, attr, set, hasClass, text, norm, article, bookHeader, headings, esc, args, basePath, parse, serializeOuter, fs, path } from './lib.mjs';
+import { buildTextbook } from './build-textbook.mjs';
+import { root, read, json, write, sha, sourceReferenceId, weekForFilename, all, attr, set, hasClass, text, norm, article, bookHeader, headings, esc, args, basePath, parse, serializeOuter, fs, path } from './lib.mjs';
 
 const config = await json('site.config.json');
 const base = basePath(args().base || process.env.BASE_PATH || config.base);
@@ -20,8 +21,9 @@ let sharedLength = 0;
 while (styles[0].nodes[sharedLength] && styles.every(s => s.nodes[sharedLength]?.toString() === styles[0].nodes[sharedLength].toString())) sharedLength++;
 function scopedCSS(nodes) {
   const css = postcss.root({ nodes: nodes.map(n => n.clone()) });
+  css.walkAtRules('page', rule => rule.remove());
   css.walkRules(rule => {
-    const selectors = postcss.list.comma(rule.selector).filter(s => !/^(?::root|html|body|main)$/.test(s.trim()) && !/\.(?:book-bar|book-layout|book-sidebar|book-footer|book-mark|book-label|toc|skip-link|sidebar-note|nav-label)(?:\b|[ .:#])/.test(s));
+    const selectors = postcss.list.comma(rule.selector).filter(s => !/^(?::root|html|body|main)(?:$|[.#[:])/.test(s.trim()) && !/(?:#ln-|\.ln-|\.(?:book-bar|book-brand|book-actions|book-layout|book-sidebar|book-footer|book-mark|book-label|toc|skip-link|sidebar-note|nav-label|panel-head|nav-tabs|fallback-navigation|page-links)\b)/.test(s));
     if (!selectors.length) rule.remove(); else rule.selector = selectors.map(s => `.lesson-content ${s}`).join(', ');
   });
   return css.toString();
@@ -47,10 +49,10 @@ ${week ? `<link rel="stylesheet" href="${url('assets/textbook.css')}"><link rel=
 <link rel="stylesheet" href="${url('assets/site.css')}"><script type="module" src="${url('assets/app.js')}"></script>${topic ? `<script type="module" src="${url('assets/midterm.js')}"></script>` : ''}</head>
 <body><a class="site-skip" href="#site-main" tabindex="0">跳至正文</a>
 <header class="site-header"><a class="site-brand" href="${base}" aria-label="CS5486 智能系统学习手册"><span class="site-brand-mark" aria-hidden="true">CS</span><span><strong>5486</strong><span class="site-brand-label">智能系统学习手册</span></span></a>
-<nav aria-label="网站导航" class="site-header-actions"><a href="${url('assignments/')}" class="site-assignment-entry" ${route.startsWith('assignments/') ? 'aria-current="page"' : ''}>作业</a><a href="https://github.com/${config.repository}" class="site-all-weeks">支持GitHub</a><button type="button" id="site-search-open"><span aria-hidden="true">⌕</span> 搜索<span class="site-key" aria-hidden="true">/</span></button><button type="button" id="site-theme" aria-label="切换主题">主题</button></nav></header>
-${week ? `<div class="site-reading-layout"><aside class="site-course"><details class="site-nav-panel" open><summary>课程目录 <span>${pageLabel}</span></summary><nav aria-label="十二周课程">${courses}<p><a href="${url('midterm/')}" ${topic ? 'aria-current="page"' : ''}>期中复习 · 至 MAXNET</a></p><p><a href="${url('assignments/')}">课程作业与个人解答</a></p></nav></details></aside>
-<main id="site-main" tabindex="-1" class="site-main"><div class="site-reading-tools"><a href="${base}">课程首页</a><span>${topic ? '独立专题 · 至 MAXNET' : `第 ${week.id} / 12 周`}</span><button id="site-print" type="button">${topic ? '打印复习篇' : '打印本周'}</button></div><div class="site-progress-row"><span id="site-progress-label">阅读位置 0%</span><progress id="site-progress" max="100" value="0" aria-label="${pageLabel}阅读位置"></progress><button type="button" id="site-resume" hidden>继续上次阅读</button></div>${body}</main>
-<aside class="site-toc"><details class="site-nav-panel" open><summary>${topic ? '专题目录' : '本周目录'} <span>${week.baseline.counts.h2} 章</span></summary><nav aria-label="${pageLabel}章节">${toc}</nav></details></aside></div>` : `<main id="site-main" tabindex="-1" class="site-page">${body}</main>`}
+<nav aria-label="网站导航" class="site-header-actions">${week ? `<button type="button" id="site-nav-open" aria-haspopup="dialog" aria-controls="site-navigation">目录</button>` : ''}<a href="${url('assignments/')}" class="site-assignment-entry" ${route.startsWith('assignments/') ? 'aria-current="page"' : ''}>作业</a><a href="https://github.com/${config.repository}" class="site-all-weeks">支持GitHub</a><button type="button" id="site-search-open"><span aria-hidden="true">⌕</span> 搜索<span class="site-key" aria-hidden="true">/</span></button><button type="button" id="site-theme" aria-label="切换主题">主题</button></nav></header>
+${week ? `<div class="site-reading-layout">
+<main id="site-main" tabindex="-1" class="site-main"><div class="site-reading-tools"><a href="${base}">课程首页</a><span>${topic ? '独立专题 · 至 MAXNET' : `第 ${week.id} / 12 周`}</span><button id="site-print" type="button">${topic ? '打印复习篇' : '打印本周'}</button></div><div class="site-progress-row"><span id="site-progress-label">阅读位置 0%</span><progress id="site-progress" max="100" value="0" aria-label="${pageLabel}阅读位置"></progress><button type="button" id="site-resume" hidden>继续上次阅读</button></div><noscript><details class="site-fallback-nav"><summary>课程与章节目录</summary><nav aria-label="十二周课程">${courses}</nav><nav aria-label="${pageLabel}章节">${toc}</nav></details></noscript>${body}</main></div>
+<dialog id="site-navigation" aria-labelledby="site-navigation-title"><div class="site-navigation-head"><h2 id="site-navigation-title">目录</h2><button id="site-nav-close" type="button" aria-label="关闭目录">关闭 <kbd>Esc</kbd></button></div><div class="site-navigation-tabs" aria-label="选择目录"><button type="button" data-nav-tab="course" aria-pressed="true" aria-controls="site-nav-course">课程目录</button><button type="button" data-nav-tab="chapter" aria-pressed="false" aria-controls="site-nav-chapter">${topic ? '专题目录' : '本周目录'}</button></div><nav id="site-nav-course" aria-label="十二周课程">${courses}<p><a href="${url('midterm/')}" ${topic ? 'aria-current="page"' : ''}>期中复习 · 至 MAXNET</a></p><p><a href="${url('assignments/')}">课程作业与个人解答</a></p></nav><nav id="site-nav-chapter" aria-label="${pageLabel}章节" hidden>${toc}</nav></dialog>` : `<main id="site-main" tabindex="-1" class="site-page">${body}</main>`}
 <footer class="site-footer"><p><strong>CS5486 智能系统学习手册</strong><br>个人整理的学习资料 · 从问题出发，理解每一步。</p><nav aria-label="页脚导航"><a href="${url('assignments/')}">课程作业</a><a href="${url('sources/')}">来源与资料说明</a><a href="${url('about/')}">关于与许可</a><a href="https://github.com/${config.repository}">GitHub</a></nav><p class="site-footer-note">${week ? '正文保留原教材内容及交付说明。图片独立存储；原始课件与资料见来源说明中的仓库链接。' : '十二周按学习顺序编排，并非官方授课周历。课程及第三方资料的权利归原权利人所有。'}</p></footer>
 <dialog id="site-search" aria-labelledby="site-search-title"><div class="site-search-top"><h2 id="site-search-title">搜索学习手册</h2><button type="button" id="site-search-close" aria-label="关闭搜索">关闭 <kbd>Esc</kbd></button></div><form id="site-search-form" role="search"><label for="site-search-input">关键词或周次</label><input id="site-search-input" type="search" placeholder="例如：感知机、SVM、Assignment 2" autocomplete="off"><button type="submit">搜索</button></form><p class="site-search-hint">支持中文、英文术语、周次及 Assignment 作业，也可以搜索折叠答案。</p><p id="site-search-status" role="status" aria-live="polite">输入关键词开始搜索</p><ol id="site-search-results"></ol></dialog>
 <noscript><p class="site-noscript">正文、目录和折叠答案可直接阅读。全文搜索、主题选择与阅读位置保存需要启用 JavaScript。</p></noscript>
@@ -69,7 +71,7 @@ for (const [i, w] of manifest.weeks.entries()) {
       const href = attr(n, 'href') || '';
       if (/^https?:\/\//.test(href)) { external.add(href); continue; }
       const textbookLink = /^(?:\.\/)?([^/#]+\.html)(#.*)?$/.exec(href);
-      const targetWeek = textbookLink && manifest.weeks.find(target => target.filename === decodeURIComponent(textbookLink[1]));
+      const targetWeek = textbookLink && weekForFilename(manifest.weeks, textbookLink[1]);
       if (targetWeek) {
         set(n, 'href', weekHref(targetWeek) + (textbookLink[2] || ''));
         continue;
@@ -96,8 +98,8 @@ for (const [i, w] of manifest.weeks.entries()) {
   const records = [];
   let trail = [], active = null;
   const ids = new Set(all(doc, n => attr(n, 'id')).map(n => attr(n, 'id')));
-  function record(anchor, title, breadcrumb) {
-    const value = { week: w.id, weekTitle: w.title, title, breadcrumb: breadcrumb.join(' › '), href: weekHref(w) + '#' + anchor, text: '' };
+  function record(anchor, title, breadcrumb, aliases = []) {
+    const value = { week: w.id, weekTitle: w.title, title, breadcrumb: breadcrumb.join(' › '), href: weekHref(w) + '#' + anchor, aliases, text: '' };
     records.push(value); return value;
   }
   active = record('page-title', w.title, []);
@@ -108,7 +110,8 @@ for (const [i, w] of manifest.weeks.entries()) {
     if (/^h[2-4]$/.test(n.tagName || '')) {
       const title = norm(text(n)), level = Number(n.tagName[1]);
       trail = trail.filter(t => t.level < level); trail.push({ level, title });
-      active = record(attr(n, 'id'), title, trail.map(t => t.title));
+      const aliases = (attr(n, 'data-aliases') || '').split('|').map(norm).filter(Boolean);
+      active = record(attr(n, 'id'), title, trail.map(t => t.title), aliases);
     } else if (saved) {
       if (!attr(n, 'id')) {
         const seed = 'answer-' + sha(`${active.href}:${norm(text(n))}`).slice(0, 12);
@@ -147,11 +150,12 @@ const totals = docs.reduce((counts, doc) => {
   }
   return counts;
 }, { weeks: docs.length, chapters: 0, answers: 0 });
-const cards = manifest.weeks.map(w => `<li><a class="site-week-card" href="${weekHref(w)}" data-card-week="${w.id}"><div class="site-card-top"><span>第 ${w.id} 周</span><span class="site-card-arrow" aria-hidden="true">↗</span></div><h3>${esc(w.title)}</h3><p>${esc(w.subtitle)}</p><div class="site-card-bottom"><span>${w.baseline.counts.h2} 章 · ${w.baseline.counts.details} 组练习答案</span><span class="site-card-progress" data-progress-week="${w.id}">开始阅读</span></div></a></li>`).join('');
-await write('dist/index.html', shell({ title: config.title, route: '', body: `<section class="site-hero"><p class="site-eyebrow">CS5486 · INTELLIGENT SYSTEMS</p><h1>智能系统<br><span>学习手册</span></h1><p class="site-hero-description">从基础概念到完整推导，从神经网络到群体智能。<br class="site-desktop-break">按十二周的学习顺序，理解模型如何表示、学习与求解。</p><div class="site-hero-actions"><a class="site-primary" href="${weekHref(manifest.weeks[0])}">从第 01 周开始 <span aria-hidden="true">→</span></a><a class="site-secondary" data-midterm-entry href="${url('midterm/')}">期中复习 · 至 MAXNET</a><a class="site-secondary" data-assignments-entry href="${url('assignments/')}">课程作业与个人解答</a><a id="site-continue" class="site-secondary" href="#curriculum" hidden>继续上次阅读</a></div><p class="site-personal">个人整理的学习资料 · 无需登录 · 进度保存在本机</p><div class="site-hero-stats"><div><strong data-stat="weeks">${totals.weeks}</strong><span>周学习路径</span></div><div><strong data-stat="chapters">${totals.chapters}</strong><span>章节循序展开</span></div><div><strong data-stat="answers">${totals.answers}</strong><span>组折叠答案</span></div></div></section><section id="curriculum" class="site-curriculum"><div class="site-section-heading"><div><p class="site-eyebrow">课程目录</p><h2>循序阅读，也可按需查阅</h2></div><p>知识讲解 · 推导与图解 · 例题与练习</p></div><ol class="site-card-grid">${cards}</ol></section><section class="site-reading-note"><h2>怎样使用这本手册</h2><p>每周从必要前置开始，保留完整讲解、重要性评级与来源索引。先尝试练习，再展开答案；遇到概念时，可用全站搜索回到相关章节。</p><p>周次按概念依赖安排，并非官方授课周历。评级表示学习依赖与应用价值，不代表考试概率。引用课件的文件名与 PDF 实际页序均保留在<a href="${url('sources/')}">来源说明</a>中。</p></section>` }));
+const cards = manifest.weeks.map(w => `<li><a class="site-week-card" href="${weekHref(w)}" data-card-week="${w.id}"><div class="site-card-top"><span>第 ${w.id} 周</span><span class="site-card-arrow" aria-hidden="true">↗</span></div><h3>${esc(w.title)}</h3><p>${esc(w.subtitle)}</p><div class="site-card-bottom"><span>${w.baseline.counts.h2} 章 · ${w.baseline.counts.details} 处折叠内容</span><span class="site-card-progress" data-progress-week="${w.id}">开始阅读</span></div></a></li>`).join('');
+await write('dist/index.html', shell({ title: config.title, route: '', body: `<section class="site-hero"><p class="site-eyebrow">CS5486 · INTELLIGENT SYSTEMS</p><h1>智能系统<br><span>学习手册</span></h1><p class="site-hero-description">从基础概念到完整推导，从神经网络到群体智能。<br class="site-desktop-break">按十二周的学习顺序，理解模型如何表示、学习与求解。</p><div class="site-hero-actions"><a class="site-primary" href="${weekHref(manifest.weeks[0])}">从第 01 周开始 <span aria-hidden="true">→</span></a><a class="site-secondary" data-midterm-entry href="${url('midterm/')}">期中复习 · 至 MAXNET</a><a class="site-secondary" data-assignments-entry href="${url('assignments/')}">课程作业与个人解答</a><a class="site-secondary" href="${url('textbook/')}">便携版教材</a><a id="site-continue" class="site-secondary" href="#curriculum" hidden>继续上次阅读</a></div><p class="site-personal">个人整理的学习资料 · 无需登录 · 进度保存在本机</p><div class="site-hero-stats"><div><strong data-stat="weeks">${totals.weeks}</strong><span>周学习路径</span></div><div><strong data-stat="chapters">${totals.chapters}</strong><span>章节循序展开</span></div><div><strong data-stat="answers">${totals.answers}</strong><span>处折叠内容</span></div></div></section><section id="curriculum" class="site-curriculum"><div class="site-section-heading"><div><p class="site-eyebrow">课程目录</p><h2>循序阅读，也可按需查阅</h2></div><p>知识讲解 · 推导与图解 · 例题与练习</p></div><ol class="site-card-grid">${cards}</ol></section><section class="site-reading-note"><h2>怎样使用这本手册</h2><p>每周从必要前置开始，保留完整讲解、重要性评级与来源索引。先尝试练习，再展开答案；遇到概念时，可用全站搜索回到相关章节。</p><p>周次按概念依赖安排，并非官方授课周历。评级表示学习依赖与应用价值，不代表考试概率。引用课件的文件名与 PDF 实际页序均保留在<a href="${url('sources/')}">来源说明</a>中。</p></section>` }));
 
 const midterm = await buildMidterm({ shell, url, manifest, references, searchIndex });
 const assignments = await buildAssignments({ shell, url, searchIndex, repository: config.repository });
+await buildTextbook();
 const materialCatalog = await json('materials/catalog.json');
 const repositoryMaterialURL = file => {
   const entry = materialCatalog.files.find(item => path.posix.basename(item.path) === file || path.posix.basename(item.source_relative_path || '') === file);

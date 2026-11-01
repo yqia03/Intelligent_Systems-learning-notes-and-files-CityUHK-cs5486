@@ -25,13 +25,28 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
   if (!saved) { html.dataset.theme = event.matches ? 'dark' : 'light'; themeLabel(); }
 });
 
-// Native details keep both navigation and answers usable without JavaScript.
-const wide = matchMedia('(min-width: 1280px)');
-const adaptNavigation = () => $$('.site-nav-panel').forEach(panel => { panel.open = wide.matches; });
-adaptNavigation(); wide.addEventListener('change', adaptNavigation);
-$$('.site-nav-panel a').forEach(link => link.addEventListener('click', () => {
-  if (!wide.matches) link.closest('details').open = false;
-}));
+// The drawer overlays the reader and restores focus without moving the page.
+const navigation = $('#site-navigation');
+if (navigation) {
+  const opener = $('#site-nav-open');
+  const closeNavigation = () => { navigation.close(); opener.focus({ preventScroll: true }); };
+  opener.addEventListener('click', () => { navigation.showModal(); $('#site-nav-close').focus({ preventScroll: true }); });
+  $('#site-nav-close').addEventListener('click', closeNavigation);
+  navigation.addEventListener('cancel', event => { event.preventDefault(); closeNavigation(); });
+  navigation.addEventListener('click', event => {
+    if (event.target === navigation) {
+      const rect = navigation.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) closeNavigation();
+    } else if (event.target.closest('a')) closeNavigation();
+  });
+  $$('[data-nav-tab]').forEach(button => button.addEventListener('click', () => {
+    $$('[data-nav-tab]').forEach(tab => {
+      const selected = tab === button;
+      tab.setAttribute('aria-pressed', String(selected));
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+    });
+  }));
+}
 
 const dialog = $('#site-search');
 const input = $('#site-search-input');
@@ -39,7 +54,11 @@ const status = $('#site-search-status');
 const results = $('#site-search-results');
 let worker, request = 0, timer, returnFocus;
 function openSearch() {
-  if (!dialog.open) { returnFocus = document.activeElement; dialog.showModal(); }
+  if (!dialog.open) {
+    returnFocus = navigation?.open ? $('#site-nav-open') : document.activeElement;
+    if (navigation?.open) navigation.close();
+    dialog.showModal();
+  }
   input.focus(); input.select();
 }
 function closeSearch() {

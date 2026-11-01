@@ -99,6 +99,10 @@ for (const [p, doc] of documents) {
       const file = path.join(root, 'dist', decodeURIComponent(target.pathname.slice(site.base.length)) + (target.pathname.endsWith('/') ? 'index.html' : ''));
       assert((await fs.stat(file)).isFile(), 'missing resource');
       if (target.hash) {
+        if (file.toLowerCase().endsWith('.pdf')) {
+          assert(/^#page=[1-9]\d*$/.test(target.hash), 'invalid PDF page reference');
+          return;
+        }
         const targetDoc = documents.get(file);
         assert(targetDoc, 'fragment must point to an HTML page');
         assert(all(targetDoc, n => attr(n, 'id') === decodeURIComponent(target.hash.slice(1))).length === 1, 'broken fragment');
@@ -111,6 +115,14 @@ await check('Search content and matching', async () => {
   assert.equal(new Set(raw.filter(r => !r.kind || r.kind === 'week').map(r => r.week)).size, 12);
   for (const query of ['感知机', 'SVM', 'svm', 'Hopfield', '隶属度', 'PSO']) assert(search(index, query).total > 0, `query has no results: ${query}`);
   assert.equal(search(index, 'SVM').total, search(index, 'svm').total);
+  const aliasRecord = raw.find(r => r.aliases?.includes('PSO'));
+  assert(aliasRecord && search(index, 'PSO').results.some(r => r.href === aliasRecord.href), 'source heading alias must be indexed');
+  const ranking = prepareIndex([
+    { week: '01', weekTitle: '', breadcrumb: '', title: 'term', text: 'text', href: '#title' },
+    { week: '01', weekTitle: '', breadcrumb: '', title: 'alias heading', aliases: ['term'], text: 'text', href: '#alias' },
+    { week: '01', weekTitle: '', breadcrumb: '', title: 'body heading', text: 'term', href: '#body' }
+  ]);
+  assert.deepEqual(search(ranking, 'term').results.map(r => r.href), ['#title', '#alias', '#body'], 'rank title before alias before body');
   const chapterPreview = search(index, '感知机').results.find(r => r.href.endsWith('/weeks/02/#perceptron'));
   assert(chapterPreview && chapterPreview.snippet !== chapterPreview.title && chapterPreview.snippet.length > 50, 'heading-only chapters need substantive excerpts');
   for (const query of ['Week 03', 'week3', '第3周', '第三周']) assert(search(index, query).results.every(r => r.week === '03') && search(index, query).total > 0, `week recognition: ${query}`);

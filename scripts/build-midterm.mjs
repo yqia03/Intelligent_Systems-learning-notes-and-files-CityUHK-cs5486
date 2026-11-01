@@ -1,5 +1,5 @@
 import postcss from 'postcss';
-import {read,json,write,all,attr,set,text,norm,article,bookHeader,headings,esc,parse,serializeOuter,sourceReferenceId} from './lib.mjs';
+import {read,json,write,all,attr,set,text,norm,article,bookHeader,headings,esc,parse,serializeOuter,sourceReferenceId,weekForFilename} from './lib.mjs';
 export async function buildMidterm({shell,url,manifest,references,searchIndex}) {
  const meta=await json('source/topics/midterm.json'),doc=parse(await read('source/topics/midterm.html')),body=article(doc);
  const css=postcss.parse(all(doc,n=>n.tagName==='style').map(text).join('\n'));
@@ -14,7 +14,7 @@ export async function buildMidterm({shell,url,manifest,references,searchIndex}) 
   if(n.tagName!=='a')continue;
   const href=attr(n,'href')||'';
   const match=/^(?:\.\/)?([^/#]+\.html)(#.*)?$/.exec(href);
-  const week=match&&manifest.weeks.find(w=>w.filename===decodeURIComponent(match[1]));
+  const week=match&&weekForFilename(manifest.weeks,match[1]);
   if(week){set(n,'href',url(`weeks/${week.id}/`)+(match[2]||''));continue;}
   if(!/^https?:/.test(href)&&/\.pdf(?:#|$)/i.test(href)) {
    const id=sourceReferenceId(href);

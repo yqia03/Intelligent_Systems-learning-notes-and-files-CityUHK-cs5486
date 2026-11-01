@@ -237,6 +237,8 @@ try {
   });
   await scenario('chapter anchors, next and previous week', async () => {
     await visit(page, 'weeks/04/');
+    await page.locator('#site-nav-open').click();
+    await page.locator('[data-nav-tab=chapter]').click();
     await page.locator('.site-chapter-list a').nth(6).click();
     const hash = new URL(page.url()).hash; assert(hash.length > 1);
     await page.reload(); assert.equal(new URL(page.url()).hash, hash);
@@ -261,10 +263,31 @@ try {
   });
   await scenario('mobile navigation and answer interaction', async () => {
     await page.setViewportSize({ width:390, height:844 }); await visit(page, 'weeks/12/');
-    assert(!(await page.locator('.site-toc details').evaluate(e => e.open)));
-    await page.locator('.site-toc summary').click();
+    assert(!(await page.locator('#site-navigation').evaluate(e => e.open)));
+    const before = await page.locator('#site-main').boundingBox();
+    await page.locator('#site-nav-open').click();
+    assert(await page.locator('#site-navigation').evaluate(e => e.open));
+    const after = await page.locator('#site-main').boundingBox();
+    assert.equal(before.x, after.x); assert.equal(before.width, after.width);
+    const scrollBefore = await page.evaluate(() => scrollY);
+    await page.mouse.move(389, 400); await page.mouse.wheel(0, 600);
+    await page.waitForTimeout(200);
+    assert.equal(await page.evaluate(() => scrollY), scrollBefore, 'directory backdrop scrolls the lesson');
+    await page.keyboard.press('/');
+    assert(!(await page.locator('#site-navigation').evaluate(e => e.open)));
+    assert(await page.locator('#site-search').evaluate(e => e.open));
+    await page.keyboard.press('Escape');
+    assert(await page.locator('#site-nav-open').evaluate(e => e === document.activeElement));
+    await page.locator('#site-nav-open').click();
+    await page.locator('[data-nav-tab=chapter]').click();
     await page.locator('.site-chapter-list a').nth(3).click();
-    assert(!(await page.locator('.site-toc details').evaluate(e => e.open)));
+    assert(!(await page.locator('#site-navigation').evaluate(e => e.open)));
+    await page.locator('#site-nav-open').click(); await page.keyboard.press('Escape');
+    assert(!(await page.locator('#site-navigation').evaluate(e => e.open)));
+    assert(await page.locator('#site-nav-open').evaluate(e => e === document.activeElement));
+    await page.locator('#site-nav-open').click();
+    await page.mouse.click(389, 400);
+    assert(!(await page.locator('#site-navigation').evaluate(e => e.open)));
     const answer = page.locator('.textbook-body details').first(); await answer.locator('summary').click(); assert(await answer.evaluate(e => e.open));
     await answer.locator('summary').click(); assert(!(await answer.evaluate(e => e.open)));
   });

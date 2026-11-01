@@ -4,68 +4,70 @@
 
 ## 第 01 周
 
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 3 SVGs.
 
 ## 第 02 周
 
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 9 SVGs.
 - Extract 2 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 03 周
 
-- Add stable anchors to 3 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 7 SVGs.
 - Extract 1 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 04 周
 
-- Add stable anchors to 6 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 6 SVGs.
 
 ## 第 05 周
 
-- Add stable anchors to 4 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 5 SVGs.
 - Extract 2 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 06 周
 
-- Add stable anchors to 12 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 5 SVGs.
 - Extract 6 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 07 周
 
-- Add stable anchors to 8 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 4 SVGs.
 - Extract 1 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 08 周
 
-- Add stable anchors to 9 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 3 SVGs.
 - Extract 4 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 09 周
 
-- Add stable anchors to 9 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 4 SVGs.
 - Extract 3 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 10 周
 
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 10 SVGs.
 
 ## 第 11 周
 
-- Replace local absolute path with 资料根目录; teaching content unchanged.
-- Add stable anchors to 6 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 4 SVGs.
 - Extract 1 PNG images without recompression; retain pixel dimensions and alt text.
 
 ## 第 12 周
 
-- Add stable anchors to 4 headings.
+- Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.
 - Namespace references within 2 SVGs.
 - Extract 8 PNG images without recompression; retain pixel dimensions and alt text.
 

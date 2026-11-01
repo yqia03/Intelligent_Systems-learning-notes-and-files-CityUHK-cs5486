@@ -1,9 +1,10 @@
 # CS5486 智能系统学习手册
 
-个人整理的十二周智能系统学习资料。保留已有教材的完整讲解、推导、例题、图表、练习、折叠答案、重要性评级与来源索引；不是官方课程网站。使用模型为GPT-6-Astra-Ultra
+个人整理的十二周智能系统学习资料。包括十二周教材的基础补充、讲解、具体推导、例题、图表、记忆提示、练习、折叠答案、重要性评级与来源索引；不是官方课程网站。使用模型为GPT-6-Astra-Ultra
 
 - 网站：<https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/>
 - 仓库：<https://github.com/yqia03/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486>
+- 离线教材：[打开十二周教材](https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/textbook/)（下载仓库后可直接打开 `textbook/index.html`）
 - 作业：[Assignment 栏目](https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/assignments/)
 
 ## 作业与原始资料
@@ -18,7 +19,8 @@ Assignment 栏目分别介绍三次作业的任务要求。Assignment 1、2 附�
 | `materials/lectures/` | 课程说明与课件原文件 |
 | `materials/tutorials/` | Tutorial 原文件 |
 | `materials/papers/` | 论文及补充资料 |
-| `materials/study-notes/` | 独立 HTML 学习教材 |
+| `textbook/` | 十二周便携离线教材：首页、章节、图片与索引 |
+| `materials/study-notes/` | 十二周旧文件名兼容副本及独立期中复习篇；十二周副本依赖仓库中的 `textbook/` 资源 |
 | `materials/prompts/` | 已去除本机路径的教材生成提示词归档 |
 | `materials/midterm/` | 期中 PDF、LaTeX 源码、构建脚本、验证记录与项目压缩包 |
 
@@ -28,17 +30,26 @@ Assignment 2 在 MATLAB 中从 `assignments/assignment-2/code/` 运行 `run_assi
 
 ## 阅读功能
 
-十二周独立页面、分级章节锚点、前后周导航、中文／英文／周次全文搜索、浅色／深色主题、本机阅读位置保存、移动端折叠目录和打印样式。全文搜索包含答案；链接到答案时自动展开。正文以原生 HTML、MathML、SVG 呈现，不依赖 iframe 或外部公式 CDN。禁用 JavaScript 后，正文、目录和折叠答案仍然可用。
+十二周独立页面、分级章节锚点、前后周导航、中文／英文／周次全文搜索、浅色／深色主题、本机阅读位置保存、单栏阅读、默认收起的课程／本周合并目录弹窗和打印样式。全文搜索包含答案；链接到答案时自动展开。正文以原生 HTML、MathML、SVG 呈现，不依赖 iframe 或外部公式 CDN。禁用 JavaScript 后，正文、目录和折叠答案仍然可用。
 
 数学排版面向支持原生 MathML 的现代 Chromium、Safari/WebKit 和 Firefox。图形保留原配色，深色主题中使用浅色图面；宽表格及公式在各自区域横向滚动。
 
 ## 教材增量更新
 
-原始 HTML 当前位于本项目同级的“学习笔记”目录。编辑前在仓库之外备份对应周，再运行例如 `npm run import -- --source ../学习笔记 --week 05`；省略 `--source` 时也默认使用该目录。不要直接编辑 `source/weeks/` 或 `source/manifest.json`。
+十二周教材的当前源文件位于仓库同级的 `../textbook/`。编辑源教材后，依次同步便携教材、导入网站正文并验证：
 
-导入后执行 `npm test`、`npm run check -- --originals ../学习笔记` 和 `npm run test:browser`；本地构建沿用 `site.config.json` 中的正式 Pages 子路径。推送后等待既有 Actions 成功，再验收实际站点。
+```sh
+npm run sync:textbook
+npm run import -- --source ../textbook
+npm test
+node scripts/check.mjs --originals ../textbook
+node scripts/check-midterm.mjs --originals ../学习笔记
+npm run test:browser
+```
 
-本轮第05、06周的资料覆盖、计算核验与待核对事项见 [新增资料记录](docs/NEW_MATERIALS.md) 和 [内容修正记录](docs/CONTENT_REVIEW.md)。导入只转换当前教材的呈现形式，知识增补在原教材中完成。
+`sync:textbook` 将首页、十二章、28 张 PNG 和索引同步到仓库 `textbook/`，将 16 份 PDF 的引用重定位到 `materials/` 已收录的原文件，并更新旧命名教材副本及清单；不复制源教材的 48 MB ZIP，也不复制额外 PDF。旧命名 HTML 可从 `materials/study-notes/` 打开，但需要保留整个仓库的 `textbook/` 和 `materials/` 相对布局。可用 `--week 05` 只导入一周；不要直接编辑 `source/weeks/` 或 `source/manifest.json`。导入不修改源教材。
+
+`npm test` 构建并检查网站与期中专题。原件核验须分别执行上述两个 `node` 命令：十二周和期中篇的源目录不同，不能将单一 `--originals` 参数传给整套 `npm run check`。本地构建沿用 `site.config.json` 中的 Pages 子路径。新版教材的覆盖及资料限制见 [内容核对与待核对事项](docs/CONTENT_REVIEW.md)，第 05、06 周此前的增补记录见 [新增资料记录](docs/NEW_MATERIALS.md)。
 
 ## 文件与许可
 
@@ -47,6 +58,7 @@ Assignment 2 在 MATLAB 中从 `assignments/assignment-2/code/` 运行 `run_assi
 - source/：教材副本、无损图片及保真清单。
 - docs/：导入记录、内容疑点和外部链接检查。
 - assignments/：按作业、题面、报告、代码、数据、图表及依赖分类的发布副本。
+- textbook/：可直接离线打开的十二周教材与图片。
 - materials/：按材料用途分类的原文件及可移植的脱敏副本。
 - .github/workflows/：验证和 Pages 部署。
 
@@ -63,7 +75,8 @@ Assignment 2 在 MATLAB 中从 `assignments/assignment-2/code/` 运行 `run_assi
 ```sh
 npm run import:midterm -- --source ../学习笔记
 npm test
-npm run check -- --originals ../学习笔记
+node scripts/check.mjs --originals ../textbook
+node scripts/check-midterm.mjs --originals ../学习笔记
 npm run test:browser
 npm run test:browser -- --engine webkit
 ```
@@ -78,4 +91,4 @@ npm run test:browser -- --engine webkit
 npm run test:browser -- --url https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/
 ```
 
-`npm test` 同时运行原十二周检查和专题检查，`--originals` 参数会传给两套检查。`npm run test:browser` 同时运行原十二周验收与专题验收，URL／浏览器参数也传给两套。专题核心数值由 `scripts/numerical/` 中独立编写的 Python 标准库脚本校验（需要 Python 3；GitHub 托管 runner 已提供），不依赖内容生成逻辑。覆盖、勘误和验收范围见 `docs/MIDTERM.md`。专题文字、第三方资料与原教材样式不适用代码 MIT 许可。
+`npm test` 同时运行十二周检查和专题检查；核验各自原件时使用上面的两个独立命令。`npm run test:browser` 同时运行十二周、期中专题、作业与便携教材验收，URL／浏览器参数传给全部检查。专题核心数值由 `scripts/numerical/` 中独立编写的 Python 标准库脚本校验（需要 Python 3；GitHub 托管 runner 已提供），不依赖内容生成逻辑。覆盖、勘误和验收范围见 `docs/MIDTERM.md`。专题文字、第三方资料与原教材样式不适用代码 MIT 许可。

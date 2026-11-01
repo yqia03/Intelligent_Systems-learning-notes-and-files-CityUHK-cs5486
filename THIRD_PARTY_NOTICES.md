@@ -9,6 +9,7 @@ MIT License 仅适用于新编写的网站代码（scripts/、web/）、构建�
 - source/weeks/ 中的教材正文、数学推导、练习、引用及原教材样式；
 - source/assets/ 中从教材无损提取的原始图片；
 - 构建输出中的教材内容、MathML、SVG、原教材共享样式与每周补充样式；
+- textbook/ 中的便携教材、正文、样式和图片；
 - materials/ 中的课程课件、Tutorial、论文、独立学习教材及其截图、图表、引文等内容；
 - assignments/ 中的课程题面、个人报告及实验资料；第三方软件依赖遵循其自身条款。
 
@@ -23,7 +24,7 @@ MIT License 仅适用于新编写的网站代码（scripts/、web/）、构建�
 - 2026-10-15增量采用的SVR.pdf、SVR-tutorial.pdf（Smola / Schölkopf）、NPL-LS_SVM.pdf（Suykens / Vandewalle，1999）、LS-SVM-load.pdf（Espinoza等，2007）及Adaptive Resonance Theory.pdf：用于第05、06周核验和增补，采用范围见docs/NEW_MATERIALS.md；原PDF按类别收录于 materials/。
 - 各周正文列出的原始论文、作者机构页面和官方软件文档：保留原外部链接，不将其内容整体镜像至本站。
 
-2026-11-01 起，原始 PDF、独立 HTML 教材、生成提示词与期中资料按用途收录于 materials/，文件清单见 materials/catalog.json；含本机路径的文件使用脱敏发布副本。收录不改变原文件的著作权与许可。教材中的 28 张内嵌 PNG 原样提取，无重新编码；具体文件、SHA-256、尺寸及原有替代文本见 source/manifest.json。每张图片的归属、课件页码和说明继续保留在正文邻近图注及来源段落。
+2026-11-01 起，原始 PDF、独立 HTML 教材、生成提示词与期中资料按用途收录于 materials/，文件清单见 materials/catalog.json；含本机路径的文件使用脱敏发布副本。收录不改变原文件的著作权与许可。教材中的 28 张 PNG 按内容哈希原样复制，无重新编码；具体文件、SHA-256、尺寸及原有替代文本见 source/manifest.json。每张图片的归属、课件页码和说明继续保留在正文邻近图注及来源段落。
 
 新编写的网站不增添无来源教学结论。原教材中的“教学补充”“经核实的纠正”“资料限制”等标记均予以保留。
 

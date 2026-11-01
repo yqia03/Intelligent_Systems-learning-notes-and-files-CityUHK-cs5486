@@ -9,7 +9,10 @@ export function parseQuery(value) {
   return { week, assignment, terms: query.split(/\s+/).filter(Boolean) };
 }
 export function prepareIndex(index) {
-  return index.map(record => ({ ...record, normalized: normalize(`${record.weekTitle} ${record.breadcrumb} ${record.title} ${record.text}`), normalizedTitle: normalize(record.title), normalizedText: normalize(record.text) }));
+  return index.map(record => {
+    const aliases = Array.isArray(record.aliases) ? record.aliases.join(' ') : '';
+    return { ...record, normalized: normalize(`${record.weekTitle} ${record.breadcrumb} ${record.title} ${aliases} ${record.text}`), normalizedTitle: normalize(record.title), normalizedAliases: normalize(aliases), normalizedText: normalize(record.text) };
+  });
 }
 export function search(index, query) {
   const { week, assignment, terms } = parseQuery(query);
@@ -19,7 +22,7 @@ export function search(index, query) {
     if (week !== null && Number(record.week) !== week) continue;
     if (assignment !== null && (record.kind !== 'assignment' || record.week !== assignment)) continue;
     if (!terms.every(term => record.normalized.includes(term))) continue;
-    let score = terms.reduce((s, t) => s + (record.normalizedTitle.includes(t) ? 30 : 0) + (record.normalizedText.includes(t) ? 5 : 0), 0);
+    let score = terms.reduce((s, t) => s + (record.normalizedTitle.includes(t) ? 30 : 0) + (record.normalizedAliases.includes(t) ? 20 : 0) + (record.normalizedText.includes(t) ? 5 : 0), 0);
     if (!record.title.startsWith('答案')) score += 1;
     const excerpt = (record.text.startsWith(record.title) ? record.text.slice(record.title.length).trim() : record.text) || record.text;
     const normalizedExcerpt = normalize(excerpt);

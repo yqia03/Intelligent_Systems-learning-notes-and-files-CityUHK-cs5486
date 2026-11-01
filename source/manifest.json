@@ -4,13 +4,13 @@
     {
       "id": "01",
       "title": "智能系统导论与神经网络的统一框架",
-      "filename": "CS5486-Week01-学习教材.html",
-      "originalSha256": "ecfbb5cfd14778d68a97daa8088d4efc107c7f76a4f62f3e660053776ac67d66",
-      "importedSha256": "18c0ff0148bc8bd7c1a70c4e936e8d21182e8c9c657e2bf91b2f86ca0a413052",
-      "subtitle": "从输入、表示与智能行为，走到 ARCH/RULE、预测、评价与学习。",
+      "filename": "chapters/week01.html",
+      "originalSha256": "40690b4afadec467c11ede4d00039351fb182ad483bfd291ed70c53bab04de7c",
+      "importedSha256": "3a3ee208d369635c30151f418be1138d3a70894cf3e74f0e07c978505c8eae09",
+      "subtitle": "输入、参数、输出、评价与学习分别在做什么？",
       "baseline": {
-        "text": "12c9b1bba953960749678d4d7182bf4815d3aa25ae4259817693b029d7f863ea",
-        "header": "ec75005f6418a463b896d8fa2e716a04801e88c5763ff3f7df81fb20b5c082ae",
+        "text": "35fac207ad25e782dd4e52b7a8bd3286bf4f985157ced4ac3e661286e798b0d5",
+        "header": "4b59b053b01d173b73d7cb8f1ab83c61508ac1799041f810414b7d1c34a4f076",
         "counts": {
           "h2": 12,
           "h3": 46,
@@ -19,12 +19,12 @@
           "svg": 3,
           "img": 0,
           "table": 10,
-          "details": 9,
-          "summary": 9
+          "details": 40,
+          "summary": 40
         },
         "blocks": {
           "worked-example": 15,
-          "checkpoint": 9,
+          "checkpoint": 39,
           "importance": 54,
           "rating": 54,
           "source": 43
@@ -32,7 +32,7 @@
         "headings": [
           {
             "level": 2,
-            "title": "开始之前：本周要建立什么能力"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 3,
@@ -40,7 +40,7 @@
           },
           {
             "level": 2,
-            "title": "1 · 必要前置：把一个问题写成可计算的形式"
+            "title": "Required foundations（必要前置）"
           },
           {
             "level": 3,
@@ -56,7 +56,7 @@
           },
           {
             "level": 2,
-            "title": "2 · 从系统到智能行为"
+            "title": "Intelligent systems（智能系统）"
           },
           {
             "level": 3,
@@ -72,7 +72,7 @@
           },
           {
             "level": 2,
-            "title": "3 · AI、CI 与三种互补的解题方式"
+            "title": "AI and CI approaches（人工智能与计算智能方法）"
           },
           {
             "level": 3,
@@ -104,7 +104,7 @@
           },
           {
             "level": 2,
-            "title": "4 · 历史与应用：理解问题怎样推动方法发展"
+            "title": "History and applications（历史与应用）"
           },
           {
             "level": 3,
@@ -136,7 +136,7 @@
           },
           {
             "level": 2,
-            "title": "5 · ANN 的结构：有哪些量，谁与谁相连"
+            "title": "ANN architecture（人工神经网络结构）"
           },
           {
             "level": 3,
@@ -156,7 +156,7 @@
           },
           {
             "level": 2,
-            "title": "6 · RULE：从输入走到输出，再走到参数更新"
+            "title": "ARCH and RULE（结构与规则）"
           },
           {
             "level": 3,
@@ -184,7 +184,7 @@
           },
           {
             "level": 2,
-            "title": "7 · 学习的信息来源与两种时间尺度"
+            "title": "Learning and dynamics（学习与动力学）"
           },
           {
             "level": 3,
@@ -204,7 +204,7 @@
           },
           {
             "level": 2,
-            "title": "8 · 网络分类：每次只问一个维度"
+            "title": "Network categories（网络分类）"
           },
           {
             "level": 3,
@@ -228,7 +228,7 @@
           },
           {
             "level": 2,
-            "title": "9 · 八项网络性质：能力从哪里来，边界在哪里"
+            "title": "Network properties（网络性质）"
           },
           {
             "level": 3,
@@ -264,35 +264,35 @@
           },
           {
             "level": 2,
-            "title": "10 · 综合练习与讲解答案"
+            "title": "Integrated practice（综合练习）"
           },
           {
             "level": 3,
-            "title": "练习 A · 从数据到评价，完整算一遍"
+            "title": "Worked practice A（从数据到评价）"
           },
           {
             "level": 3,
-            "title": "练习 B · 不要把净输入直接当作输出"
+            "title": "Worked practice B（净输入与输出）"
           },
           {
             "level": 3,
-            "title": "练习 C · 更新量、更新后数值和变化率"
+            "title": "Worked practice C（更新量与变化率）"
           },
           {
             "level": 3,
-            "title": "练习 D · 检查结构、维度和学习信息"
+            "title": "Worked practice D（结构、维度与监督信息）"
           },
           {
             "level": 3,
-            "title": "练习 E · 判断一句话缺少了什么条件"
+            "title": "Worked practice E（检查条件）"
           },
           {
             "level": 3,
-            "title": "练习 F · 用统一框架解释一个稍有变化的系统"
+            "title": "Worked practice F（系统设计）"
           },
           {
             "level": 2,
-            "title": "来源索引、覆盖范围与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -318,19 +318,20 @@
       },
       "images": [],
       "transformations": [
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 3 SVGs."
       ]
     },
     {
       "id": "02",
       "title": "M-P 神经元、阈值逻辑与感知机",
-      "filename": "CS5486-Week02-学习教材.html",
-      "originalSha256": "2f15f9922abafa22d328e1c44ead7b3104805b098cc43489ba630a9a04ca7fc3",
-      "importedSha256": "451c34abbe0c3bfc57c4fca816563f9e7b24e6efd629e00725d7c041291dc2de",
-      "subtitle": "从真值表到学习规则：理解单个线性阈值单元的能力、收敛前提与表示限制",
+      "filename": "chapters/week02.html",
+      "originalSha256": "d85ee98e3024ea00f80f8ddf4264171a68f029498215206c7f9cea6972e5d074",
+      "importedSha256": "f33b2fa794d7ebcb7f0139a99d2c7ca8fe9fce62f2660f232a6ccf678de0fb30",
+      "subtitle": "一个阈值神经元怎样实现逻辑、纠正错分，为什么做不了 XOR？",
       "baseline": {
-        "text": "2bc346632b924463923194a4b5239370ef3209d321d080ed16adf2ae8693071c",
-        "header": "67691abf8ce95461c111054bf4c245688c6b2bb76bc103698562bf38797fb09a",
+        "text": "a1f3f58ef1c3ad9c782435a14fa8a1c73b2a6bd47850d619e560112a2f88a096",
+        "header": "5af9d65f4863edd821d1129010c67ffc0ff948a435f7cbb56fd5e66e843fc6b9",
         "counts": {
           "h2": 14,
           "h3": 34,
@@ -339,12 +340,12 @@
           "svg": 9,
           "img": 2,
           "table": 14,
-          "details": 12,
-          "summary": 12
+          "details": 32,
+          "summary": 32
         },
         "blocks": {
-          "worked-example": 12,
-          "checkpoint": 12,
+          "worked-example": 13,
+          "checkpoint": 31,
           "importance": 34,
           "rating": 34,
           "source": 36
@@ -352,11 +353,11 @@
         "headings": [
           {
             "level": 2,
-            "title": "开始之前：这周要学会什么"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1. 必要前置：把问题写成可计算的形式"
+            "title": "Required foundations（必要前置）"
           },
           {
             "level": 3,
@@ -396,7 +397,7 @@
           },
           {
             "level": 2,
-            "title": "3. Decoder、两层构造与单调性"
+            "title": "Logic networks（逻辑网络）"
           },
           {
             "level": 3,
@@ -476,15 +477,15 @@
           },
           {
             "level": 2,
-            "title": "8. Weight space 与 Duality（权重空间与对偶视角）"
+            "title": "Weight space and duality（权重空间与对偶视角）"
           },
           {
             "level": 3,
-            "title": "8.1 一个公式，两种坐标空间"
+            "title": "Input space and weight space（输入空间与权重空间）"
           },
           {
             "level": 3,
-            "title": "8.2 在权重空间中读 AND 的学习路径"
+            "title": "Feasible weights for AND（AND 的可行权重）"
           },
           {
             "level": 2,
@@ -492,11 +493,11 @@
           },
           {
             "level": 3,
-            "title": "9.1 定理保证什么，前提是什么"
+            "title": "Perceptron convergence theorem（感知机收敛定理）"
           },
           {
             "level": 3,
-            "title": "9.2 为什么不会永远纠错：一个可核对的证明思路"
+            "title": "Convergence proof（收敛证明）"
           },
           {
             "level": 2,
@@ -504,19 +505,19 @@
           },
           {
             "level": 3,
-            "title": "10.1 两个输入为什么有16种 Boolean 函数"
+            "title": "Boolean function count（布尔函数计数）"
           },
           {
             "level": 3,
-            "title": "10.2 XOR 的几何证明：两条连线共享中点"
+            "title": "Geometric proof for XOR（XOR 的几何证明）"
           },
           {
             "level": 3,
-            "title": "10.3 XOR 的不等式证明：四个要求无法同时成立"
+            "title": "Algebraic proof for XOR（XOR 的不等式证明）"
           },
           {
             "level": 3,
-            "title": "10.4 不收敛意味着什么：表示失败与训练失败"
+            "title": "Nonconvergence（不收敛的含义）"
           },
           {
             "level": 2,
@@ -524,7 +525,7 @@
           },
           {
             "level": 3,
-            "title": "11.1 改变编码，哪些东西会改变"
+            "title": "Unipolar and bipolar coding（单极与双极编码）"
           },
           {
             "level": 3,
@@ -532,15 +533,15 @@
           },
           {
             "level": 2,
-            "title": "12. 综合练习：从条件出发，而不是套现成权重"
+            "title": "Integrated practice（综合练习）"
           },
           {
             "level": 3,
-            "title": "12.1 三项迁移练习"
+            "title": "Transfer exercises（迁移练习）"
           },
           {
             "level": 2,
-            "title": "来源索引、覆盖与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -649,6 +650,7 @@
         }
       ],
       "transformations": [
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 9 SVGs.",
         "Extract 2 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -656,13 +658,13 @@
     {
       "id": "03",
       "title": "ADALINE、多层感知机与反向传播",
-      "filename": "CS5486-Week03-学习教材.html",
-      "originalSha256": "14bcce3fa1caf6c4442d81c1e603f70c5fc593895fe08d61c7b2ca537fdc7b5e",
-      "importedSha256": "afbcc955fb086c4242ca215ab58b81bb2cb2d4cb8989e0d3a224cbeb04fe3cf8",
-      "subtitle": "从连续误差到隐藏表示：逐步推导、完整手算与泛化边界",
+      "filename": "chapters/week03.html",
+      "originalSha256": "4623d969008a00223d48b673482b4597e1ed04523387c3f07a74c101025791ab",
+      "importedSha256": "687aa7ea3fed06a2853ac901f0f1ce4452866a37f54b484917db51dee3dd4d1b",
+      "subtitle": "为什么要在连续输出上训练，隐藏层的误差又怎样传回？",
       "baseline": {
-        "text": "8ce37458776944071c38728f8453f772fee2981fe43594ffff84e6e22d67424c",
-        "header": "bb58d0fac4d82abcf4403732447af87415ff8da5f467246ae95f659dcf6b0604",
+        "text": "335304c377f9fc8b59b05a55127cf591aa2c00ad6fbc87c2557e76a4379406c2",
+        "header": "5b5af241305e8155ab18c18d82f6a49f6bb610dd02bf1b427d95623c262be996",
         "counts": {
           "h2": 12,
           "h3": 33,
@@ -671,12 +673,12 @@
           "svg": 7,
           "img": 1,
           "table": 8,
-          "details": 12,
-          "summary": 12
+          "details": 34,
+          "summary": 34
         },
         "blocks": {
-          "worked-example": 13,
-          "checkpoint": 12,
+          "worked-example": 14,
+          "checkpoint": 33,
           "importance": 33,
           "rating": 33,
           "source": 35
@@ -684,11 +686,11 @@
         "headings": [
           {
             "level": 2,
-            "title": "从单个线性单元，走到能学习表示的网络"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1 必要前置：把“改一点会怎样”说清楚"
+            "title": "Required foundations（必要前置）"
           },
           {
             "level": 3,
@@ -720,7 +722,7 @@
           },
           {
             "level": 3,
-            "title": "2.4 复算 Tutorial：从 −0.1 更新到 0.56"
+            "title": "ADALINE worked example（ADALINE 完整计算）"
           },
           {
             "level": 4,
@@ -736,7 +738,7 @@
           },
           {
             "level": 2,
-            "title": "3 权重空间：有多少种分类能被单层表示？"
+            "title": "Capacity and weight space（容量与权重空间）"
           },
           {
             "level": 3,
@@ -752,7 +754,7 @@
           },
           {
             "level": 2,
-            "title": "4 MLP 与 XOR：隐藏层如何改变表示"
+            "title": "MLP and XOR（多层感知机与异或）"
           },
           {
             "level": 3,
@@ -760,7 +762,7 @@
           },
           {
             "level": 3,
-            "title": "4.2 三计算单元 XOR：先检测两种“不同”，再合并"
+            "title": "Three-unit XOR（三计算单元异或）"
           },
           {
             "level": 3,
@@ -776,7 +778,7 @@
           },
           {
             "level": 2,
-            "title": "5 从手工逻辑转向可微网络"
+            "title": "Differentiable networks（可微网络）"
           },
           {
             "level": 3,
@@ -792,7 +794,7 @@
           },
           {
             "level": 2,
-            "title": "6 BP 推导：输出层、隐藏层与第一可训练层"
+            "title": "Backpropagation derivation（反向传播推导）"
           },
           {
             "level": 3,
@@ -816,7 +818,7 @@
           },
           {
             "level": 2,
-            "title": "7 完整手算：一个 2–2–1 MLP 的一次更新"
+            "title": "A 2–2–1 MLP update（2–2–1 多层感知机的一次更新）"
           },
           {
             "level": 3,
@@ -836,7 +838,7 @@
           },
           {
             "level": 2,
-            "title": "8 优化不等于保证：局部极小与动量"
+            "title": "Optimization and momentum（优化与动量）"
           },
           {
             "level": 3,
@@ -848,7 +850,7 @@
           },
           {
             "level": 2,
-            "title": "9 表示、优化与泛化：三个不同问题"
+            "title": "Representation, optimization and generalization（表示、优化与泛化）"
           },
           {
             "level": 3,
@@ -868,11 +870,11 @@
           },
           {
             "level": 2,
-            "title": "10 综合练习：换一个条件，还能推理吗？"
+            "title": "Integrated practice（综合练习）"
           },
           {
             "level": 2,
-            "title": "来源索引、覆盖范围与必要限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -1314,7 +1316,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 3 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 7 SVGs.",
         "Extract 1 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -1322,13 +1324,13 @@
     {
       "id": "04",
       "title": "RBF、显式特征映射与硬间隔 SVM",
-      "filename": "CS5486-Week04-学习教材.html",
-      "originalSha256": "3db986d4e81901a931de45e50bb2e814b83cdfc3c0a06d1268cee92d0542efc7",
-      "importedSha256": "3f12d2b4060b15d0e1693b27334f9f14e10f457a40934883b524e58f63706472",
-      "subtitle": "CS5486 · 从距离特征与 XOR，走到最大间隔、对偶、KKT 和决策函数。",
+      "filename": "chapters/week04.html",
+      "originalSha256": "08868e5c94b0bce1cb4fea008a03f33ee4ca82c154cd73dfcf198decbe7311e1",
+      "importedSha256": "b59fa3a119f27738b1a63cda82f5e787efda87adc0012bc74d35e5ba9e43531c",
+      "subtitle": "局部响应怎样产生非线性表示，最大间隔为什么要约束尺度？",
       "baseline": {
-        "text": "cc1800e6d71eaca12bd4a0daf4e98b44e05a26ece6201d69c3ca2c84652aa396",
-        "header": "8f285e81cc5731e6c4fc2c7687562b893479786b9d44f449f0f1520ba139998d",
+        "text": "1fa4bd68b24588376f480c18c77ec57dab0dd49fabf09781e4a8e851548899aa",
+        "header": "813076bc6781b4116ef7cd9d605de006c498a6eb296fc9c8aedbb3c186bb7975",
         "counts": {
           "h2": 10,
           "h3": 28,
@@ -1337,12 +1339,12 @@
           "svg": 6,
           "img": 0,
           "table": 6,
-          "details": 8,
-          "summary": 8
+          "details": 30,
+          "summary": 30
         },
         "blocks": {
           "worked-example": 12,
-          "checkpoint": 8,
+          "checkpoint": 29,
           "importance": 28,
           "rating": 28,
           "source": 31
@@ -1350,11 +1352,11 @@
         "headings": [
           {
             "level": 2,
-            "title": "开始学习：从“换一种表示”到“选择一条好边界”"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1 必要前置：把数据、公式和求解对象说清楚"
+            "title": "Required foundations（必要前置）"
           },
           {
             "level": 3,
@@ -1370,7 +1372,7 @@
           },
           {
             "level": 2,
-            "title": "2 RBF：用到中心的距离构造特征"
+            "title": "Radial Basis Function（径向基函数）"
           },
           {
             "level": 3,
@@ -1390,7 +1392,7 @@
           },
           {
             "level": 2,
-            "title": "3 XOR：亲手验证显式特征映射"
+            "title": "XOR and feature mapping（异或与特征映射）"
           },
           {
             "level": 3,
@@ -1414,7 +1416,7 @@
           },
           {
             "level": 2,
-            "title": "4 FLN 与 ELM：特征如何产生，哪些参数要训练？"
+            "title": "FLN and ELM（函数连接网络与极限学习机）"
           },
           {
             "level": 3,
@@ -1430,7 +1432,7 @@
           },
           {
             "level": 2,
-            "title": "5 SVM 的几何：从超平面到最大间隔"
+            "title": "SVM geometry（支持向量机几何）"
           },
           {
             "level": 3,
@@ -1450,7 +1452,7 @@
           },
           {
             "level": 2,
-            "title": "6 从 primal 到 dual：每一步在求什么？"
+            "title": "Primal and dual problems（原始问题与对偶问题）"
           },
           {
             "level": 3,
@@ -1470,7 +1472,7 @@
           },
           {
             "level": 2,
-            "title": "7 支持向量与决策函数：把解变成预测"
+            "title": "Support vectors and decision function（支持向量与决策函数）"
           },
           {
             "level": 3,
@@ -1482,7 +1484,7 @@
           },
           {
             "level": 2,
-            "title": "8 完整示范与练习：从数据算到预测"
+            "title": "Worked SVM example（支持向量机完整示范）"
           },
           {
             "level": 3,
@@ -1522,7 +1524,7 @@
           },
           {
             "level": 2,
-            "title": "9 来源索引与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -2099,20 +2101,20 @@
       },
       "images": [],
       "transformations": [
-        "Add stable anchors to 6 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 6 SVGs."
       ]
     },
     {
       "id": "05",
       "title": "软间隔、核 SVM、SVR 与 LS-SVM",
-      "filename": "CS5486-Week05-学习教材.html",
-      "originalSha256": "c873241c263988bb3865cf68db21f82ff23895e25b29ce18483c3df4d76f4183",
-      "importedSha256": "806c4d3a8e9e699faf3a0e1ef6121edf4161544c2e96f85aac525d5fc760af80",
-      "subtitle": "CS5486 · 从基础理解监督核方法，走通推导、手算与 MATLAB 实践。",
+      "filename": "chapters/week05.html",
+      "originalSha256": "d43f0bd6eef4f1e5d844c15bd3d07c4b55157d3236b071fe2ee4fbea59fb41ab",
+      "importedSha256": "e2e93bd7654103f91478a8c9055765ea3d38c8988f4078ea8d37c2b16adc55aa",
+      "subtitle": "允许误差、改用核及平方损失后，问题与求解方式怎样变化？",
       "baseline": {
-        "text": "d271b5f0975bf9301f9342ba641098dbaebdef027b33c4b9dd90954fa450ce82",
-        "header": "51ea209ab24d69b6cdc96c82f5dfb9574a14f837c4ad0bcacd86872fb82c67df",
+        "text": "ca186f0a974862252b1d75646464eb8ec753cb557c34dacd46f81ad0b88296c4",
+        "header": "12d13b05cbfb5c815d43c702a9585c8b865b14e3d614a5889322ef6b450c8710",
         "counts": {
           "h2": 11,
           "h3": 33,
@@ -2121,120 +2123,120 @@
           "svg": 5,
           "img": 2,
           "table": 10,
-          "details": 11,
-          "summary": 11
+          "details": 35,
+          "summary": 35
         },
         "blocks": {
           "worked-example": 14,
-          "checkpoint": 11,
+          "checkpoint": 34,
           "importance": 39,
           "rating": 39,
-          "source": 41
+          "source": 42
         },
         "headings": [
           {
             "level": 2,
-            "title": "学习路线：允许偏差、改变表示、预测数值"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1 先把共用的数学语言接上"
+            "title": "Foundations（必要前置） · 1"
           },
           {
             "level": 3,
-            "title": "1.1 Classification / Regression（分类与回归）及维度"
+            "title": "Classification / Regression（分类与回归）及维度 · 1.1"
           },
           {
             "level": 3,
-            "title": "1.2 Hard margin / KKT（硬间隔与最优性条件）短回顾"
+            "title": "Hard margin / KKT（硬间隔与最优性条件）短回顾 · 1.2"
           },
           {
             "level": 3,
-            "title": "1.3 Regularization / Validation（正则化与验证）"
+            "title": "Regularization / Validation（正则化与验证） · 1.3"
           },
           {
             "level": 2,
-            "title": "2 Soft-margin SVM（软间隔）：为违反间隔定价"
+            "title": "Soft-margin SVM（软间隔支持向量机） · 2"
           },
           {
             "level": 3,
-            "title": "2.1 Slack variable（松弛变量）不是错误计数"
+            "title": "Slack variable（松弛变量）不是错误计数 · 2.1"
           },
           {
             "level": 3,
-            "title": "2.2 Primal objective / C（原始目标与惩罚权重）"
+            "title": "Primal objective / C（原始目标与惩罚权重） · 2.2"
           },
           {
             "level": 3,
-            "title": "2.3 Dual / KKT（对偶与支持向量的三种状态）"
+            "title": "Dual / KKT（对偶与支持向量的三种状态） · 2.3"
           },
           {
             "level": 2,
-            "title": "3 Kernel trick（核技巧）：先改变表示，再做线性模型"
+            "title": "Kernel trick（核技巧） · 3"
           },
           {
             "level": 3,
-            "title": "3.1 Feature map（特征映射）为什么能改变可分性"
+            "title": "Feature map（特征映射）为什么能改变可分性 · 3.1"
           },
           {
             "level": 3,
-            "title": "3.2 Kernel function（核函数）省掉什么计算"
+            "title": "Kernel function（核函数）省掉什么计算 · 3.2"
           },
           {
             "level": 3,
-            "title": "3.3 Polynomial kernel（多项式核）：亲手展开六维特征"
+            "title": "Polynomial kernel（多项式核）：亲手展开六维特征 · 3.3"
           },
           {
             "level": 3,
-            "title": "3.4 Positive semidefinite / Gram matrix（半正定与格拉姆矩阵）"
+            "title": "Positive semidefinite / Gram matrix（半正定与格拉姆矩阵） · 3.4"
           },
           {
             "level": 3,
-            "title": "3.5 Common kernels（常见核）与适用条件"
+            "title": "Common kernels（常见核）与适用条件 · 3.5"
           },
           {
             "level": 3,
-            "title": "3.6 Kernel width（核宽度）：局部影响能扩散多远"
+            "title": "Kernel width（核宽度）：局部影响能扩散多远 · 3.6"
           },
           {
             "level": 3,
-            "title": "3.7 RBF network / RBF kernel SVM（径向基网络与核 SVM）"
+            "title": "RBF network / RBF kernel SVM（径向基网络与核 SVM） · 3.7"
           },
           {
             "level": 2,
-            "title": "4 从核矩阵到分类器：训练、预测、验证"
+            "title": "Kernel training（核模型训练） · 4"
           },
           {
             "level": 3,
-            "title": "4.1 Kernelized dual（核化对偶）与预测流程"
+            "title": "Kernelized dual（核化对偶）与预测流程 · 4.1"
           },
           {
             "level": 3,
-            "title": "4.2 Model selection（模型选择）是训练流程的一部分"
+            "title": "Model selection（模型选择）是训练流程的一部分 · 4.2"
           },
           {
             "level": 2,
-            "title": "5 Support Vector Regression（支持向量回归）：只为超出管道的误差付费"
+            "title": "Support Vector Regression（支持向量回归） · 5"
           },
           {
             "level": 3,
-            "title": "5.1 ε-insensitive loss（ε不敏感损失）与管道"
+            "title": "ε-insensitive loss（ε不敏感损失）与管道 · 5.1"
           },
           {
             "level": 3,
-            "title": "5.2 Two slack variables（两类松弛）与 SVR primal"
+            "title": "Two slack variables（两类松弛）与 SVR primal · 5.2"
           },
           {
             "level": 3,
-            "title": "5.3 SVR dual（回归对偶）：为什么系数是 α−α*"
+            "title": "SVR dual（回归对偶）：为什么系数是 α−α* · 5.3"
           },
           {
             "level": 3,
-            "title": "5.4 Bias interval（偏置区间）：把两类 KKT 分开推"
+            "title": "Bias interval（偏置区间）：把两类 KKT 分开推 · 5.4"
           },
           {
             "level": 3,
-            "title": "5.5 Kernel SVR worked example（核 SVR 完整手算）"
+            "title": "Kernel SVR worked example（核 SVR 完整手算） · 5.5"
           },
           {
             "level": 4,
@@ -2254,23 +2256,23 @@
           },
           {
             "level": 3,
-            "title": "5.6 Loss and further reading（损失比较与选读衔接）"
+            "title": "Loss and further reading（损失比较与选读衔接） · 5.6"
           },
           {
             "level": 2,
-            "title": "6 Least-Squares SVM（最小二乘支持向量机）：从优化到线性方程"
+            "title": "Least-Squares SVM（最小二乘支持向量机） · 6"
           },
           {
             "level": 3,
-            "title": "6.1 Squared error / Equality constraint（平方误差与等式约束）"
+            "title": "Squared error / Equality constraint（平方误差与等式约束） · 6.1"
           },
           {
             "level": 3,
-            "title": "6.2 Linear KKT system（线性 KKT 系统）的逐步推导"
+            "title": "Linear KKT system（线性 KKT 系统）的逐步推导 · 6.2"
           },
           {
             "level": 3,
-            "title": "6.3 完整手算：一个 3×3 的 LS-SVM 回归系统"
+            "title": "LS-SVM worked example（完整手算：一个 3×3 的 LS-SVM 回归系统） · 6.3"
           },
           {
             "level": 4,
@@ -2290,7 +2292,7 @@
           },
           {
             "level": 3,
-            "title": "6.4 Sparsity / Classification variant（稀疏性与分类形式的区别）"
+            "title": "Sparsity / Classification variant（稀疏性与分类形式的区别） · 6.4"
           },
           {
             "level": 4,
@@ -2306,35 +2308,35 @@
           },
           {
             "level": 2,
-            "title": "7 MATLAB 实践：知道每段代码在做什么"
+            "title": "MATLAB practice（MATLAB 实践） · 7"
           },
           {
             "level": 3,
-            "title": "7.1 Binary / Multiclass classification（二分类与多分类）"
+            "title": "Binary / Multiclass classification（二分类与多分类） · 7.1"
           },
           {
             "level": 3,
-            "title": "7.2 fitrsvm（回归训练）：收敛、损失和泛化是三件事"
+            "title": "fitrsvm（回归训练）：收敛、损失和泛化是三件事 · 7.2"
           },
           {
             "level": 3,
-            "title": "7.3 LS-SVM from scratch（从零组装 LS-SVM）"
+            "title": "LS-SVM from scratch（从零组装 LS-SVM） · 7.3"
           },
           {
             "level": 3,
-            "title": "7.4 Fold-local preprocessing（逐折预处理）：防止数据泄漏"
+            "title": "Fold-local preprocessing（Fold-local preprocessing（逐折预处理）：防止数据泄漏） · 7.4"
           },
           {
             "level": 2,
-            "title": "8 读懂课件的两个应用图"
+            "title": "Applications（应用） · 8"
           },
           {
             "level": 3,
-            "title": "8.1 Two-spiral classification（双螺旋分类）"
+            "title": "Two-spiral classification（双螺旋分类） · 8.1"
           },
           {
             "level": 3,
-            "title": "8.2 Short-term prediction（短期负荷预测）"
+            "title": "Short-term prediction（短期负荷预测） · 8.2"
           },
           {
             "level": 4,
@@ -2362,19 +2364,19 @@
           },
           {
             "level": 2,
-            "title": "9 把三类模型放到同一张图景里"
+            "title": "Model comparison（模型比较） · 9"
           },
           {
             "level": 3,
-            "title": "9.1 Objective / Constraint / Output（目标、约束与输出）的比较"
+            "title": "Objective / Constraint / Output（目标、约束与输出）的比较 · 9.1"
           },
           {
             "level": 3,
-            "title": "9.2 理解检查与迁移练习"
+            "title": "Practice and transfer（理解检查与迁移练习） · 9.2"
           },
           {
             "level": 2,
-            "title": "10 来源索引、核验记录与资料限制"
+            "title": "Sources and limitations（来源与资料限制） · 10"
           }
         ],
         "math": [
@@ -2519,7 +2521,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 4 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 5 SVGs.",
         "Extract 2 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -2527,13 +2529,13 @@
     {
       "id": "06",
       "title": "竞争学习、ART 与自组织映射",
-      "filename": "CS5486-Week06-学习教材.html",
-      "originalSha256": "266b072778ae5cb8860cea8b10a35ad2c7dcfdc5740105eff0a1e109c5563460",
-      "importedSha256": "f12a7ef1810f9c4d46da664d2d466349d9aa5e2443dfe7fcdac904dbb0e5dfc5",
-      "subtitle": "CS5486 · 从最大值竞争，到增量类别学习，再到固定地图上的邻域协同。",
+      "filename": "chapters/week06.html",
+      "originalSha256": "d39e5eab7e6e91060bda7b4f999f38bab85048b4eac22235cfc65c40ca137a8c",
+      "importedSha256": "42cd0aafc24ca89449546dc4ab163d275690a5bccdfac6f48fcde40fa8a00f12",
+      "subtitle": "没有目标标签时，神经元怎样竞争、形成类别并组织邻域？",
       "baseline": {
-        "text": "979744368a8f844fdd145e47297141fabb9d566c60730883d296738b544f7f13",
-        "header": "765c029fa3580c5bb8f0f6c9e69c3982827a830bc45fadf00fd2426f4c6034de",
+        "text": "8f91e2055aabf53cf902d759f03024442f5578e382ee174fd048c1670d90e00f",
+        "header": "6abe5325c4e585930b7da6cf7d2b74d30ed2395161fecd193dd20beca284c666",
         "counts": {
           "h2": 9,
           "h3": 23,
@@ -2542,12 +2544,12 @@
           "svg": 5,
           "img": 6,
           "table": 11,
-          "details": 11,
-          "summary": 11
+          "details": 27,
+          "summary": 27
         },
         "blocks": {
           "worked-example": 10,
-          "checkpoint": 11,
+          "checkpoint": 26,
           "importance": 26,
           "rating": 26,
           "source": 28
@@ -2555,67 +2557,67 @@
         "headings": [
           {
             "level": 2,
-            "title": "开始之前：本周要解决什么问题"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1 必要前置：从数据、相似性到会变化的状态"
+            "title": "Foundations（必要前置） · 1"
           },
           {
             "level": 3,
-            "title": "1.1 Unsupervised learning（无监督学习）与 Clustering（聚类）"
+            "title": "Unsupervised learning（无监督学习）与 Clustering（聚类） · 1.1"
           },
           {
             "level": 3,
-            "title": "1.2 Prototype vector（原型向量）与 Vector quantization（向量量化）"
+            "title": "Prototype vector（原型向量）与 Vector quantization（向量量化） · 1.2"
           },
           {
             "level": 3,
-            "title": "1.3 Distance（距离）与 Binary overlap（二值重叠）"
+            "title": "Distance（距离）与 Binary overlap（二值重叠） · 1.3"
           },
           {
             "level": 3,
-            "title": "1.4 Discrete iteration（离散迭代）与 Differential equation（微分方程）直觉"
+            "title": "Discrete iteration（离散迭代）与 Differential equation（微分方程）直觉 · 1.4"
           },
           {
             "level": 2,
-            "title": "2 MAXNET：让最大者在抑制中留下来"
+            "title": "MAXNET（最大值竞争网络） · 2"
           },
           {
             "level": 3,
-            "title": "2.1 Winner-take-all（胜者全得）与 Lateral inhibition（侧向抑制）"
+            "title": "Winner-take-all（胜者全得）与 Lateral inhibition（侧向抑制） · 2.1"
           },
           {
             "level": 3,
-            "title": "2.2 同步更新：一步步算到单一赢家"
+            "title": "Synchronous MAXNET update（同步更新：一步步算到单一赢家） · 2.2"
           },
           {
             "level": 3,
-            "title": "2.3 并列、最大值与最大位置：停止前要看清输出"
+            "title": "Ties and output interpretation（并列、最大值与最大位置：停止前要看清输出） · 2.3"
           },
           {
             "level": 2,
-            "title": "3 kWTA：调一道门槛，留下恰好 k 项"
+            "title": "kWTA（k 个获胜者竞争） · 3"
           },
           {
             "level": 3,
-            "title": "3.1 Threshold state（阈值状态）与动态方程"
+            "title": "Threshold state（阈值状态）与动态方程 · 3.1"
           },
           {
             "level": 3,
-            "title": "3.2 Finite-time convergence（有限时间收敛）：条件先于结论"
+            "title": "Finite-time convergence（有限时间收敛）：条件先于结论 · 3.2"
           },
           {
             "level": 3,
-            "title": "3.3 从分段计算到 Simulation（仿真）读图"
+            "title": "Piecewise simulation（从分段计算到 Simulation（仿真）读图） · 3.3"
           },
           {
             "level": 2,
-            "title": "4 ART1：先找最像的，再问是否足够像"
+            "title": "ART1（自适应共振理论第一类模型） · 4"
           },
           {
             "level": 3,
-            "title": "4.1 ART1 的双向结构与增量聚类问题"
+            "title": "ART1 architecture（ART1 的双向结构与增量聚类问题） · 4.1"
           },
           {
             "level": 4,
@@ -2623,15 +2625,15 @@
           },
           {
             "level": 3,
-            "title": "4.2 Choice、Vigilance、Reset：把五步算法拆开"
+            "title": "Choice、Vigilance、Reset：把五步算法拆开 · 4.2"
           },
           {
             "level": 3,
-            "title": "4.3 Fast learning（快速学习）：模板取交集，评分重新归一"
+            "title": "Fast learning（快速学习）：模板取交集，评分重新归一 · 4.3"
           },
           {
             "level": 3,
-            "title": "4.4 从空网络到三类：完整二值算例"
+            "title": "ART1 worked example（从空网络到三类：完整二值算例） · 4.4"
           },
           {
             "level": 4,
@@ -2651,11 +2653,11 @@
           },
           {
             "level": 3,
-            "title": "4.5 Vigilance（警戒性）、输入顺序与 C/E/F 原例"
+            "title": "Vigilance（警戒性）、输入顺序与 C/E/F 原例 · 4.5"
           },
           {
             "level": 3,
-            "title": "4.6 Five-bit comparison（五位输入对照）：两种警戒值，完整候选竞争"
+            "title": "Five-bit comparison（五位输入对照）：两种警戒值，完整候选竞争 · 4.6"
           },
           {
             "level": 4,
@@ -2663,43 +2665,43 @@
           },
           {
             "level": 2,
-            "title": "5 SOM：把固定原型组织成一张地图"
+            "title": "SOM（自组织映射） · 5"
           },
           {
             "level": 3,
-            "title": "5.1 Input space（输入空间）与 Map space（地图空间）"
+            "title": "Input space（输入空间）与 Map space（地图空间） · 5.1"
           },
           {
             "level": 3,
-            "title": "5.2 Kohonen learning algorithm（Kohonen 学习算法）"
+            "title": "Kohonen learning algorithm（Kohonen 学习算法） · 5.2"
           },
           {
             "level": 3,
-            "title": "5.3 Neighborhood（邻域）：竞争之后为什么还要合作"
+            "title": "Neighborhood（邻域）：竞争之后为什么还要合作 · 5.3"
           },
           {
             "level": 3,
-            "title": "5.4 一次获胜与邻域更新：四个单元的完整计算"
+            "title": "SOM worked example（一次获胜与邻域更新：四个单元的完整计算） · 5.4"
           },
           {
             "level": 3,
-            "title": "5.5 Topology preservation（拓扑保持）：读懂原图与它的限度"
+            "title": "Topology preservation（拓扑保持）：读懂原图与它的限度 · 5.5"
           },
           {
             "level": 3,
-            "title": "5.6 最小距离何时等价于最大点积"
+            "title": "Minimum distance and maximum dot product（最小距离与最大点积） · 5.6"
           },
           {
             "level": 2,
-            "title": "6 把方法连起来：选择、增加类别与组织地图"
+            "title": "Method comparison（方法比较） · 6"
           },
           {
             "level": 3,
-            "title": "6.1 ART1 vs. SOM（ART1 与 SOM）：相似的竞争，不同的学习目标"
+            "title": "ART1 vs. SOM（ART1 与 SOM）：相似的竞争，不同的学习目标 · 6.1"
           },
           {
             "level": 2,
-            "title": "7 迁移练习：换一组条件，独立判断"
+            "title": "Practice（迁移练习） · 7"
           },
           {
             "level": 4,
@@ -2727,7 +2729,7 @@
           },
           {
             "level": 2,
-            "title": "8 来源索引、采用范围与资料限制"
+            "title": "Sources and limitations（来源与资料限制） · 8"
           },
           {
             "level": 4,
@@ -2886,7 +2888,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 12 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 5 SVGs.",
         "Extract 6 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -2894,13 +2896,13 @@
     {
       "id": "07",
       "title": "离散 Hopfield 网络、联想记忆与 BAM",
-      "filename": "CS5486-Week07-学习教材.html",
-      "originalSha256": "5abbfb783657953f77b4f547474d6065d44c62d7e74bcf70f14ce5f031007d3d",
-      "importedSha256": "16280a131ac29fbe05ecf06c0d3ce62c46c52b93127371cdc26a456597f3f507",
-      "subtitle": "从二值状态与矩阵运算出发，亲手写入记忆、追踪能量、判断双向回忆的条件。",
+      "filename": "chapters/week07.html",
+      "originalSha256": "ae8adee26b13684bc6956668b929aefb4eca48e9be57400b993afffff2e65edd",
+      "importedSha256": "e99fb70847a9eefb12d24fae4718c97b8dde0ffa82fade08b2aef187c1285bed",
+      "subtitle": "残缺图案怎样通过状态更新恢复，什么时候能保证能量下降？",
       "baseline": {
-        "text": "45e923a69d6ab8a06250eb73df8306dfa26b9844df18832797ae3c9a7521714e",
-        "header": "10e5a68d6d3770ae0d4fde10642415bac3a7fcf552dc3864319927fac7576d2b",
+        "text": "d8afdf69df084599a5ab3e75d82f67c33e47722c256ad71a59ceabc0ba444095",
+        "header": "99eba2c848d52dc283f4c567ba41242a51736338c952f75825f452f6bab4b6d6",
         "counts": {
           "h2": 11,
           "h3": 28,
@@ -2909,12 +2911,12 @@
           "svg": 4,
           "img": 1,
           "table": 7,
-          "details": 9,
-          "summary": 9
+          "details": 30,
+          "summary": 30
         },
         "blocks": {
           "worked-example": 9,
-          "checkpoint": 9,
+          "checkpoint": 29,
           "importance": 30,
           "rating": 30,
           "source": 31
@@ -2922,99 +2924,99 @@
         "headings": [
           {
             "level": 2,
-            "title": "开始学习：怎样让一个网络“想起”完整模式？"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1 必要前置：把模式变成能计算的对象"
+            "title": "Prerequisites（必要前置） · 1"
           },
           {
             "level": 3,
-            "title": "1.1 Binary / bipolar encoding（二值／双极性编码）"
+            "title": "Binary / bipolar encoding（二值／双极性编码） · 1.1"
           },
           {
             "level": 3,
-            "title": "1.2 Transpose / inner product / outer product（转置／内积／外积）"
+            "title": "Transpose / inner product / outer product（转置／内积／外积） · 1.2"
           },
           {
             "level": 3,
-            "title": "1.3 Symmetric matrix / quadratic form（对称矩阵／二次型）"
+            "title": "Symmetric matrix / quadratic form（对称矩阵／二次型） · 1.3"
           },
           {
             "level": 2,
-            "title": "2 Discrete Hopfield network（离散 Hopfield 网络）：状态怎样更新？"
+            "title": "Discrete Hopfield dynamics（离散 Hopfield 动力学） · 2"
           },
           {
             "level": 3,
-            "title": "2.1 Recurrent network（循环网络）与 State（状态）"
+            "title": "Recurrent network（循环网络）与 State（状态） · 2.1"
           },
           {
             "level": 3,
-            "title": "2.2 Local field（局部场）、Bias（偏置）与 Threshold（阈值）"
+            "title": "Local field（局部场）、Bias（偏置）与 Threshold（阈值） · 2.2"
           },
           {
             "level": 3,
-            "title": "2.3 Asynchronous / synchronous update（异步／同步更新）"
+            "title": "Asynchronous / synchronous update（异步／同步更新） · 2.3"
           },
           {
             "level": 2,
-            "title": "3 Energy function（能量函数）：为什么异步更新会停？"
+            "title": "Energy function（能量函数） · 3"
           },
           {
             "level": 3,
-            "title": "3.1 用一个数评价整个状态"
+            "title": "Energy definition（用一个数评价整个状态） · 3.1"
           },
           {
             "level": 3,
-            "title": "3.2 单节点更新的 Energy difference（能量差）推导"
+            "title": "Energy difference derivation（单节点更新的能量差推导） · 3.2"
           },
           {
             "level": 3,
-            "title": "3.3 Fixed point（不动点）、收敛与条件边界"
+            "title": "Fixed point（不动点）、收敛与条件边界 · 3.3"
           },
           {
             "level": 3,
-            "title": "3.4 Synchronous two-cycle（同步二周期）反例"
+            "title": "Synchronous two-cycle（同步二周期）反例 · 3.4"
           },
           {
             "level": 2,
-            "title": "4 Associative memory（联想记忆）：记住的究竟是什么？"
+            "title": "Associative memory（联想记忆） · 4"
           },
           {
             "level": 3,
-            "title": "4.1 Content-addressable memory（内容寻址记忆）"
+            "title": "Content-addressable memory（内容寻址记忆） · 4.1"
           },
           {
             "level": 3,
-            "title": "4.2 Biological inspiration（生物学启发）的角色"
+            "title": "Biological inspiration（生物学启发）的角色 · 4.2"
           },
           {
             "level": 3,
-            "title": "4.3 Auto-association / hetero-association（自联想／异联想）"
+            "title": "Auto-association / hetero-association（自联想／异联想） · 4.3"
           },
           {
             "level": 3,
-            "title": "4.4 Storage / retrieval（存储／检索）：两个阶段，不是两套记忆"
+            "title": "Storage / retrieval（存储／检索）：两个阶段，不是两套记忆 · 4.4"
           },
           {
             "level": 2,
-            "title": "5 Outer-product learning（外积学习）：从原型到可回忆的网络"
+            "title": "Outer-product learning（外积学习） · 5"
           },
           {
             "level": 3,
-            "title": "5.1 用成对关系写入权重"
+            "title": "Hebbian storage（用成对关系写入权重） · 5.1"
           },
           {
             "level": 3,
-            "title": "5.2 Cross-talk（串扰）：为什么写入不等于精确恢复？"
+            "title": "Cross-talk（串扰）：为什么写入不等于精确恢复？ · 5.2"
           },
           {
             "level": 3,
-            "title": "5.3 Orthogonal / orthonormal（正交／标准正交）：第 195 页的核实纠正"
+            "title": "Orthogonal / orthonormal（正交／标准正交）：第 195 页的核实纠正 · 5.3"
           },
           {
             "level": 3,
-            "title": "5.4 完整教学示例：五节点网络的写入、含噪回忆与每步能量"
+            "title": "Hopfield worked example（完整教学示例：五节点网络的写入、含噪回忆与每步能量） · 5.4"
           },
           {
             "level": 4,
@@ -3034,11 +3036,11 @@
           },
           {
             "level": 2,
-            "title": "6 从数字恢复到容量限制：网络会走进哪个记忆？"
+            "title": "Memory limits（记忆容量与局限） · 6"
           },
           {
             "level": 3,
-            "title": "6.1 Attractor / basin of attraction（吸引子／吸引盆地）"
+            "title": "Attractor / basin of attraction（吸引子／吸引盆地） · 6.1"
           },
           {
             "level": 4,
@@ -3046,43 +3048,43 @@
           },
           {
             "level": 3,
-            "title": "6.2 Noise recovery（噪声恢复）：带着条件读原图"
+            "title": "Noise recovery（噪声恢复）：带着条件读原图 · 6.2"
           },
           {
             "level": 3,
-            "title": "6.3 Spurious state（伪稳定状态）与误恢复"
+            "title": "Spurious state（伪稳定状态）与误恢复 · 6.3"
           },
           {
             "level": 3,
-            "title": "6.4 Storage capacity（存储容量）：一个公式对应一种成功标准"
+            "title": "Storage capacity（存储容量）：一个公式对应一种成功标准 · 6.4"
           },
           {
             "level": 2,
-            "title": "7 Optimization model（优化模型）：本周只建立动机"
+            "title": "Optimization motivation（优化动机） · 7"
           },
           {
             "level": 3,
-            "title": "7.1 把目标函数写成网络能量"
+            "title": "Objective as network energy（把目标函数写成网络能量） · 7.1"
           },
           {
             "level": 2,
-            "title": "8 Bidirectional Associative Memory（双向联想记忆，BAM）"
+            "title": "Bidirectional Associative Memory（双向联想记忆） · 8"
           },
           {
             "level": 3,
-            "title": "8.1 两层结构：从一组状态回想另一组"
+            "title": "BAM architecture（两层结构：从一组状态回想另一组） · 8.1"
           },
           {
             "level": 3,
-            "title": "8.2 Hetero-associative outer product（异联想外积）写入"
+            "title": "Hetero-associative outer product（异联想外积）写入 · 8.2"
           },
           {
             "level": 3,
-            "title": "8.3 Bidirectional recall（双向回忆）的操作顺序"
+            "title": "Bidirectional recall（双向回忆）的操作顺序 · 8.3"
           },
           {
             "level": 3,
-            "title": "8.4 完整教学示例：两对模式写入与两向回忆"
+            "title": "BAM worked example（完整教学示例：两对模式写入与两向回忆） · 8.4"
           },
           {
             "level": 4,
@@ -3098,15 +3100,15 @@
           },
           {
             "level": 3,
-            "title": "8.5 Exact recall（精确回忆）的串扰条件：核查第 201 页"
+            "title": "Exact recall（精确回忆）的串扰条件：核查第 201 页 · 8.5"
           },
           {
             "level": 2,
-            "title": "9 综合练习：把条件带进计算"
+            "title": "Practice（综合练习） · 9"
           },
           {
             "level": 2,
-            "title": "10 来源索引、覆盖与资料限制"
+            "title": "Sources and limitations（来源与资料限制） · 10"
           }
         ],
         "math": [
@@ -3556,7 +3558,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 8 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 4 SVGs.",
         "Extract 1 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -3564,13 +3566,13 @@
     {
       "id": "08",
       "title": "连续 Hopfield 网络与 TSP 能量建模",
-      "filename": "CS5486-Week08-学习教材.html",
-      "originalSha256": "a0b19ac89d59189b696bc768b6f6fb254b2fedfe89df30e3273550500cb07857",
-      "importedSha256": "c0e2a8b874a6ca198738e38d0da73fcc0689f7d963a009f48964fa406e2ea990",
-      "subtitle": "CS5486 · 完整中文自学教材 · 主课件实际第 202–222 页",
+      "filename": "chapters/week08.html",
+      "originalSha256": "df0ca76be3f3d072b2950b158936b090d290228330a6af7f368b90c3cf26b246",
+      "importedSha256": "989b834fa33eb4f8fa0e380469e801af0bbac3d182a4588b9d52d4afcb8a9ca3",
+      "subtitle": "怎样把约束写成能量，为什么低能量不自动等于合法最优解？",
       "baseline": {
-        "text": "32cf2056a0915bc3bccea27a37b7565606a67ae46b94ab5a039508a55ad2df90",
-        "header": "b26aa6a22691f9ecd225cba64dd0822410572342608800645b9bf7771b67079a",
+        "text": "060c040377bc7e66db255a530748af4ba080467bf3cbe2cfe52e5fe3ec19cb36",
+        "header": "bd18283948010087f1055cff83642c9d499dda7cb22e560544bf4c5d7c596ab1",
         "counts": {
           "h2": 11,
           "h3": 25,
@@ -3579,12 +3581,12 @@
           "svg": 3,
           "img": 4,
           "table": 8,
-          "details": 9,
-          "summary": 9
+          "details": 29,
+          "summary": 29
         },
         "blocks": {
           "worked-example": 12,
-          "checkpoint": 9,
+          "checkpoint": 28,
           "importance": 25,
           "rating": 25,
           "source": 27
@@ -3592,47 +3594,47 @@
         "headings": [
           {
             "level": 2,
-            "title": "学习路线：让一张路线表自己“走向”低能量"
+            "title": "Learning route（学习路线）"
           },
           {
             "level": 2,
-            "title": "1 必要前置：从“下一步”转向“变化速度”"
+            "title": "Prerequisites（必要前置） · 1"
           },
           {
             "level": 3,
-            "title": "1.1 Energy and stability（能量与稳定性）"
+            "title": "Energy and stability（能量与稳定性） · 1.1"
           },
           {
             "level": 3,
-            "title": "1.2 Derivative and differential equation（导数与微分方程）"
+            "title": "Derivative and differential equation（导数与微分方程） · 1.2"
           },
           {
             "level": 3,
-            "title": "1.3 Quadratic energy and penalty（二次能量与惩罚项）"
+            "title": "Quadratic energy and penalty（二次能量与惩罚项） · 1.3"
           },
           {
             "level": 2,
-            "title": "2 Continuous-time Hopfield network（连续时间 Hopfield 网络）"
+            "title": "Continuous-time Hopfield network（连续时间 Hopfield 网络） · 2"
           },
           {
             "level": 3,
-            "title": "2.1 State equation（状态方程）：泄漏、反馈与偏置"
+            "title": "State equation（状态方程）：泄漏、反馈与偏置 · 2.1"
           },
           {
             "level": 3,
-            "title": "2.2 Sigmoid（S 形激活）：连续值为什么有用？"
+            "title": "Sigmoid（S 形激活）：连续值为什么有用？ · 2.2"
           },
           {
             "level": 3,
-            "title": "2.3 Analog circuit（模拟电路）：方程里的变量从哪里来？"
+            "title": "Analog circuit（模拟电路）：方程里的变量从哪里来？ · 2.3"
           },
           {
             "level": 2,
-            "title": "3 Lyapunov function（Lyapunov 函数）：为什么会往低处走？"
+            "title": "Lyapunov function（Lyapunov 函数） · 3"
           },
           {
             "level": 3,
-            "title": "3.1 完整能量及非增性的逐步证明"
+            "title": "Energy descent proof（完整能量及非增性的逐步证明） · 3.1"
           },
           {
             "level": 4,
@@ -3648,35 +3650,35 @@
           },
           {
             "level": 3,
-            "title": "3.2 Equilibrium（平衡点）不自动等于好答案"
+            "title": "Equilibrium（平衡点）不自动等于好答案 · 3.2"
           },
           {
             "level": 3,
-            "title": "3.3 High-gain approximation（高增益近似）的条件与极限"
+            "title": "High-gain approximation（高增益近似）的条件与极限 · 3.3"
           },
           {
             "level": 2,
-            "title": "4 Traveling Salesman Problem（旅行商问题）：先把路线变成状态"
+            "title": "Traveling Salesman Problem encoding（旅行商问题编码） · 4"
           },
           {
             "level": 3,
-            "title": "4.1 路线问题与组合规模"
+            "title": "Tour count（路线问题与组合规模） · 4.1"
           },
           {
             "level": 3,
-            "title": "4.2 City-position encoding（城市－位置编码）"
+            "title": "City-position encoding（城市－位置编码） · 4.2"
           },
           {
             "level": 3,
-            "title": "4.3 四城市的完整编码示范"
+            "title": "Four-city encoding example（四城市的完整编码示范） · 4.3"
           },
           {
             "level": 2,
-            "title": "5 Penalty energy（惩罚能量）：让规则产生数值代价"
+            "title": "Penalty energy（惩罚能量） · 5"
           },
           {
             "level": 3,
-            "title": "5.1 一城一次、一位一城与总访问数"
+            "title": "Assignment constraints（一城一次、一位一城与总访问数） · 5.1"
           },
           {
             "level": 4,
@@ -3684,27 +3686,27 @@
           },
           {
             "level": 3,
-            "title": "5.2 Tour length（路线长度）：相邻位置如何找到城市？"
+            "title": "Tour length（Tour length（路线长度）：相邻位置如何找到城市？） · 5.2"
           },
           {
             "level": 3,
-            "title": "5.3 完整的 TSP 二次目标与它的适用域"
+            "title": "Full TSP energy（完整的 TSP 二次目标与它的适用域） · 5.3"
           },
           {
             "level": 3,
-            "title": "5.4 同一张四城市地图：合法与非法编码的能量账本"
+            "title": "Energy worked example（同一张四城市地图：合法与非法编码的能量账本） · 5.4"
           },
           {
             "level": 2,
-            "title": "6 Network synthesis（网络构造）：从能量读出连接"
+            "title": "Network synthesis（网络构造） · 6"
           },
           {
             "level": 3,
-            "title": "6.1 Coefficient matching（系数对应）的准备"
+            "title": "Coefficient matching（系数对应）的准备 · 6.1"
           },
           {
             "level": 3,
-            "title": "6.2 Kronecker delta（Kronecker 指示符）与行列抑制"
+            "title": "Kronecker delta（Kronecker 指示符）与行列抑制 · 6.2"
           },
           {
             "level": 4,
@@ -3716,15 +3718,15 @@
           },
           {
             "level": 3,
-            "title": "6.3 相邻位置的距离连接与完整权重"
+            "title": "Distance weights（相邻位置的距离连接与完整权重） · 6.3"
           },
           {
             "level": 3,
-            "title": "6.4 Self-connection（自连接）与二值化简的边界"
+            "title": "Self-connection（自连接）与二值化简的边界 · 6.4"
           },
           {
             "level": 3,
-            "title": "6.5 从连接返回 Dynamics（动力学），再解码"
+            "title": "TSP dynamics and decoding（从连接返回 Dynamics（动力学），再解码） · 6.5"
           },
           {
             "level": 4,
@@ -3732,35 +3734,35 @@
           },
           {
             "level": 2,
-            "title": "7 Parameter selection（参数选择）与十城市结果"
+            "title": "Parameter selection（参数选择） · 7"
           },
           {
             "level": 3,
-            "title": "7.1 参数控制的是不同目标之间的权衡"
+            "title": "Parameter trade-offs（参数控制的是不同目标之间的权衡） · 7.1"
           },
           {
             "level": 3,
-            "title": "7.2 Ten-city example（十城市示例）：从输出图读到路线图"
+            "title": "Ten-city example（十城市示例）：从输出图读到路线图 · 7.2"
           },
           {
             "level": 3,
-            "title": "7.3 如何读“约 50%”与 181,440 条路线"
+            "title": "Ten-city results（如何读“约 50%”与 181,440 条路线） · 7.3"
           },
           {
             "level": 2,
-            "title": "8 Local minima（局部极小）：下降为什么还会被困住？"
+            "title": "Local minima（局部极小） · 8"
           },
           {
             "level": 3,
-            "title": "8.1 Energy landscape（能量景观）与障碍"
+            "title": "Energy landscape（能量景观）与障碍 · 8.1"
           },
           {
             "level": 2,
-            "title": "9 练习：先自己判断，再对照完整解析"
+            "title": "Practice（练习） · 9"
           },
           {
             "level": 2,
-            "title": "10 来源索引、覆盖与资料限制"
+            "title": "Sources and limitations（来源与资料限制） · 10"
           },
           {
             "level": 4,
@@ -4265,7 +4267,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 9 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 3 SVGs.",
         "Extract 4 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -4273,13 +4275,13 @@
     {
       "id": "09",
       "title": "模拟退火、随机网络与 ESN",
-      "filename": "CS5486-Week09-学习教材.html",
-      "originalSha256": "1a234d4046c17752cfb4990bc3a897204a0364a0335e33978c599b66f7bc004f",
-      "importedSha256": "c8312e46587b5f1895bd8d2eda1310ef9853cfc7ddce8cc740dee6722d113232",
-      "subtitle": "完整中文自学教材｜单元 A：随机优化与热平衡网络 · 单元 B：ESN 时序建模",
+      "filename": "chapters/week09.html",
+      "originalSha256": "b81475cf91b6589b86500cfb5558c907f3ee5bb89c56701b3dc9ce74340bc948",
+      "importedSha256": "40adb71720edd3ea7da6e2162ffd7ba8ab66ca54e606d69b335e8c3096ec660b",
+      "subtitle": "为什么有时接受更差的移动，随机网络与 reservoir 各解决什么问题？",
       "baseline": {
-        "text": "7461ff01678ce4b4c6048655ccfe8b1370f2263bddb8faa33a0e933b89483bc3",
-        "header": "7627fe769873f1f1e112daf4ba66f584537d34a7312188f0d02f166be1a653b7",
+        "text": "9bdbaf80f1f617ca04bc370a252e36e8a30e5e12d3286013042a1a2920c64c7f",
+        "header": "dcd79e09a37c83b00c283d4eedce83d7f7da862f2ec036fb4de4c95d9427efed",
         "counts": {
           "h2": 8,
           "h3": 22,
@@ -4288,12 +4290,12 @@
           "svg": 4,
           "img": 3,
           "table": 7,
-          "details": 9,
-          "summary": 9
+          "details": 28,
+          "summary": 28
         },
         "blocks": {
           "worked-example": 8,
-          "checkpoint": 9,
+          "checkpoint": 27,
           "importance": 23,
           "rating": 23,
           "source": 36
@@ -4301,11 +4303,11 @@
         "headings": [
           {
             "level": 2,
-            "title": "学习路线：从搜索好解，到记住时间"
+            "title": "Learning roadmap（学习路线）"
           },
           {
             "level": 2,
-            "title": "必要前置：把本周要用的数学接起来"
+            "title": "Prerequisites（必要前置）"
           },
           {
             "level": 3,
@@ -4325,7 +4327,7 @@
           },
           {
             "level": 2,
-            "title": "单元 A · 随机优化与热平衡网络"
+            "title": "Simulated annealing（模拟退火）与热平衡网络"
           },
           {
             "level": 3,
@@ -4349,7 +4351,7 @@
           },
           {
             "level": 2,
-            "title": "单元 A 续 · 从随机节点到连续平均状态"
+            "title": "Boltzmann machine and mean field（玻尔兹曼机与均值场）"
           },
           {
             "level": 3,
@@ -4373,7 +4375,7 @@
           },
           {
             "level": 2,
-            "title": "单元 B · 循环网络的另一用途——ESN 时序建模"
+            "title": "Echo State Network（回声状态网络）与时序建模"
           },
           {
             "level": 3,
@@ -4409,7 +4411,7 @@
           },
           {
             "level": 2,
-            "title": "把神经网络部分收束：四种网络解决四类问题"
+            "title": "Model comparison（模型比较）"
           },
           {
             "level": 3,
@@ -4417,7 +4419,7 @@
           },
           {
             "level": 2,
-            "title": "巩固练习：先作答，再看完整讲解"
+            "title": "Practice（巩固练习）"
           },
           {
             "level": 4,
@@ -4453,7 +4455,7 @@
           },
           {
             "level": 2,
-            "title": "来源索引、核验结果与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -4762,7 +4764,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 9 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 4 SVGs.",
         "Extract 3 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -4770,13 +4772,13 @@
     {
       "id": "10",
       "title": "模糊集合、模糊推理与 Type-2 系统",
-      "filename": "CS5486-Week10-学习教材.html",
-      "originalSha256": "b8335b99d7c0bdbef2335030c0a0c1ffe1d2fb7ef3f8b37f7358e1f6a831a70a",
-      "importedSha256": "56a32fc915c571ca1c318a5d9c679befe0e817bc2fc05c2f3d83c931407e4f8d",
-      "subtitle": "完整中文自学教材 · 从基础到手算控制实例 · PDF 实际页序 245–276",
+      "filename": "chapters/week10.html",
+      "originalSha256": "dab9d28456f8dbad82f162c03da867381700c642ea9abb3fd5e81e7ad1502f27",
+      "importedSha256": "76e1ebd67bee6d29bf478e76440c92da8fb17db975b4845eed5079ed6ae85b33",
+      "subtitle": "“有多热”怎样成为可计算的隶属度，规则怎样产生一个输出？",
       "baseline": {
-        "text": "7c478b8de48199de639b155191663ba88b9b90ddae74f9b0edd24d14e84f186d",
-        "header": "9c1140ab9ce558cc7f916f386bbab3f2d8e4150182f8f1edf3a2c3bb0e42a8dd",
+        "text": "9754b0bdd69a51dcf5e6f7b904e65b61969eeb39c5c2c914289d02d62a4df1ba",
+        "header": "83da133bfee4fd0bcb76063c8dea4ecf2895d24de3fdbd714b6a7f4c03f9fcaf",
         "counts": {
           "h2": 11,
           "h3": 34,
@@ -4785,12 +4787,12 @@
           "svg": 10,
           "img": 0,
           "table": 8,
-          "details": 7,
-          "summary": 7
+          "details": 39,
+          "summary": 39
         },
         "blocks": {
           "worked-example": 14,
-          "checkpoint": 7,
+          "checkpoint": 38,
           "importance": 34,
           "rating": 34,
           "source": 38
@@ -4798,7 +4800,7 @@
         "headings": [
           {
             "level": 2,
-            "title": "开始学习：本周要解决什么问题"
+            "title": "Learning goals（学习目标）"
           },
           {
             "level": 3,
@@ -4814,7 +4816,7 @@
           },
           {
             "level": 2,
-            "title": "单元一 · 集合与运算：把“有多符合”写成数学"
+            "title": "Fuzzy sets（模糊集）与隶属度"
           },
           {
             "level": 3,
@@ -4842,7 +4844,7 @@
           },
           {
             "level": 2,
-            "title": "单元一 · 从隶属函数提取结构"
+            "title": "Fuzzy set structure（模糊集结构）"
           },
           {
             "level": 3,
@@ -4862,7 +4864,7 @@
           },
           {
             "level": 2,
-            "title": "单元一 · 运算、数量与模糊程度"
+            "title": "Fuzzy operations（模糊运算）"
           },
           {
             "level": 3,
@@ -4886,7 +4888,7 @@
           },
           {
             "level": 2,
-            "title": "单元一 · Fuzzy relation（模糊关系）与合成"
+            "title": "Fuzzy relations（模糊关系）与合成"
           },
           {
             "level": 3,
@@ -4902,7 +4904,7 @@
           },
           {
             "level": 2,
-            "title": "单元二 · 推理与控制：语言怎样变成动作"
+            "title": "Fuzzy inference（模糊推理）与控制"
           },
           {
             "level": 3,
@@ -4922,7 +4924,7 @@
           },
           {
             "level": 2,
-            "title": "单元二 · Defuzzification（去模糊化）：输出一个可执行数值"
+            "title": "Defuzzification（去模糊化）"
           },
           {
             "level": 3,
@@ -4934,7 +4936,7 @@
           },
           {
             "level": 2,
-            "title": "单元二 · Electrical heater（电加热器）：完整走完一次推理"
+            "title": "Electrical heater example（电加热器案例）"
           },
           {
             "level": 3,
@@ -4954,7 +4956,7 @@
           },
           {
             "level": 2,
-            "title": "单元二 · Type-2 fuzzy system（二型模糊系统）：连隶属度也不确定时"
+            "title": "Type-2 fuzzy system（二型模糊系统）"
           },
           {
             "level": 3,
@@ -4970,11 +4972,11 @@
           },
           {
             "level": 2,
-            "title": "综合练习：从算得出到解释得清"
+            "title": "Practice（综合练习）"
           },
           {
             "level": 2,
-            "title": "来源索引、覆盖与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -5315,19 +5317,20 @@
       },
       "images": [],
       "transformations": [
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 10 SVGs."
       ]
     },
     {
       "id": "11",
       "title": "进化计算、遗传算法与编码设计",
-      "filename": "CS5486-Week11-学习教材.html",
-      "originalSha256": "af5eae0c68aa0beb6e7027da4917d8a1d4e458e4c57787129d31d0eb646618cc",
-      "importedSha256": "1a3c14775c97e3898402a2d22162257cdd7fe159e6da397d0b00a9b1396eb0f9",
-      "subtitle": "从候选解与适应度出发，手算一代GA，再理解汉诺塔移动序列与8–3–8网络参数搜索。",
+      "filename": "chapters/week11.html",
+      "originalSha256": "77159e047be08d27e3e5bde492c1cf62af7eba39e131d8f70eefd57630039356",
+      "importedSha256": "39886f78b5d0f80d38710cb925c035185aabef6878fec0c39232bfb778ce7735",
+      "subtitle": "编码、选择、交叉与变异怎样共同改变候选解群体？",
       "baseline": {
-        "text": "2af085ccff54dec69878a9b6b7303e6b3f6bd048db25aa825f1d234bb4e40e7d",
-        "header": "f63ec143938348ee8023493b5955f8305b609f3cefaa3050d9edcca4dd646595",
+        "text": "ee5213299005bc0cd53aad82c752d9d79ee5f62b195596665dff17a17f37de1b",
+        "header": "4fe034afe081397e264df84bc7578c6d65a75d4d6560dec79d4c0e77f42326bc",
         "counts": {
           "h2": 10,
           "h3": 29,
@@ -5336,24 +5339,24 @@
           "svg": 4,
           "img": 1,
           "table": 14,
-          "details": 13,
-          "summary": 13
+          "details": 36,
+          "summary": 36
         },
         "blocks": {
           "worked-example": 10,
-          "checkpoint": 13,
+          "checkpoint": 35,
           "importance": 29,
           "rating": 29,
-          "source": 33
+          "source": 34
         },
         "headings": [
           {
             "level": 2,
-            "title": "开始之前：本周要学会什么"
+            "title": "Learning goals（学习目标）"
           },
           {
             "level": 2,
-            "title": "一、先把优化问题说清楚"
+            "title": "Optimization basics（优化基础）"
           },
           {
             "level": 3,
@@ -5369,7 +5372,7 @@
           },
           {
             "level": 2,
-            "title": "二、Evolutionary computation（进化计算）如何组织搜索"
+            "title": "Evolutionary computation（进化计算）"
           },
           {
             "level": 3,
@@ -5385,7 +5388,7 @@
           },
           {
             "level": 2,
-            "title": "三、Representation（表示）与 Fitness（适应度）：别把四种对象混在一起"
+            "title": "Representation and fitness（表示与适应度）"
           },
           {
             "level": 3,
@@ -5401,7 +5404,7 @@
           },
           {
             "level": 2,
-            "title": "四、Selection（选择）与 Genetic operators（遗传算子）"
+            "title": "Selection and genetic operators（选择与遗传算子）"
           },
           {
             "level": 3,
@@ -5421,7 +5424,7 @@
           },
           {
             "level": 2,
-            "title": "五、完整示范：手算一代小种群"
+            "title": "One generation（一代演化）"
           },
           {
             "level": 3,
@@ -5457,7 +5460,7 @@
           },
           {
             "level": 2,
-            "title": "六、Towers of Hanoi（汉诺塔）：编码一条能执行的路径"
+            "title": "Towers of Hanoi（汉诺塔）"
           },
           {
             "level": 3,
@@ -5485,7 +5488,7 @@
           },
           {
             "level": 2,
-            "title": "七、Encoder-decoder design（编码器—解码器设计）：用GA搜索网络参数"
+            "title": "Encoder-decoder design（编码器—解码器设计）"
           },
           {
             "level": 3,
@@ -5509,23 +5512,23 @@
           },
           {
             "level": 2,
-            "title": "八、综合练习：把机制迁移到稍有变化的问题"
+            "title": "Practice（综合练习）"
           },
           {
             "level": 3,
-            "title": "练习A｜Fitness scaling（适应度缩放）与轮盘赌"
+            "title": "Fitness scaling（适应度缩放）练习"
           },
           {
             "level": 3,
-            "title": "练习B｜Crossover and mutation（交叉与变异）的追踪"
+            "title": "Crossover and mutation（交叉与变异）练习"
           },
           {
             "level": 3,
-            "title": "练习C｜Application design（应用设计）中的证据边界"
+            "title": "Application design（应用设计）练习"
           },
           {
             "level": 2,
-            "title": "来源索引与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           }
         ],
         "math": [
@@ -5563,8 +5566,7 @@
         }
       ],
       "transformations": [
-        "Replace local absolute path with 资料根目录; teaching content unchanged.",
-        "Add stable anchors to 6 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 4 SVGs.",
         "Extract 1 PNG images without recompression; retain pixel dimensions and alt text."
       ]
@@ -5572,13 +5574,13 @@
     {
       "id": "12",
       "title": "群体智能、粒子群优化与全课程整合",
-      "filename": "CS5486-Week12-学习教材.html",
-      "originalSha256": "b3bb7501ecadbfd7d0edb16f5dfc61de8c62e7ef0d24063abc8529379f30a180",
-      "importedSha256": "6978e5a6ba4d8ea2b8b444a4a2a1d7754dec66e14925bec38db57094e8004437",
-      "subtitle": "从基础理解 PSO，完成一轮可复核计算，再用证据解读搜索实验。",
+      "filename": "chapters/week12.html",
+      "originalSha256": "bcd747125b4c9102cc2af4f64235d27ad9fcbfcf1832cb8ab9c02013eefe8ce6",
+      "importedSha256": "a93ce77cbe5e64fc8fb47be5787ea96a299d8bf8b22d3bc2a0f4f1c16ec6cb5a",
+      "subtitle": "粒子怎样利用惯性与两种最好位置；怎样选择和组合全课方法？",
       "baseline": {
-        "text": "e0e483b25bc1347ea00928c321bca50abad076dc06efcc621e7f200746c29a14",
-        "header": "9faacc55bb3dd6704db9809e8bca75085cc2a79f7012b1a1260c8e758cfbb301",
+        "text": "03d09927f3281359ece5f4929082cdc73c758ccac40e83c7df23517e7bd95b08",
+        "header": "35a02838fccad9a54ba21431d7f2c494cb620229028c5ae83a97e5a8afa9e5c3",
         "counts": {
           "h2": 10,
           "h3": 24,
@@ -5587,12 +5589,12 @@
           "svg": 2,
           "img": 8,
           "table": 13,
-          "details": 9,
-          "summary": 9
+          "details": 29,
+          "summary": 29
         },
         "blocks": {
           "worked-example": 7,
-          "checkpoint": 9,
+          "checkpoint": 28,
           "importance": 25,
           "rating": 25,
           "source": 26
@@ -5600,11 +5602,11 @@
         "headings": [
           {
             "level": 2,
-            "title": "1 · 本周要解决的问题"
+            "title": "Learning goals（学习目标）"
           },
           {
             "level": 2,
-            "title": "2 · 够用的前置知识"
+            "title": "Prerequisites（必要前置）"
           },
           {
             "level": 3,
@@ -5624,7 +5626,7 @@
           },
           {
             "level": 2,
-            "title": "3 · 从群体启发到可计算的状态"
+            "title": "Swarm intelligence（群体智能）"
           },
           {
             "level": 3,
@@ -5640,7 +5642,7 @@
           },
           {
             "level": 2,
-            "title": "4 · 一轮 PSO 怎样发生"
+            "title": "PSO update（粒子群更新）"
           },
           {
             "level": 3,
@@ -5664,7 +5666,7 @@
           },
           {
             "level": 2,
-            "title": "5 · 完整手算：两只二维粒子的一轮搜索"
+            "title": "Worked example（两只二维粒子的一轮搜索）"
           },
           {
             "level": 4,
@@ -5684,7 +5686,7 @@
           },
           {
             "level": 2,
-            "title": "6 · 把八张 Global Optimization 图读成一次搜索"
+            "title": "Global optimization（全局优化）图像解读"
           },
           {
             "level": 3,
@@ -5696,7 +5698,7 @@
           },
           {
             "level": 2,
-            "title": "7 · Schwefel 示例：从公式读到实验记录"
+            "title": "Schwefel’s function（Schwefel 函数）示例"
           },
           {
             "level": 3,
@@ -5712,7 +5714,7 @@
           },
           {
             "level": 2,
-            "title": "8 · 全课程整合：表示、更新与任务选择"
+            "title": "Course integration（全课程整合）"
           },
           {
             "level": 3,
@@ -5732,7 +5734,7 @@
           },
           {
             "level": 2,
-            "title": "9 · 练习与讲解答案"
+            "title": "Practice（练习与讲解答案）"
           },
           {
             "level": 3,
@@ -5744,7 +5746,7 @@
           },
           {
             "level": 2,
-            "title": "10 · 来源索引与资料限制"
+            "title": "Sources and limitations（来源与资料限制）"
           },
           {
             "level": 3,
@@ -6025,7 +6027,7 @@
         }
       ],
       "transformations": [
-        "Add stable anchors to 4 headings.",
+        "Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.",
         "Namespace references within 2 SVGs.",
         "Extract 8 PNG images without recompression; retain pixel dimensions and alt text."
       ]

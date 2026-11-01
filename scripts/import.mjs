@@ -1,18 +1,45 @@
-import { root, read, json, write, sha, all, attr, set, text, norm, article, headings, fingerprint, topics, args, parse, serialize, fs, path } from './lib.mjs';
+import { root, read, json, write, sha, all, attr, set, text, norm, article, headings, fingerprint, topics, args, parse, serialize, serializeOuter, fs, path } from './lib.mjs';
 
 const options = args();
-const source = path.resolve(root, options.source || '../学习笔记');
+const source = path.resolve(root, options.source || '../textbook');
 const selected = options.week === undefined ? Array.from({ length: 12 }, (_, i) => i + 1) : [Number(options.week)];
 if (selected.some(n => !Number.isInteger(n) || n < 1 || n > 12)) throw new Error('--week must be 01–12');
+let bookIndex;
+try { bookIndex = JSON.parse(await fs.readFile(path.join(source, 'textbook-index.json'), 'utf8')); }
+catch (e) { if (e.code !== 'ENOENT') throw e; }
+if (bookIndex && (bookIndex.schema_version !== 1 || bookIndex.generated_by !== 'learning-notes' || bookIndex.entry !== 'index.html' || !Array.isArray(bookIndex.pages))) throw new Error('Invalid learning-notes textbook index');
+const realSource = await fs.realpath(source);
+async function confinedFile(relative, from = realSource) {
+  if (typeof relative !== 'string' || /[?#\\]/.test(relative) || path.isAbsolute(relative) || /^[a-z][a-z0-9+.-]*:/i.test(relative)) throw new Error(`Unsafe textbook path: ${relative}`);
+  const target = path.resolve(from, relative);
+  if (!target.startsWith(realSource + path.sep) || await fs.realpath(target) !== target) throw new Error(`Textbook path escapes root or contains symlink: ${relative}`);
+  if (!(await fs.stat(target)).isFile()) throw new Error(`Not a textbook file: ${relative}`);
+  return target;
+}
+if (bookIndex) {
+  const entry = bookIndex.pages.filter(p => p.path === 'index.html');
+  if (entry.length !== 1 || sha(await fs.readFile(await confinedFile('index.html'))) !== entry[0].sha256) throw new Error('Textbook index entry hash mismatch');
+}
 let manifest = { version: 1, weeks: [] };
 try { manifest = await json('source/manifest.json'); } catch (e) { if (e.code !== 'ENOENT') throw e; }
 
 for (const week of selected) {
   const id = String(week).padStart(2, '0');
-  const filename = `CS5486-Week${id}-学习教材.html`;
-  const input = await fs.readFile(path.join(source, filename));
-  const document = parse(input.toString('utf8'));
-  const changes = [];
+  const filename = bookIndex ? `chapters/week${id}.html` : `CS5486-Week${id}-学习教材.html`;
+  const inputPath = bookIndex ? await confinedFile(filename) : path.join(source, filename);
+  const input = await fs.readFile(inputPath);
+  let document = parse(input.toString('utf8'));
+  if (bookIndex) {
+    const entries = bookIndex.pages.filter(p => p.path === filename);
+    if (entries.length !== 1 || sha(input) !== entries[0].sha256) throw new Error(`${filename}: textbook index hash mismatch`);
+    const markers = all(document, n => n.tagName === 'meta' && attr(n, 'name') === 'generator' && attr(n, 'content') === 'learning-notes textbook-v2');
+    const styles = all(document, n => n.tagName === 'style');
+    const headers = all(document, n => (attr(n, 'class') || '').split(/\s+/).includes('book-header'));
+    const bodies = all(document, n => (attr(n, 'class') || '').split(/\s+/).includes('textbook-body'));
+    if (markers.length !== 1 || styles.length !== 1 || headers.length !== 1 || bodies.length !== 1 || /@import|url\s*\(/i.test(text(styles[0]))) throw new Error(`${filename}: unexpected textbook template`);
+    document = parse(`<!doctype html><html lang="zh-CN"><head>${serializeOuter(styles[0])}</head><body><main>${serializeOuter(headers[0])}${serializeOuter(bodies[0])}</main></body></html>`);
+  }
+  const changes = bookIndex ? ['Import the verified learning-notes textbook-v2 header, article and stylesheet; omit its navigation, scripts and embedded search index so the website supplies its own reader controls.'] : [];
   if (all(document, n => n.tagName === 'script' || (n.tagName === 'link' && attr(n, 'rel') === 'stylesheet') || n.attrs?.some(a => /^on/i.test(a.name) || a.name === 'srcset')).length) {
     throw new Error(`${filename}: new script or stylesheet/image-set dependency requires explicit import support`);
   }
@@ -58,9 +85,13 @@ for (const week of selected) {
   for (const n of all(document, n => n.tagName === 'img')) {
     const value = attr(n, 'src');
     const match = /^data:image\/png;base64,([A-Za-z0-9+/=\s]+)$/.exec(value || '');
-    if (!match) throw new Error(`${filename}: unsupported image dependency; inspect before publishing`);
-    const bytes = Buffer.from(match[1], 'base64');
-    if (bytes.toString('base64') !== match[1].replace(/\s/g, '')) throw new Error('Invalid base64 image');
+    let bytes;
+    if (match) {
+      bytes = Buffer.from(match[1], 'base64');
+      if (bytes.toString('base64') !== match[1].replace(/\s/g, '')) throw new Error('Invalid base64 image');
+    } else if (bookIndex && value) {
+      bytes = await fs.readFile(await confinedFile(value, path.dirname(inputPath)));
+    } else throw new Error(`${filename}: unsupported image dependency; inspect before publishing`);
     if (bytes.subarray(0, 8).toString('hex') !== '89504e470d0a1a0a') throw new Error('Invalid PNG signature');
     const hash = sha(bytes), width = bytes.readUInt32BE(16), height = bytes.readUInt32BE(20);
     const target = `source/assets/${hash}.png`;
@@ -81,7 +112,7 @@ for (const week of selected) {
     baseline, images, transformations: changes
   };
   manifest.weeks = manifest.weeks.filter(w => w.id !== id).concat(metadata).sort((a, b) => a.id.localeCompare(b.id));
-  if (sha(await fs.readFile(path.join(source, filename))) !== sha(input)) throw new Error('Original source changed while importing');
+  if (sha(await fs.readFile(inputPath)) !== sha(input)) throw new Error('Original source changed while importing');
   console.log(`Week ${id}: ${baseline.counts.math} formulas, ${baseline.counts.svg} SVGs, ${images.length} images; content verified`);
 }
 await write('source/manifest.json', manifest);
