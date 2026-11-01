@@ -1,0 +1,15 @@
+<section aria-labelledby="solution"><h2 id="solution">个人解答：实验设置与方法</h2>
+<p>以下内容整理自个人提交报告，是这次实验的实现与观察。原题要求见上文；参数选择、计时方法和评估网格属于本次解答的实验设计。</p>
+<p>固定随机种子 <code>rng(5486,'twister')</code>，在方形区域内独立抽取 100 个无噪声样本。保留两个输入坐标，不做标准化或单输入降维。两个模型共用这些样本与同一组平衡五折划分，以所有折外预测合并后的 MSE 选取参数。</p>
+<p>Gaussian 核统一为 <code>K(u,v) = exp(−‖u−v‖² / (2σ²))</code>，且 σ 始终为 1。MATLAB <code>fitrsvm</code> 使用 <code>KernelScale = sqrt(2)</code>；本次 LS-SVMlab 1.8 实际调用的 <code>kernel_matrix.m</code> 使用 <code>sig2 = 1</code>。这两个取值转换核函数的参数约定，并未改变题目指定的核宽。</p>
+<p>ε-SVR 使用 <code>fitrsvm</code> 的 SMO 求解器；LS-SVM 使用 <code>trainlssvm</code>、<code>simlssvm</code> 与 <code>'original'</code> 预处理模式，调用 MATLAB 线性求解路径，未使用 MEX 求解器。报告记录了候选参数及一次边界扩展规则；最优值只表示已测试范围内的最佳选择。</p>
+<div class="assignment-table-wrap" role="region" aria-label="参数选择结果" tabindex="0"><table><caption>共享五折划分后的参数选择</caption><thead><tr><th scope="col">模型</th><th scope="col">选定参数</th><th scope="col">五折 MSE</th></tr></thead><tbody><tr><th scope="row">ε-SVR</th><td>C = 100，ε = 0.0001</td><td>0.037405</td></tr><tr><th scope="row">LS-SVM</th><td>γ = 100000</td><td>0.037464</td></tr></tbody></table></div>
+<p>选定参数后，用全部 100 个样本重新训练，再在 101 × 101 的独立规则网格上评估。网格目标值只用于最终误差测量，不参与调参。</p></section>
+<section aria-labelledby="results"><h2 id="results">个人报告结果：准确性与速度</h2>
+<div class="assignment-table-wrap" role="region" aria-label="误差与速度比较" tabindex="0"><table><caption>同一组训练样本与 10,201 个网格点上的结果</caption><thead><tr><th scope="col">指标</th><th scope="col">ε-SVR</th><th scope="col">LS-SVM</th></tr></thead><tbody>
+<tr><th scope="row">训练 RMSE</th><td>0.000099</td><td>0.000106</td></tr><tr><th scope="row">网格 RMSE</th><td>0.134672</td><td>0.136610</td></tr><tr><th scope="row">网格 MAE</th><td>0.070355</td><td>0.071900</td></tr><tr><th scope="row">网格最大绝对误差</th><td>0.716636</td><td>0.717608</td></tr><tr><th scope="row">重新训练中位时间 / ms</th><td>89.7528</td><td>6.4052</td></tr><tr><th scope="row">网格预测中位时间 / ms</th><td>0.9061</td><td>4.5744</td></tr>
+</tbody></table></div>
+<p>在这次实验中，ε-SVR 的网格 RMSE 略低；LS-SVM 的训练中位时间约快 14.01 倍，而 ε-SVR 的预测中位时间约快 5.05 倍。训练误差不能代替对样本间隙和区域边缘的评估。</p>
+<p>每个模型先预热 5 次，再交替顺序测量 40 次独立训练与 40 次预测。训练计时包含初始化、核矩阵计算和求解，预测计时包含所需的核计算；调参、绘图与文件读写不计入。结果受样本规模、硬件与实现影响，不能直接推广为模型的一般速度排名。</p>
+<p>运行环境：MATLAB R2026b、Statistics and Machine Learning Toolbox 26.2、LS-SVMlab 1.8；macOS 26.6.2、Apple M3 Pro、18 GiB RAM。完整 IQR 与原始计时可查报告和 <code>results.mat</code>。</p></section>
+<section aria-labelledby="reproduce"><h2 id="reproduce">复现入口</h2><p>下载 MATLAB 脚本、报告、数据与下方依赖包，保留 <code>code/</code>、<code>data/</code>、<code>figures/</code>、<code>solution/</code>、<code>dependencies/</code> 的同级目录结构。将依赖包解压为 <code>dependencies/LSSVMlabv1_8_R2009b_R2011a/</code>。在具有 Statistics and Machine Learning Toolbox 的 MATLAB 中，进入作业目录后执行 <code>addpath('code'); run_assignment2</code>；脚本会设置 LS-SVMlab 路径并重新生成实验输出。下方仓库入口提供完整目录，单独下载时请自行保留代码、数据、图与依赖的分类；报告源文档中的图路径指向同一作业下的 <code>figures/</code>。</p></section>

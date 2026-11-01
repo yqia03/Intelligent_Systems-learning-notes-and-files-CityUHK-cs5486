@@ -1,0 +1,12 @@
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Homebrew) (preloaded format=xelatex 2026.3.4)  22 OCT 2026 13:12
+COLUMN 1 HEIGHT 516.1101pt
+COLUMN 2 HEIGHT 494.69115pt
+COLUMN 3 HEIGHT 433.63765pt
+COLUMN 4 HEIGHT 483.1155pt
+COLUMN 5 HEIGHT 495.06348pt
+COLUMN 6 HEIGHT 527.71698pt
+COLUMN 7 HEIGHT 494.80797pt
+COLUMN 8 HEIGHT 492.66798pt
+COLUMN 9 HEIGHT 496.17557pt
+COLUMN 10 HEIGHT 501.6934pt
+Final compilation: success; exactly 2 pages; no warnings, overfull/underfull boxes, missing characters or undefined references.

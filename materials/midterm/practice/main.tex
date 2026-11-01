@@ -1,0 +1,31 @@
+\input{preamble.tex}
+\begin{document}
+{\LARGE\bfseries CS5486 期中 Cheatsheet\par 配套复习题与详细解析}\par\medskip
+{\large 新课件实际第1--187页｜56道自拟复习题｜中文讲解}\par
+\textbf{怎么用这本册子：}先看题目并遮住分隔线后的解析，圈出标签类型、预测输出、损失和约束。到两页cheatsheet所列的“面／栏／编号”找定义或步骤，再自己写出中间结果。做完用“答卷答案、检查、易错、换题迁移”核对；最后完成Q52--Q56混合自测。
+
+\textbf{范围依据：}CS5486a-2026.pdf，共187页。179--182页为SVR，183--185页为LS-SVM回归推导，186页为分类应用，187页为短期预测。开头整学期大纲、人物与应用仅按实际概览深度处理；未展开的后续算法不进入题库。完整逐页覆盖表随项目提供。
+
+\textbf{重点来源与限制：}用户提供的老师消息提到LS-SVM、构建函数与求导、微分线代、方程组、模型共性区别；“最高／最大”所指未明确。本册通过目标极值与最大间隔练习覆盖这些能力，这是复习设计。所有题均为自拟复习题，不是真题，也不表示必考、命题概率、分值或官方评分点。
+
+\textbf{统一约定：}输入按列向量；神经网络目标通常记$z$，输出$a$或$\hat y$；SVM分类标签$y_i\in\{-1,+1\}$；SVR与LS-SVM目标$y_i\in\R$。偏置采用$+b$、阈值$b=-\theta$；$H(0)=1$除非题设另说；BP用$\delta=-\partial E/\partial u$。LS-SVM未知顺序$[\alpha;b]$。每题再列局部具体约定。
+
+\textbf{阅读导航：}
+\begin{center}\small\begin{tabular}{p{.44\linewidth}p{.44\linewidth}}
+\toprule 正面五栏 & 背面五栏\\\midrule
+1：F01/F02概念，M01--M03数学 & 1：S01间隔，S02对偶/KKT\\
+2：N01/N02逻辑与状态，D01，P01/P02 & 2：S03软间隔，K01核，D05\\
+3：A01 LMS，D02，B01前向 & 3：V01/V02 SVR与偏置\\
+4：B02 BP，B03动量/泛化 & 4：L01/L02 LS-SVM建模/系统\\
+5：R01/R02，D03/D04比较 & 5：L03例题/条件，D06与关键词索引\\\bottomrule
+\end{tabular}\end{center}
+
+\textbf{短答组织：}先完整句写共同任务／结构，再选目标、输出、训练方法等明确维度写差异，最后补适用条件与限制。\textbf{计算组织：}认量→写模型→必要时写目标约束→求导／最优条件→代入消元→回代→解释。
+
+\clearpage\tableofcontents
+\input{sections/01-foundations.tex}
+\input{sections/02-neural.tex}
+\input{sections/03-svm.tex}
+\input{sections/04-lssvm.tex}
+\input{sections/05-mixed.tex}
+\end{document}

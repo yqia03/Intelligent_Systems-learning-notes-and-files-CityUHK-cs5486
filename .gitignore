@@ -5,3 +5,5 @@ output/
 .DS_Store
 *.log
 .env*
+# Local prompt originals; reviewed publication copies live in materials/prompts/.
+/CS5486-*提示词.txt

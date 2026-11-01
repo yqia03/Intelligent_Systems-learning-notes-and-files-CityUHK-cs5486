@@ -1,0 +1,60 @@
+[
+  {
+    "id": "assignment-1",
+    "number": 1,
+    "title": "从线性分类器到 XOR 的非线性网络",
+    "summary": "用双极性感知机、ADALINE、Sigmoid MLP 与 Gaussian RBF，比较 OR、XOR 的可分性与训练收敛。",
+    "due": "10 月 8 日 23:59",
+    "points": 10,
+    "status": "已完成 · 报告已发布",
+    "completed": true,
+    "requirements": [
+      "使用双极性激活函数，分别训练感知机和 ADALINE 完成双变量 OR、XOR 分类；展示训练收敛过程并提交代码。",
+      "构建使用 Sigmoid 激活的多层感知机（MLP）完成 XOR 分类，给出四组输入的输出及收敛过程。",
+      "构建使用 Gaussian 基函数的径向基函数网络（RBF）完成 XOR 分类，同样给出四组输出及收敛过程。"
+    ],
+    "related": [{"week":"02","anchor":"perceptron","label":"感知机与线性可分性"},{"week":"03","anchor":"page-title","label":"ADALINE、MLP 与反向传播"},{"week":"04","anchor":"page-title","label":"RBF 网络"}],
+    "downloads": [{"path":"solution/assignment-1-report.pdf","label":"个人解答报告","format":"PDF","note":"已移除身份信息；保留代码、图与文字。原报告部分表格为 notebook 导出占位提示，无单独 notebook 归档。"}]
+  },
+  {
+    "id": "assignment-2",
+    "number": 2,
+    "title": "SVM 与 LS-SVM 的双输入函数回归",
+    "summary": "在 MATLAB 中拟合 z = sin(x + y)，固定 Gaussian 核宽，比较预测曲面、回归误差与运行时间。",
+    "due": "10 月 31 日 23:59",
+    "points": 10,
+    "status": "已完成 · 报告与代码已发布",
+    "completed": true,
+    "requirements": [
+      "使用 MATLAB 实现具有两个输入的 SVM 回归与 LS-SVM 回归，目标函数为 z = sin(x + y)。",
+      "在 [-5, 5] × [-5, 5] 内均匀随机抽取 100 个训练样本；两个模型均使用 σ = 1 的 Gaussian 核。",
+      "绘制训练样本与两个模型的三维拟合曲面，并比较准确性与计算速度。"
+    ],
+    "related": [{"week":"05","anchor":"svr","label":"SVR"},{"week":"05","anchor":"ls-sparsity","label":"LS-SVM"}],
+    "downloads": [
+      {"path":"solution/assignment-2-report.pdf","label":"个人解答报告","format":"PDF","note":"完整实验设置、曲面、误差与计时记录。"},
+      {"path":"solution/assignment-2-report.md","label":"报告源文档","format":"Markdown","note":"可编辑的解答正文。"},
+      {"path":"code/run_assignment2.m","label":"MATLAB 运行脚本","format":"MATLAB","note":"数据生成、参数选择、训练、评估与绘图。"},
+      {"path":"data/training_samples.csv","label":"训练样本","format":"CSV","note":"同一组 100 个双输入样本与目标值。"},
+      {"path":"data/comparison.csv","label":"指标比较表","format":"CSV","note":"误差与运行时间汇总。"},
+      {"path":"data/results.mat","label":"完整实验结果","format":"MAT","note":"交叉验证分数与原始计时等记录。"}
+    ]
+  },
+  {
+    "id": "assignment-3",
+    "number": 3,
+    "title": "竞争网络与 Hopfield 联想记忆",
+    "summary": "围绕 MAXNET、kWTA 与离散 Hopfield 网络，练习竞争选择及 3 × 3 图像的联想恢复。",
+    "due": "11 月 14 日 23:59",
+    "points": 10,
+    "status": "尚未完成 · 仅发布题目",
+    "completed": false,
+    "requirements": [
+      "对五神经元 MAXNET，使用侧向连接权重 −0.15 与输入 (0.1, 0.3, 0.5, 0.7, 0.9)，按原题要求研究网络的竞争过程。",
+      "对 kWTA 网络分别考察 k = 1、k = 2 的情况，其他条件以原题为准。",
+      "使用九神经元离散 Hopfield 网络存储原题所示的两幅 3 × 3 图像；按外积法构建权重，并用各有一个像素受到干扰的探测图像测试联想恢复。T、C 图案与探测图像请直接查看下方原题截图。"
+    ],
+    "related": [{"week":"06","anchor":"page-title","label":"竞争学习与 MAXNET"},{"week":"07","anchor":"page-title","label":"离散 Hopfield 网络"}],
+    "downloads": []
+  }
+]

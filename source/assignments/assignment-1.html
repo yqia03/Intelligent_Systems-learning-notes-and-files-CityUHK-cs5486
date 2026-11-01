@@ -1,0 +1,8 @@
+<section aria-labelledby="solution"><h2 id="solution">个人解答：模型与实验过程</h2>
+<p>以下为个人报告的中文导读，完整计算过程、代码和输出见报告 PDF。归档中只有这份报告，代码收录于报告内，没有单独发布原始 notebook 或脚本。原报告有部分嵌入输出保留为 IPython HTML 对象占位提示；本页未补造缺失的表格或图。</p>
+<p>报告先在双极性 OR、XOR 数据上训练感知机与 ADALINE，再用非线性模型处理 XOR。感知机按分类错误更新权重；ADALINE 优化线性输出的均方误差，因此需要同时观察损失和阈值化后的分类结果。</p>
+<p>MLP 使用 2–2–1 结构、Sigmoid 激活、全批量训练，学习率为 1，随机种子为 1，训练 20,000 轮。RBF 使用两个固定中心的 Gaussian 基函数，学习率为 0.5，训练 2,000 轮。这些设置属于本次报告的具体实现。</p></section>
+<section aria-labelledby="results"><h2 id="results">个人报告结果：收敛不等于正确分类</h2>
+<div class="assignment-table-wrap" role="region" aria-label="模型实验结果" tabindex="0"><table><caption>报告中的观察结果</caption><thead><tr><th scope="col">模型</th><th scope="col">OR</th><th scope="col">XOR</th></tr></thead><tbody><tr><th scope="row">感知机</th><td>四组输入均正确分类</td><td>权重循环；每轮在线更新有 4 次错误，轮末分类有 2 个错误</td></tr><tr><th scope="row">ADALINE</th><td>四组输入均正确分类；MSE 为 0.25</td><td>MSE 趋近 1，未解决 XOR 分类</td></tr><tr><th scope="row">Sigmoid MLP</th><td>本部分任务为 XOR</td><td>四组输入均正确分类</td></tr><tr><th scope="row">Gaussian RBF</th><td>本部分任务为 XOR</td><td>四组输入均正确分类</td></tr></tbody></table></div>
+<p>OR 的线性可分性使线性分类器能够完成任务；XOR 需要非线性表示。ADALINE 的损失可以收敛，同时分类仍不满足目标。报告中线性模型对 XOR 的 50% 准确率是该次实验的观察值，不是所有线性分类器的准确率上限。</p>
+<p>MLP 与 RBF 的轮数来自不同训练设置，不能据此得出一般性的运行速度排名。误差曲线与实现代码保留在报告中；四组具体数值的表格在原 PDF 中未正常呈现。</p></section>

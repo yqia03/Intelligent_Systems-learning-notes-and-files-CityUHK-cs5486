@@ -1,0 +1,16 @@
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026/Homebrew) (preloaded format=xelatex 2026.3.4)  22 OCT 2026 01:35
+LaTeX2e <2025-11-01>
+File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+\XeTeXLinkMargin=\dimen338
+File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
+LaTeX2e <2025-11-01>
+Output written on .build/practice/m
+Final compilation: success; no warnings, overfull/underfull boxes, missing characters or undefined references.

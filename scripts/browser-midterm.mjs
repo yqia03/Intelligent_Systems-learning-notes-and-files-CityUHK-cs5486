@@ -5,7 +5,7 @@ import {startPreview} from './preview.mjs';
 const opts=args(),engine=opts.engine||'chromium',preview=opts.url?null:await startPreview({port:0}),base=opts.url||preview.url;
 const browser=await ({chromium,webkit}[engine]).launch(),report={base,engine,scenarios:[],errors:[],resources:[]};
 const folder=`output/playwright/midterm-${opts.url?'online':'local'}-${engine}`;await fs.mkdir(path.join(root,folder),{recursive:true});
-const meta=await json('source/topics/midterm.json');
+const meta=await json('source/topics/midterm.json'),config=await json('site.config.json');
 const run=async(name,fn)=>{try{await fn();report.scenarios.push(name);console.log('PASS midterm',name);}catch(e){report.errors.push(`${name}: ${e.message}`);console.log('FAIL midterm',name,e.message);}};
 const watch=p=>{p.on('pageerror',e=>report.errors.push(e.message));p.on('console',m=>{if(m.type()==='error')report.errors.push(m.text());});p.on('response',r=>{if(r.url().startsWith(base)&&r.status()>=400)report.resources.push(`${r.status()} ${r.url()}`);});};
 const visit=async(p,route='midterm/')=>{const r=await p.goto(new URL(route,base).href,{waitUntil:'networkidle'});assert.equal(r.status(),200);await p.waitForFunction(()=>document.querySelector('#site-theme').textContent!=='主题');};
@@ -25,7 +25,7 @@ try{
   });await c.close();
  }
  const c=await browser.newContext({viewport:{width:1440,height:960},reducedMotion:'reduce'}),p=await c.newPage();watch(p);
- await run('home entry and twelve-week order',async()=>{await visit(p,'');assert.equal(await p.locator('.site-week-card').count(),12);await p.locator('[data-midterm-entry]').click();await p.waitForURL('**/midterm/');assert.equal(await p.locator('h1').count(),1);assert.equal(await p.locator('.site-header a[href="https://github.com/yqia03/cs5486-learning-notes"]').textContent(),'支持GitHub');});
+ await run('home entry and twelve-week order',async()=>{await visit(p,'');assert.equal(await p.locator('.site-week-card').count(),12);await p.locator('[data-midterm-entry]').click();await p.waitForURL('**/midterm/');assert.equal(await p.locator('h1').count(),1);assert.equal(await p.locator(`.site-header a[href="https://github.com/${config.repository}"]`).textContent(),'支持GitHub');});
  await run('Chinese English and nested-answer search',async()=>{
   for(const q of ['期中复习 微分','期中复习 LS-SVM','期中复习 2.72']){
    await p.locator('#site-search-open').click();await p.locator('#site-search-input').fill(q);await p.locator('#site-search-form').evaluate(e=>e.requestSubmit());

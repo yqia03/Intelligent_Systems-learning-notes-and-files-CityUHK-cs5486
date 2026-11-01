@@ -21,7 +21,7 @@ export async function buildMidterm({shell,url,manifest,references,searchIndex}) 
    if(!references.has(id))references.set(id,{id,file:decodeURIComponent(href.split('#')[0]).split('/').pop(),page:/#page=(\d+)/.exec(href)?.[1]||null,occurrences:[]});
    const ref=references.get(id);
    if(!ref.occurrences.some(o=>o.week==='midterm'&&o.anchor===current))ref.occurrences.push({week:'midterm',anchor:current});
-   set(n,'href',url('sources/')+'#'+id);set(n,'title','来源说明；PDF 实际页序，本站不托管原 PDF');
+   set(n,'href',url('sources/')+'#'+id);set(n,'title','来源说明与仓库原始资料；PDF 实际页序');
   }
  }
  // Record each knowledge block and each nested example/answer independently.

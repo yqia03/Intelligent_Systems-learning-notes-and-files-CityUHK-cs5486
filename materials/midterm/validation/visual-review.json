@@ -1,0 +1,71 @@
+{
+  "cheatsheet": {
+    "revision": "2026-10-22 Chinese procedural guidance; English answer-ready knowledge",
+    "pages": 2,
+    "columns_reviewed_at_300dpi": 10,
+    "whole_pages_reviewed_at_96dpi": 2,
+    "critical_checks": [
+      "Chinese calculation, forward-pass, checks, navigation, example setup and operational reminders; English answer-ready knowledge",
+      "No Q-number, practice or external-booklet references",
+      "Scalar BP gradients, old weights, signs and subscripts",
+      "All 30 block IDs retain original ten-column positions",
+      "LS-SVM four derivatives, block system, two-sample template and elimination",
+      "SVR free/no-free-SV bias conditions and epsilon-zero exception",
+      "Matrices, fractions, minus signs, Greek letters and CJK glyphs"
+    ],
+    "findings_remaining": [],
+    "rendered_ink_margins_mm_LTRB": [
+      [
+        5.997,
+        7.291,
+        6.115,
+        15.875
+      ],
+      [
+        5.997,
+        7.291,
+        6.115,
+        11.877
+      ]
+    ],
+    "body_font_tex_pt": 5.3,
+    "body_leading_tex_pt": 6.3,
+    "math_script_tex_pt": 4.5
+  },
+  "practice": {
+    "pdf": "CS5486-期中Cheatsheet-配套例题与解析.pdf",
+    "pages": 61,
+    "all_A4_portrait": true,
+    "page_images": 61,
+    "contact_sheets": 11,
+    "all_pages_reviewed_in_contact_sheets": true,
+    "full_page_zoom_reviewed": [
+      2,
+      3,
+      4,
+      25,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61
+    ],
+    "visual_findings": [],
+    "text_spans_outside_page": [],
+    "result": "PASS: no clipping, overlap, missing matrices, abnormal page breaks or blank PDF pages observed."
+  },
+  "last_edit_changed_pages": [
+    1,
+    2
+  ],
+  "last_edit": "Translated non-answer instructions to Chinese; preserved formulas, numbers, block IDs and locations. Reviewed both whole pages and all ten columns; the practice booklet is unchanged.",
+  "physical_print_test": false,
+  "last_edit_changed_document": "cheatsheet"
+}

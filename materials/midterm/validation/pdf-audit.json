@@ -1,0 +1,251 @@
+{
+  "checks": [
+    {
+      "name": "cheatsheet A4 and orientation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cheatsheet no blank pages",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cheatsheet all fonts embedded",
+      "passed": true,
+      "detail": 15
+    },
+    {
+      "name": "cheatsheet no excluded algorithms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "exactly two cheatsheet pages",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "five explicit column headings per page",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cheatsheet printable ink has at least 5mm margins",
+      "passed": true,
+      "detail": [
+        [
+          5.997,
+          7.291,
+          6.115,
+          15.875
+        ],
+        [
+          5.997,
+          7.291,
+          6.115,
+          11.877
+        ]
+      ]
+    },
+    {
+      "name": "all stable knowledge block IDs present",
+      "passed": true,
+      "detail": 30
+    },
+    {
+      "name": "cheatsheet has no external exercise references",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "practice A4 and orientation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "practice no blank pages",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "practice all fonts embedded",
+      "passed": true,
+      "detail": 26
+    },
+    {
+      "name": "practice no excluded algorithms",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "56 question bookmarks",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "all 56 questions appear",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "cheatsheet source has no practice macro or Q references",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "procedural and answer-navigation labels are Chinese",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "stable block IDs remain in the original ten columns",
+      "passed": true,
+      "detail": {
+        "正面第1栏": [
+          "F01",
+          "F02",
+          "M01",
+          "M02",
+          "M03"
+        ],
+        "正面第2栏": [
+          "N01",
+          "N02",
+          "D01",
+          "P01",
+          "P02"
+        ],
+        "正面第3栏": [
+          "A01",
+          "D02",
+          "B01"
+        ],
+        "正面第4栏": [
+          "B02",
+          "B03"
+        ],
+        "正面第5栏": [
+          "R01",
+          "R02",
+          "D03",
+          "D04"
+        ],
+        "背面第1栏": [
+          "S01",
+          "S02"
+        ],
+        "背面第2栏": [
+          "S03",
+          "K01",
+          "D05"
+        ],
+        "背面第3栏": [
+          "V01",
+          "V02"
+        ],
+        "背面第4栏": [
+          "L01",
+          "L02"
+        ],
+        "背面第5栏": [
+          "L03",
+          "D06"
+        ]
+      }
+    },
+    {
+      "name": "56 unique stable exercise IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "every exercise contains all required teaching fields",
+      "passed": true,
+      "detail": {}
+    },
+    {
+      "name": "coverage table includes each of 187 actual slide pages",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "pdfs": {
+    "cheatsheet": {
+      "pages": 2,
+      "size_points": [
+        841.89,
+        595.28
+      ],
+      "font_embedding": {
+        "XWUTNK+LMRoman8-Bold-Identity-H": true,
+        "HOBLCA+FandolSong-Bold-Identity-H": true,
+        "TTNEVO+FandolSong-Regular-Identity-H": true,
+        "PXNKHR+LMRoman6-Regular-Identity-H": true,
+        "OEOWXU+LMRoman7-Bold-Identity-H": true,
+        "TDPQAG+LMRoman5-Regular-Identity-H": true,
+        "OLGVTJ+LMRoman6-Bold-Identity-H": true,
+        "DNBXYS+LMRoman5-Bold-Identity-H": true,
+        "NQYOSM+CMR5": true,
+        "DHQAOM+CMMI5": true,
+        "ZAXCHX+CMSY5": true,
+        "EOROQJ+MSBM5": true,
+        "ATXDVR+CMEX7": true,
+        "NINLRY+LMRomanDemi10-Regular-Identity-H": true,
+        "PANGZI+CMSY6": true
+      },
+      "bookmarks": 0,
+      "rendered_ink_margins_mm_LTRB": [
+        [
+          5.997,
+          7.291,
+          6.115,
+          15.875
+        ],
+        [
+          5.997,
+          7.291,
+          6.115,
+          11.877
+        ]
+      ]
+    },
+    "practice": {
+      "pages": 61,
+      "size_points": [
+        595.28,
+        841.89
+      ],
+      "font_embedding": {
+        "FLGORK+LMRoman10-Regular-Identity-H": true,
+        "FRTNIL+FandolSong-Regular-Identity-H": true,
+        "BHCCSZ+LMRoman12-Bold-Identity-H": true,
+        "QOWYDE+FandolSong-Bold-Identity-H": true,
+        "DZNXIH+LMRoman12-Regular-Identity-H": true,
+        "VFLVMG+CMMI10": true,
+        "NDIIWT+CMR10": true,
+        "BXHIVH+CMMI8": true,
+        "ATSEWO+CMSY10": true,
+        "FEGBDS+MSBM10": true,
+        "XQYAMX+LMRoman10-Bold-Identity-H": true,
+        "XHFKZQ+CMMIB10": true,
+        "BRCXEU+CMR8": true,
+        "JQBANJ+CMEX10": true,
+        "GGQEHL+CMSY8": true,
+        "HODKZG+LMSans8-Regular-Identity-H": true,
+        "IMSNUA+CMBX10": true,
+        "DFHFLC+CMR6": true,
+        "JXMQEC+FandolKai-Regular-Identity-H": true,
+        "AJPWHW+CMMI6": true,
+        "SMVICU+LMRomanDemi10-Regular-Identity-H": true,
+        "BQZPIR+LMRoman8-Regular-Identity-H": true,
+        "NXMARV+CMSY6": true,
+        "GWSWVI+CMR7": true,
+        "QXJDYU+CMMI7": true,
+        "SBSCJW+CMSY7": true
+      },
+      "bookmarks": 57
+    }
+  },
+  "passed": true
+}

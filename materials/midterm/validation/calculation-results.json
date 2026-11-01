@@ -1,0 +1,1391 @@
+{
+  "scope": "Independent numerical checks for the paired CS5486 revision PDFs",
+  "source": "Handwritten examples; no answer generation or TeX parsing",
+  "total": 69,
+  "passed": 69,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Q04 matrix affine threshold",
+      "method": "Direct matrix product and H(u>=0)",
+      "computed": [
+        0.0,
+        -5.0,
+        1.0,
+        -7.0,
+        1.0,
+        0.0,
+        0.5
+      ],
+      "expected": [
+        0.0,
+        -5.0,
+        1.0,
+        -7.0,
+        1.0,
+        0.0,
+        0.5
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q05 quadratic gradient",
+      "method": "Central differences of scalar square loss",
+      "computed": [
+        -1.0000000000287557,
+        -0.9999999999177334
+      ],
+      "expected": [
+        -1,
+        -1
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q05 stationary minimum",
+      "method": "Independent direct least-squares fit",
+      "computed": [
+        2.9999999999999996,
+        -1.0,
+        9.860761315262648e-32
+      ],
+      "expected": [
+        3,
+        -1,
+        0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q05 Hessian",
+      "method": "Matrix product A.T @ A",
+      "computed": [
+        [
+          1.0,
+          2.0
+        ],
+        [
+          2.0,
+          5.0
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q06 unique system",
+      "method": "NumPy linear solve",
+      "computed": [
+        2.0,
+        1.0
+      ],
+      "expected": [
+        2,
+        1
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q06 inconsistent and infinite systems",
+      "method": "Coefficient/augmented ranks",
+      "computed": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "expected": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q07 M-P veto and gates",
+      "method": "Exhaustive Boolean truth tables",
+      "computed": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "expected": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q08 decoder",
+      "method": "Exhaustive eight rows rather than selected examples",
+      "computed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q09 multilayer XOR",
+      "method": "Direct Boolean hidden detectors plus OR",
+      "computed": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q10 synchronous recurrent states",
+      "method": "Frozen-old-state Boolean simulation",
+      "computed": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q12 batch half-square gradient",
+      "method": "Central differences of full batch objective",
+      "computed": [
+        -1.000000000139778,
+        -2.0000000000575113,
+        -3.0000000001972893
+      ],
+      "expected": [
+        -1,
+        -2,
+        -3
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q12 one batch update",
+      "method": "Independent forward evaluation after update",
+      "computed": [
+        0.1000000000139778,
+        0.20000000000575113,
+        0.30000000001972893,
+        0.4000000000337067,
+        0.5000000000254801,
+        1.3049999999415558
+      ],
+      "expected": [
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        1.305
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q13 perceptron OR",
+      "method": "Independent sequential threshold simulation",
+      "computed": [
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        -1.0,
+        5.0,
+        4.0
+      ],
+      "expected": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        -1,
+        5,
+        4
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q15 capacity counts",
+      "method": "Integer binomial computation",
+      "computed": [
+        14,
+        128,
+        256
+      ],
+      "expected": [
+        14,
+        128,
+        256
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q16 bipolar update",
+      "method": "Explicit encoded target and threshold output",
+      "computed": [
+        1.0,
+        1.0,
+        -1.0
+      ],
+      "expected": [
+        1,
+        1,
+        -1
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q17 LMS gradient",
+      "method": "Finite differences before any update",
+      "computed": [
+        -1.1000000000316312,
+        -2.19999999995224,
+        -1.1000000000316312
+      ],
+      "expected": [
+        -1.1,
+        -2.2,
+        -1.1
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q17 LMS update and loss",
+      "method": "Forward scalar residual after finite-difference step",
+      "computed": [
+        0.21000000000316313,
+        0.11999999999522401,
+        0.11000000000316312,
+        0.5599999999967743,
+        0.6050000000000001,
+        0.0968000000014193
+      ],
+      "expected": [
+        0.21,
+        0.12,
+        0.11,
+        0.56,
+        0.605,
+        0.0968
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q18 online batch mean distinction",
+      "method": "Separate direct objective gradients",
+      "computed": [
+        0.29000000000000004,
+        0.30000000001972893,
+        0.15000000000986446
+      ],
+      "expected": [
+        0.29,
+        0.3,
+        0.15
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q18 ADALINE XOR least squares",
+      "method": "Direct least-squares solution of augmented design",
+      "computed": [
+        -8.246146643278119e-17,
+        1.5416892535137301e-16,
+        5.377003757094578e-18
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q19 perceptron versus continuous residual",
+      "method": "Evaluate hard class error and linear residual separately at u=.2",
+      "computed": [
+        0.0,
+        0.8
+      ],
+      "expected": [
+        0.0,
+        0.8
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q20 MLP and skip-connection XOR forward",
+      "method": "Exhaustive forward threshold evaluation in each distinct architecture",
+      "computed": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q21 BP all-parameter gradient",
+      "method": "Central differences of a forward-only network loss",
+      "computed": [
+        -0.06249999997404165,
+        -0.06249999997404165,
+        -0.06249999997404165,
+        -0.12500000001747225
+      ],
+      "expected": [
+        -0.0625,
+        -0.0625,
+        -0.0625,
+        -0.125
+      ],
+      "absolute_tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "name": "Q21 BP synchronous update",
+      "method": "Subtract finite-difference gradient once from old parameters",
+      "computed": [
+        0.06249999997404165,
+        0.06249999997404165,
+        2.0624999999740417,
+        -0.8749999999825278
+      ],
+      "expected": [
+        0.0625,
+        0.0625,
+        2.0625,
+        -0.875
+      ],
+      "absolute_tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "name": "Q21 forward after update",
+      "method": "Forward-only recomputation; loss must decrease",
+      "computed": {
+        "hidden": 0.5312093733608276,
+        "output": 0.5549322045814719,
+        "old_loss": 0.125,
+        "new_loss": 0.09904267125935441
+      },
+      "expected": "0 <= new_loss < old_loss=1/8",
+      "passed": true
+    },
+    {
+      "name": "Q22 hidden branches and momentum",
+      "method": "Finite differences of two downstream branches, then signed momentum",
+      "computed": [
+        0.03520000000506451,
+        0.0062399999997467745,
+        0.4062399999997468
+      ],
+      "expected": [
+        0.0352,
+        0.00624,
+        0.40624
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q23 scaled activation derivatives",
+      "method": "Central differences of full original exponential expressions",
+      "computed": [
+        0.32000000005361073,
+        0.5000000000421334
+      ],
+      "expected": [
+        0.32,
+        0.5
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q24 equal training fits different interpolation",
+      "method": "Direct function evaluation at training points and unseen midpoint",
+      "computed": [
+        0.0,
+        1.0,
+        1.5,
+        0.5
+      ],
+      "expected": [
+        0.0,
+        1.0,
+        1.5,
+        0.5
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q25 RBF width conventions",
+      "method": "Direct squared-distance Gaussian evaluations for both denominator conventions",
+      "computed": [
+        0.36787944117144233,
+        0.36787944117144233,
+        1.0,
+        0.1353352832366127,
+        0.7788007830714049,
+        0.6065306597126334
+      ],
+      "expected": [
+        0.36787944117144233,
+        0.36787944117144233,
+        1.0,
+        0.1353352832366127,
+        0.7788007830714049,
+        0.6065306597126334
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q26 RBF feature solve",
+      "method": "Gaussian forward design plus independent least squares",
+      "computed": [
+        1.0,
+        0.5,
+        0.5,
+        1.0,
+        1.333333333333333,
+        -0.6666666666666667,
+        0.5605976101691427
+      ],
+      "expected": [
+        1.0,
+        0.5,
+        0.5,
+        1.0,
+        1.3333333333333333,
+        -0.6666666666666666,
+        0.560597610169143
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q27 Gaussian XOR mapping",
+      "method": "Direct two-dimensional squared distances",
+      "computed": [
+        -0.2353352832366128,
+        0.16424111765711535,
+        0.16424111765711535,
+        -0.2353352832366128
+      ],
+      "expected": [
+        -0.23533528323661268,
+        0.16424111765711535,
+        0.16424111765711535,
+        -0.23533528323661268
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q28 ELM fixed features",
+      "method": "Independent hidden forward matrix and least-squares output fit",
+      "computed": [
+        0.5,
+        0.5,
+        0.75,
+        0.25,
+        2.0,
+        -2.000000000000001,
+        -1.0000000000000007
+      ],
+      "expected": [
+        0.5,
+        0.5,
+        0.75,
+        0.25,
+        2.0,
+        -2.0,
+        -1.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q28 FLN XOR expansion",
+      "method": "Exhaustive explicit cross-product features",
+      "computed": [
+        0.0,
+        1.0,
+        1.0,
+        0.0
+      ],
+      "expected": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q31 scaled geometric margin",
+      "method": "Distances computed from both parameter scales",
+      "computed": [
+        5.0,
+        2.0,
+        0.4,
+        0.4
+      ],
+      "expected": [
+        5.0,
+        2.0,
+        0.4,
+        0.4
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q32 hard SVM primal",
+      "method": "Exhaustive direct primal feasibility/objective grid",
+      "computed": [
+        1.0,
+        0.0,
+        0.5
+      ],
+      "expected": [
+        1.0,
+        0.0,
+        0.5
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q33 hard SVM dual",
+      "method": "Independent one-dimensional dual search",
+      "computed": [
+        0.5,
+        0.5
+      ],
+      "expected": [
+        0.5,
+        0.5
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q34 support coefficients and degenerate boundary",
+      "method": "Direct labelled expansion and KKT products",
+      "computed": [
+        1.0,
+        -0.25,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "expected": [
+        1.0,
+        -0.25,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q35 soft slack and cost",
+      "method": "Direct minimal feasible nonnegative slack",
+      "computed": [
+        0.0,
+        0.0,
+        0.4,
+        1.0,
+        1.4,
+        7.6
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.4,
+        1.0,
+        1.4,
+        7.6
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q36 soft SVM boxed optimum",
+      "method": "Independent bounded dual grid",
+      "computed": [
+        0.25,
+        0.5,
+        0.375
+      ],
+      "expected": [
+        0.25,
+        0.5,
+        0.375
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q37 polynomial map identity",
+      "method": "Independent explicit feature dot versus scalar polynomial",
+      "computed": [
+        1.0,
+        0.9999999999999991,
+        121.0
+      ],
+      "expected": [
+        1.0,
+        1.0,
+        121.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q38 PSD and invalid Gram",
+      "method": "Symmetric eigensolver and negative quadratic witness",
+      "computed": [
+        3.0,
+        5.0,
+        -2.0
+      ],
+      "expected": [
+        3,
+        5,
+        -2
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q39 Gaussian classification prediction",
+      "method": "Kernel distances, labelled prediction, independent objectives",
+      "computed": [
+        0.8646647167633873,
+        1.1353352832366128,
+        1.1353352832366128,
+        0.1353352832366127,
+        0.1353352832366127
+      ],
+      "expected": [
+        0.8646647167633873,
+        1.1353352832366128,
+        1.1353352832366128,
+        0.1353352832366127,
+        0.1353352832366127
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q39 alternative width denominator",
+      "method": "Re-evaluate exponential with denominator sigma squared",
+      "computed": [
+        0.01831563888873418,
+        0.9816843611112658
+      ],
+      "expected": [
+        0.01831563888873418,
+        0.9816843611112658
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q41 SVR two slack sides",
+      "method": "Direct residual inequalities and epsilon-insensitive loss",
+      "computed": [
+        0.0,
+        0.0,
+        0.7,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4,
+        1.1
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.7,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4,
+        1.1
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q43 free SVR KKT and objectives",
+      "method": "Separate primal residual/slack cost versus kernel dual and complementarity",
+      "computed": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.125,
+        0.125
+      ],
+      "expected": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.125,
+        0.125
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q43 free SVR direct primal minimum",
+      "method": "Exhaustive 401 by 601 original-objective grid",
+      "computed": [
+        0.5,
+        0.125
+      ],
+      "expected": [
+        0.5,
+        0.125
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q44 no-free SVR KKT and objectives",
+      "method": "Separate primal residual/slack cost versus kernel dual and complementarity",
+      "computed": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.375,
+        0.375
+      ],
+      "expected": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.375,
+        0.375
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q44 no-free SVR direct primal minimum",
+      "method": "Exhaustive 401 by 601 original-objective grid",
+      "computed": [
+        0.5,
+        0.375
+      ],
+      "expected": [
+        0.5,
+        0.375
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q44 no-free bias interval",
+      "method": "All primal-grid minimizers at optimal w",
+      "computed": [
+        0.5,
+        1.0
+      ],
+      "expected": [
+        0.5,
+        1.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q44 epsilon zero both multipliers positive",
+      "method": "Explicit one-point primal/dual KKT witness",
+      "computed": [
+        0.0,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "LS-SVM gamma=1 independent primal solution",
+      "method": "Regularized primal normal equations in w,b; alpha obtained only afterwards from residual",
+      "computed": [
+        0.6666666666666667,
+        0.6666666666666666,
+        -0.6666666666666666,
+        0.6666666666666665
+      ],
+      "expected": [
+        0.6666666666666666,
+        0.6666666666666666,
+        -0.6666666666666666,
+        0.6666666666666666
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "LS-SVM gamma=1 block and stationarity check",
+      "method": "Back-substitute primal solution into course block system and finite-difference objective gradient",
+      "computed": [
+        0.0,
+        -4.440892098500626e-16,
+        -1.1102230246251565e-16,
+        -5.551115123125783e-11,
+        0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "name": "LS-SVM gamma=1 original Hessian",
+      "method": "Symmetric primal Hessian eigenvalues prove strict convexity",
+      "computed": [
+        1.0,
+        3.0
+      ],
+      "expected": "all eigenvalues positive",
+      "passed": true
+    },
+    {
+      "name": "LS-SVM gamma=2 independent primal solution",
+      "method": "Regularized primal normal equations in w,b; alpha obtained only afterwards from residual",
+      "computed": [
+        1.0,
+        0.5,
+        -1.0,
+        1.0
+      ],
+      "expected": [
+        1.0,
+        0.5,
+        -1.0,
+        1.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "LS-SVM gamma=2 block and stationarity check",
+      "method": "Back-substitute primal solution into course block system and finite-difference objective gradient",
+      "computed": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.1102230246251565e-10
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 2e-08,
+      "passed": true
+    },
+    {
+      "name": "LS-SVM gamma=2 original Hessian",
+      "method": "Symmetric primal Hessian eigenvalues prove strict convexity",
+      "computed": [
+        1.4384471871911697,
+        5.561552812808831
+      ],
+      "expected": "all eigenvalues positive",
+      "passed": true
+    },
+    {
+      "name": "Q50 nonlinear three-point LS-SVM",
+      "method": "Original squared-feature primal objective solved in w,b; forward residual check",
+      "computed": [
+        0.39999999999999997,
+        0.4,
+        0.19999999999999996,
+        -0.4,
+        0.19999999999999996,
+        0.8,
+        0.4,
+        0.8,
+        0.19999999999999996,
+        -0.4,
+        0.19999999999999996,
+        2.0,
+        0.19999999999999998
+      ],
+      "expected": [
+        0.4,
+        0.4,
+        0.2,
+        -0.4,
+        0.2,
+        0.8,
+        0.4,
+        0.8,
+        0.2,
+        -0.4,
+        0.2,
+        2.0,
+        0.2
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q50 nonlinear block back-substitution",
+      "method": "Back-substitute independently fitted coefficients into kernel block equations",
+      "computed": [
+        -1.1102230246251565e-16,
+        0.0,
+        -1.1102230246251565e-16,
+        -1.1102230246251565e-16
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q48 general gamma-transfer formula",
+      "method": "Independent primal normal solves at four unseen positive gamma values",
+      "computed": [
+        0.22222222222222224,
+        0.888888888888889,
+        0.39999999999999997,
+        0.8,
+        1.2,
+        0.4,
+        1.5555555555555556,
+        0.2222222222222222
+      ],
+      "expected": [
+        0.2222222222222222,
+        0.8888888888888888,
+        0.4,
+        0.8,
+        1.2,
+        0.4,
+        1.5555555555555556,
+        0.2222222222222222
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q52 three distinct update rules",
+      "method": "Hard decision plus separate finite-difference linear and sigmoid forward losses",
+      "computed": [
+        0.2,
+        0.1,
+        0.26999999999784957,
+        0.16999999999784957,
+        0.21040310638744658,
+        0.11040310638744658
+      ],
+      "expected": [
+        0.2,
+        0.1,
+        0.27,
+        0.17,
+        0.21040311,
+        0.11040311
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q52 sigmoid rounded gradient",
+      "method": "Central difference checks the full forward loss, without differentiating a hand-coded delta",
+      "computed": [
+        0.574442516811659,
+        0.1040310638744657,
+        0.1040310638744657
+      ],
+      "expected": [
+        0.57444252,
+        0.10403106,
+        0.10403106
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q52 LMS before and after losses",
+      "method": "Direct loss evaluation at the independently computed update",
+      "computed": [
+        0.24499999999999997,
+        0.15680000000240846
+      ],
+      "expected": [
+        0.245,
+        0.1568
+      ],
+      "absolute_tolerance": 1e-08,
+      "passed": true
+    },
+    {
+      "name": "Q53 wrong bias and corrected hard SVM",
+      "method": "Direct primal margins, two independent support-vector biases and objectives",
+      "computed": [
+        0.5,
+        -0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        4.0,
+        0.125,
+        0.125
+      ],
+      "expected": [
+        0.5,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        4.0,
+        0.125,
+        0.125
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q53 scaling invariance",
+      "method": "Re-evaluate functional and geometric margins after parameter scaling",
+      "computed": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "expected": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q54 invalid kernel versus solvable formal system",
+      "method": "Negative quadratic witness, eigensolver and direct augmented linear solve",
+      "computed": [
+        -2.0,
+        0.9999999999999999,
+        5.0,
+        -1.0,
+        0.9999999999999999,
+        1.0,
+        1.9999999999999998,
+        0.0,
+        -1.9999999999999998,
+        2.0
+      ],
+      "expected": [
+        -2,
+        1,
+        5,
+        -1,
+        1,
+        1,
+        2,
+        0,
+        -2,
+        2
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q54 formal residual relation",
+      "method": "Back-substitute without claiming an original feature-space optimization",
+      "computed": [
+        2.220446049250313e-16,
+        2.220446049250313e-16
+      ],
+      "expected": [
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q55 original multipliers epsilon=0",
+      "method": "Direct complementary-slackness and dual-objective evaluation",
+      "computed": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q55 original multipliers epsilon=0.5",
+      "method": "Direct complementary-slackness and dual-objective evaluation",
+      "computed": [
+        0.2,
+        0.2,
+        -0.4
+      ],
+      "expected": [
+        0.2,
+        0.2,
+        -0.4
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q55 corrected positive-width KKT certificate",
+      "method": "Explicit primal/dual zero-objective and complementary-slackness witness",
+      "computed": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "expected": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    },
+    {
+      "name": "Q56 regularized training versus held-out squared error",
+      "method": "Original primal normal solve followed by separate unregularized test evaluation",
+      "computed": [
+        2.0,
+        0.6666666666666665,
+        4.0,
+        2.0,
+        0.0,
+        4.0
+      ],
+      "expected": [
+        2.0,
+        0.6666666666666666,
+        4.0,
+        2.0,
+        0.0,
+        4.0
+      ],
+      "absolute_tolerance": 1e-09,
+      "passed": true
+    }
+  ]
+}

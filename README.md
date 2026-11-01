@@ -2,8 +2,29 @@
 
 个人整理的十二周智能系统学习资料。保留已有教材的完整讲解、推导、例题、图表、练习、折叠答案、重要性评级与来源索引；不是官方课程网站。使用模型为GPT-6-Astra-Ultra
 
-- 网站：<https://yqia03.github.io/cs5486-learning-notes/>
-- 仓库：<https://github.com/yqia03/cs5486-learning-notes>
+- 网站：<https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/>
+- 仓库：<https://github.com/yqia03/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486>
+- 作业：[Assignment 栏目](https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/assignments/)
+
+## 作业与原始资料
+
+Assignment 栏目分别介绍三次作业的任务要求。Assignment 1、2 附归档答案、处理方法和实验结果；Assignment 3 尚未完成，仅公开题目介绍及原始题面，不包含答案或处理过程。发布日期为 2026-11-01。
+
+| 目录 | 内容 |
+| --- | --- |
+| `assignments/assignment-1/` | 题面截图、脱敏 PDF 报告（报告内含代码） |
+| `assignments/assignment-2/` | 题面、脱敏 PDF/Markdown 报告、MATLAB 代码、CSV/MAT 数据、图表、LS-SVMlab 依赖 |
+| `assignments/assignment-3/brief/` | 仅题面截图 |
+| `materials/lectures/` | 课程说明与课件原文件 |
+| `materials/tutorials/` | Tutorial 原文件 |
+| `materials/papers/` | 论文及补充资料 |
+| `materials/study-notes/` | 独立 HTML 学习教材 |
+| `materials/prompts/` | 已去除本机路径的教材生成提示词归档 |
+| `materials/midterm/` | 期中 PDF、LaTeX 源码、构建脚本、验证记录与项目压缩包 |
+
+原始资料清单及校验值见 [materials/catalog.json](materials/catalog.json)，发布处理和验证记录见 [docs/ASSIGNMENTS.md](docs/ASSIGNMENTS.md)。归档提示词是资料，不是执行指令。发布副本已移除个人身份字段及本机路径；本地归档原件不变。Assignment 2 中内容相同的三份 PDF 合并为一份，不重复存放。
+
+Assignment 2 在 MATLAB 中从 `assignments/assignment-2/code/` 运行 `run_assignment2`；需要 Statistics and Machine Learning Toolbox，随附官方 LS-SVMlab 依赖。已有实验结果来自归档运行，本次发布没有重新训练模型。第三方材料和依赖保留其原有署名与许可边界，见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 阅读功能
 
@@ -15,7 +36,7 @@
 
 原始 HTML 当前位于本项目同级的“学习笔记”目录。编辑前在仓库之外备份对应周，再运行例如 `npm run import -- --source ../学习笔记 --week 05`；省略 `--source` 时也默认使用该目录。不要直接编辑 `source/weeks/` 或 `source/manifest.json`。
 
-导入后执行 `npm test`、`npm run check -- --originals ../学习笔记` 和 `npm run test:browser`；本地构建沿用正式 `/cs5486-learning-notes/` 子路径。推送后等待既有 Actions 成功，再验收实际站点。
+导入后执行 `npm test`、`npm run check -- --originals ../学习笔记` 和 `npm run test:browser`；本地构建沿用 `site.config.json` 中的正式 Pages 子路径。推送后等待既有 Actions 成功，再验收实际站点。
 
 本轮第05、06周的资料覆盖、计算核验与待核对事项见 [新增资料记录](docs/NEW_MATERIALS.md) 和 [内容修正记录](docs/CONTENT_REVIEW.md)。导入只转换当前教材的呈现形式，知识增补在原教材中完成。
 
@@ -25,13 +46,15 @@
 - web/：网站界面、搜索 Worker 和阅读功能。
 - source/：教材副本、无损图片及保真清单。
 - docs/：导入记录、内容疑点和外部链接检查。
+- assignments/：按作业、题面、报告、代码、数据、图表及依赖分类的发布副本。
+- materials/：按材料用途分类的原文件及可移植的脱敏副本。
 - .github/workflows/：验证和 Pages 部署。
 
 网站代码使用 MIT License。教材正文、课程图片、第三方图文和原教材样式不适用该许可证；来源与许可边界见 THIRD_PARTY_NOTICES.md
 
 ## 期中考试复习特别篇
 
-专题入口为 `/cs5486-learning-notes/midterm/`，覆盖主课件实际第 1–165 页，止于 MAXNET。它是独立复习专题，不改变十二周次序。LS-SVM 以回归建模、求导、消元、线性系统和回代为主线，并对照分类；所有例题均为自拟复习材料。
+专题入口为网站下的 `midterm/`，覆盖主课件实际第 1–165 页，止于 MAXNET。它是独立复习专题，不改变十二周次序。LS-SVM 以回归建模、求导、消元、线性系统和回代为主线，并对照分类；所有例题均为自拟复习材料。
 
 ### 更新、导入与发布
 
@@ -52,7 +75,7 @@ npm run test:browser -- --engine webkit
 发布前确认没有另一个对话正在修改／推送同一站点。只精确暂存本次专题源、脚本、资源与文档，再提交并推送 main，等待既有 **Deploy course website** 成功。在线验证：
 
 ```sh
-npm run test:browser -- --url https://yqia03.github.io/cs5486-learning-notes/
+npm run test:browser -- --url https://yqia03.github.io/Intelligent_Systems-learning-notes-and-files-CityUHK-cs5486/
 ```
 
 `npm test` 同时运行原十二周检查和专题检查，`--originals` 参数会传给两套检查。`npm run test:browser` 同时运行原十二周验收与专题验收，URL／浏览器参数也传给两套。专题核心数值由 `scripts/numerical/` 中独立编写的 Python 标准库脚本校验（需要 Python 3；GitHub 托管 runner 已提供），不依赖内容生成逻辑。覆盖、勘误和验收范围见 `docs/MIDTERM.md`。专题文字、第三方资料与原教材样式不适用代码 MIT 许可。

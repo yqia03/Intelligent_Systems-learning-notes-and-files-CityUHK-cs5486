@@ -1,0 +1,10 @@
+{
+  "revision": "Chinese procedural guidance",
+  "source_archive_extracted": true,
+  "fresh_build_succeeded": true,
+  "pages": 2,
+  "text_matches_deliverable": true,
+  "pixels_match_deliverable": true,
+  "compiler_warnings": [],
+  "practice_pdf_sha256": "54bd30d74aa6be35167ae90b460654aa279191e580f05af4e3f90e2689eda5f1"
+}

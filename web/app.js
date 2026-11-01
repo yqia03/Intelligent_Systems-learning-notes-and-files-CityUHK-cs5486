@@ -74,7 +74,7 @@ function render(data) {
   for (const item of data.results) {
     const li = document.createElement('li'), a = document.createElement('a'), label = document.createElement('span'), title = document.createElement('strong'), snippet = document.createElement('p');
     const destination = new URL(item.href, location.origin); destination.searchParams.set('q', input.value.trim());
-    a.href = destination.href; label.className = 'site-result-label'; label.textContent = item.kind === 'topic' ? `期中复习 · ${item.title}` : `第 ${item.week} 周 · ${item.weekTitle}`;
+    a.href = destination.href; label.className = 'site-result-label'; label.textContent = item.kind === 'assignment' ? `${item.label} · 课程作业` : item.kind === 'topic' ? `期中复习 · ${item.title}` : `第 ${item.week} 周 · ${item.weekTitle}`;
     markText(title, item.title, data.terms); markText(snippet, item.snippet, data.terms);
     a.append(label);
     if (item.breadcrumb && item.breadcrumb !== item.title) {

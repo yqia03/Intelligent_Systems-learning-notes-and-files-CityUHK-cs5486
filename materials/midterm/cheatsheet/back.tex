@@ -1,0 +1,234 @@
+\sheethead{背面：SVM、SVR与LS-SVM}{正文5.3pt｜英文答句＋中文操作｜蓝=概念；绿=比较；橙=计算；红=条件}
+\noindent
+\columnstart
+\colhead{背面第1栏｜间隔 / KKT}
+\block{calcorange}{S01}{SVM: maximum margin and primal}
+\findit{margin / hyperplane / maximum / separable $\to$ S01; dual / support vector / KKT $\to$ S02.}
+\textbf{答卷句：} Hard SVM selects a hyperplane with the maximum geometric margin. Hard margin requires separability in the chosen feature space. It can be outlier-sensitive and does not guarantee the best test performance.
+
+\textbf{模型：} $\phi_i,w\in\R^h$, $b\in\R$, labels $y_i=\pm1$.
+\[g(x)=w^T\phi(x)+b,\qquad\hat y=\operatorname{sign}g(x).\]
+A linear SVM uses $\phi(x)=x$. The decision boundary is $g=0$；此时按题目给定约定判类。
+$g>0$ predicts $+1$; $g<0$ predicts $-1$. The weight vector is normal to the hyperplane; the bias shifts its position. With bias, the score is an affine function.
+\textbf{Functional margin:} $m_i=y_ig_i$.
+\textbf{Geometric margin:} $\rho_i=m_i/\|w\|$.
+For $w\ne0$, distance is $|g|/\|w\|$. Positive scaling of $(w,b)$ preserves geometry/classification, but changes functional margins.
+
+规范化：将最近训练样本的函数间隔设为$m=1$。 The support planes are $g=\pm1$; each lies $1/\|w\|$ from the boundary.
+\[\max\ \frac2{\|w\|}\quad\Longleftrightarrow\quad
+\boxed{\min_{w,b}\frac12\|w\|^2},\qquad m_i\ge1.\]
+\textbf{Total width:} $2/\|w\|$ under this normalization. The primal minimizes squared norm; it maximizes geometric margin.
+Unlike a perceptron, SVM optimizes a margin criterion rather than accepting any separating boundary.
+
+{\centering\begin{tikzpicture}[x=7mm,y=4mm,font=\fontsize{5.3}{6.3}\selectfont]
+\draw[->] (-2,0)--(2.4,0) node[right]{$x$};
+\draw[dashed] (-1,-.8)--(-1,1.2);
+\draw[thick,defblue] (0,-.8)--(0,1.2);
+\draw[dashed] (1,-.8)--(1,1.2);
+\node[anchor=east] at (-.9,1.5){$g=-1$};
+\node at (0,2){$g=0$};
+\node[anchor=west] at (.9,1.5){$g=1$};
+\node at (-1,0){$\circ$};\node at (1,0){$+$};
+\draw[<->](-1,-.6)--(1,-.6) node[midway,below]{$2/\|w\|$};
+\end{tikzpicture}\par}
+\textbf{操作：}列出每个$y_i g_i\ge1$；联立紧约束求$w,b$；回代全体样本；再算宽度；用KKT确认最优。
+\mini{$(-1,-1),(1,+1)$, $g=wx+b$: $w-b\ge1$, $w+b\ge1$, 得到$w\ge1+|b|$。最优解：$w=1,b=0$；总宽$2$；原始目标值$1/2$。}
+\block{calcorange}{S02}{Dual, KKT and prediction}
+\textbf{答卷句：} Support vectors have nonzero dual coefficients and determine prediction. KKT combines feasibility, stationarity and complementary slackness. A margin point may have a zero coefficient.
+\[L=\tfrac12\|w\|^2+\sum_i\alpha_i(1-y_ig_i),\qquad\alpha_i\ge0.\]
+The Lagrangian is minimized over $w,b$ and maximized over $\alpha$.
+\[\begin{gathered}
+\partial_wL=0:\ w=\sum_i\alpha_i y_i\phi_i,\\
+\partial_bL=0:\ \sum_i\alpha_i y_i=0.
+\end{gathered}\]
+\[\max_\alpha D=\sum_i\alpha_i-\tfrac12\sum_{i,j}
+\alpha_i\alpha_jy_iy_jK_{ij},\]
+约束：$\alpha_i\ge0$，$y^T\alpha=0$；$K_{ij}=\phi_i^T\phi_j$。
+\textbf{逐项检查：} $m_i\ge1$; $\alpha_i\ge0$; 上面两条驻点式； $\alpha_i(m_i-1)=0$.
+\[m_i>1\Rightarrow\alpha_i=0,\qquad
+\alpha_i>0\Rightarrow m_i=1.\]
+\textbf{操作：}先求$\alpha$；选$\alpha_s>0$求$b$；多点核对；再计算新点分数。
+\[b=y_s-\sum_i\alpha_i y_iK(x_i,x_s),\]
+\[\boxed{g(x)=\sum_i\alpha_i\,\boxed{y_i}\,K(x_i,x)+b}.\]
+\mini{接S01：$\alpha_1=\alpha_2=a$， $D=2a-2a^2$. $D'=2-4a=0\Rightarrow a=1/2$; $D''=-4<0$. 对偶值$=$原始值$=1/2$。}
+\warn{分类预测中保留$y_i$。 Soft-margin bias recovery from the boundary equality requires $0<\alpha_s<C$.}
+\columnend\sepcol
+\columnstart
+\colhead{背面第2栏｜软间隔SVM / 核}
+\block{calcorange}{S03}{Soft margin: slack and C}
+\textbf{答卷句：} Soft-margin SVM permits penalized margin violations. Slack does not mean misclassification. Larger $C$ penalizes violations more heavily, without guaranteeing lower test error.
+\[\min\tfrac12\|w\|^2+C\sum_i\xi_i,\qquad C>0,\]
+\[m_i=y_ig_i\ge1-\xi_i,\qquad\xi_i\ge0.\]
+\textbf{操作：}先算$m_i=y_ig_i$，再逐点取最小可行松弛：
+最小松弛： $\boxed{\xi_i=\max(0,1-m_i)}$ (hinge loss).
+For minimum slacks: $m\ge1$: no violation; $0<m<1$: correct but inside the margin; $m=0$: decision boundary; $m<0$: misclassified, $\xi>1$.
+\mini{$m=(1.4,.4,0,-.3)\Rightarrow\xi=(0,.6,1,1.3)$. 代入目标：$J=\|w\|^2/2+C\sum\xi$。}
+沿用S02的对偶目标，并加$0\le\alpha_i\le C$及$y^T\alpha=0$。
+\[\alpha_i(m_i-1+\xi_i)=0,\qquad(C-\alpha_i)\xi_i=0.\]
+\[\begin{array}{c|l}
+\text{最优乘子 }\alpha&\text{必须满足}\\
+0&m\ge1\\
+0<\alpha<C&m=1,\ \xi=0\\
+C&m\le1
+\end{array}\]
+$\alpha=C$ does not imply misclassification; $m=1$ does not determine $\alpha$.
+\block{calcorange}{K01}{Kernel / Gram：答句与计算}
+\textbf{答卷句：} A kernel evaluates feature-space inner products without constructing features: $K(x,z)=\phi(x)^T\phi(z)$. The classifier is affine in feature space.
+
+\textbf{核函数：} linear $x^Tz$; polynomial $(1+x^Tz)^p$ for a nonnegative integer $p$; Gaussian
+\[K(x,z)=\exp\!\left[-\frac{\|x-z\|^2}{2\sigma^2}\right],\qquad\sigma>0.\]
+Sigmoid $\tanh(\kappa x^Tz+\theta)$ requires valid parameters/domain. Denominators $\sigma^2$ and $2\sigma^2$ use different width conventions.
+
+\textbf{有效性：} All finite Gram matrices must be symmetric PSD: $c^TKc\ge0$ for all $c$. One dataset cannot prove global validity.
+\mini{$G=\left[\begin{smallmatrix}1&2\\2&1\end{smallmatrix}\right]$, $c=(1,-1)^T$: $c^TGc=-2<0$; 该Gram矩阵无效。}
+For two-dimensional inputs, $(1+x^Tz)^2$ admits
+\[\phi(x)=(1,\sqrt2x_1,\sqrt2x_2,x_1^2,
+\sqrt2x_1x_2,x_2^2)^T.\]
+\textbf{操作：}按样本顺序算$K_{ij}$；检查对称和对角；代入dual；新点算$K(x_i,x)$；乘$\alpha_i y_i$求和、加$b$、取sign。
+\mini{Gaussian核，$x=(0,1),\sigma=1$：对角为$1$，非对角为$e^{-1/2}$。给定$\alpha=(1,1),y=(-1,1),b=0$，代入得$g(0)=-1+e^{-1/2}<0$。}
+Model selection uses validation data to choose $C$/kernel/width. Small $\sigma$ may overfit.
+\block{compgreen}{D05}{模型比较答句}
+\textbf{Hard-margin V.S. Soft-margin SVM.} Both regularize norm and classify by margin. Hard margin requires $m_i\ge1$ and separable data; it can be infeasible/outlier-sensitive. Soft margin uses penalized slacks and $\alpha_i\le C$ for noisy/overlapping data. Both need parameter selection.
+
+\textbf{RBF network V.S. RBF-kernel SVM.} Both use radial similarities. RBF networks select/learn centers and widths, then often fit linear outputs for classification/regression. RBF-kernel SVM uses training samples as centers and a margin-based QP for constrained $\alpha_i y_i$. Its expansion is often sparse, possibly with many SVs. Similar bases do not imply identical training. Both need feature/kernel choices. SVR handles regression.
+\columnend\sepcol
+\columnstart
+\colhead{背面第3栏｜SVR / 偏置}
+\block{calcorange}{V01}{Support vector regression}
+\textbf{答卷句：} SVR predicts continuous targets. The $\varepsilon$-insensitive loss ignores errors inside the tube and linearly penalizes excess errors. Norm controls flatness; $C$ weights the penalty. Full output height: $2\varepsilon$.
+$\varepsilon$ sets the tolerated output error; $C$ sets its excess-error cost. They are different parameters. Prediction returns a number, not a class sign.
+\[f_i=w^T\phi_i+b,\quad r_i=y_i-f_i,\quad y_i\in\R,\]
+\[\ell_\varepsilon(r)=\max(0,|r|-\varepsilon),\quad\varepsilon\ge0.\]
+Hard tube: $\min\|w\|^2/2$ subject to $|r_i|\le\varepsilon$. Soft tube minimizes $J$ over $w,b,\xi,\xi^*$:
+\[J=\tfrac12\|w\|^2+C\sum_i(\xi_i+\xi_i^*),\qquad C>0,\]
+\[r_i\le\varepsilon+\xi_i,\quad-r_i\le\varepsilon+\xi_i^*,\quad\xi_i,\xi_i^*\ge0.\]
+\textbf{操作：}统一$r=y-f$；算两侧最小松弛；最后相加计罚：
+$\xi_i=\max(0,r_i-\varepsilon)$;
+$\xi_i^*=\max(0,-r_i-\varepsilon)$.
+$\xi$ corresponds to underprediction; $\xi^*$ to overprediction.
+\mini{$y=3,f=2,\varepsilon=.4$: $r=1,\xi=.6,\xi^*=0$, 损失$.6$。}
+\textbf{构造L：}取 $\alpha_i,\alpha_i^*,\eta_i,\eta_i^*\ge0$.
+\[\begin{aligned}
+L={}&J+\sum_i\alpha_i(r_i-\varepsilon-\xi_i)\\
+&+\sum_i\alpha_i^*(-r_i-\varepsilon-\xi_i^*)\\
+&-\sum_i(\eta_i\xi_i+\eta_i^*\xi_i^*).
+\end{aligned}\]
+\textbf{操作：}对$w,b,\xi,\xi^*$求导置零，消元：
+\[d_i=\alpha_i-\alpha_i^*,\quad w=\sum_i d_i\phi_i,\quad\sum_i d_i=0,\]
+松弛变量求导后整理：$\eta_i=C-\alpha_i$，$\eta_i^*=C-\alpha_i^*$。
+\[\max_{\alpha,\alpha^*}-\tfrac12d^TKd
+-\varepsilon\mathbf1^T(\alpha+\alpha^*)+y^Td,\]
+\[\mathbf1^Td=0,\qquad0\le\alpha_i,\alpha_i^*\le C.\]
+预测：$f(x)=\sum_i d_iK(x_i,x)+b$。
+$\varepsilon$项用两乘子的\textbf{和}，预测系数用两乘子的\textbf{差}；回归预测不要再乘$y_i$。
+\block{calcorange}{V02}{求偏置与KKT检查}
+\[\alpha_i(\varepsilon+\xi_i-r_i)=0,\quad
+\alpha_i^*(\varepsilon+\xi_i^*+r_i)=0,\]
+\[(C-\alpha_i)\xi_i=(C-\alpha_i^*)\xi_i^*=0.\]
+先算$q_i=\sum_jd_jK(x_j,x_i)$。 \textbf{Free SV:} $0<\alpha_i^{(*)}<C$.
+If $|r_i|<\varepsilon$, both multipliers are zero.
+\[0<\alpha_i<C:\quad b=y_i-q_i-\varepsilon,\]
+\[0<\alpha_i^*<C:\quad b=y_i-q_i+\varepsilon.\]
+\textbf{操作：}选自由乘子对应的样本求$b$；其他自由样本核对同值；再回代残差、松弛与全部KKT。
+\mini{线性核，$x=y=(0,2)$，$\varepsilon=1/2,C=1$，$d=(-1/4,1/4)$，$\alpha_2=1/4$：算得$w=1/2$、$q_2=1$、$b=2-1-1/2=1/2$。残差$(-1/2,1/2)$；两侧松弛均为零。}
+\textbf{无自由SV（no free SV）：}对全部适用界取交集：
+\[\begin{array}{ll}
+\alpha_i=0:&b\ge y_i-q_i-\varepsilon,\\
+\alpha_i=C:&b\le y_i-q_i-\varepsilon,\\
+\alpha_i^*=0:&b\le y_i-q_i+\varepsilon,\\
+\alpha_i^*=C:&b\ge y_i-q_i+\varepsilon.
+\end{array}\]
+\textbf{操作：}取最大下界$\le b\le$最小上界；交集为空则重查系数；选区间内$b$回代。
+\mini{$x=(0,1),y=(0,2),\varepsilon=C=1/2$, $d=(-1/2,1/2)$, 两非零乘子都等于$C$：$q=(0,1/2)$，$b\in[1/2,1]$。取$b=3/4$，得到$r=(-3/4,3/4)$；每点一侧松弛为$1/4$。}
+\warn{For $\varepsilon>0$, one sample cannot have both multipliers positive. At $\varepsilon=0$, both may be positive；预测时使用两者之差。 Tube-boundary location does not require a positive coefficient.}
+\columnend\sepcol
+\columnstart
+\colhead{背面第4栏｜LS-SVM推导}
+\block{defblue}{L01}{Least-Squares Support Vector Machine}
+\textbf{答卷句：} LS-SVM uses squared loss, norm regularization and equality constraints. Training solves a linear system. 以下按\textbf{回归}题型填写。
+
+\textbf{题设：} $n$ samples $(x_i,y_i)$, $x_i\in\R^d$, $y_i\in\R$; feature vector $\phi_i\in\R^h$; kernel $K_{ij}=\phi_i^T\phi_j$; $\gamma>0$.
+\textbf{未知量：} $w\in\R^h$, $b\in\R$, residuals $e\in\R^n$, multipliers $\alpha\in\R^n$.
+
+\textbf{1. 写模型、目标与约束}
+\[f(x)=w^T\phi(x)+b,\qquad e_i=y_i-f(x_i),\]
+\[\boxed{\min_{w,b,e}\ \tfrac12\|w\|^2+\tfrac\gamma2\sum_{i=1}^n e_i^2}\]
+\[\boxed{y_i=w^T\phi_i+b+e_i,\quad i=1,\ldots,n.}\]
+\textbf{答卷句：} The norm term controls complexity. Squared loss penalizes residuals. A larger $\gamma$ emphasizes training fit. Equality constraints allow nonzero errors; they do not force interpolation.
+
+\textbf{2. 构造拉格朗日函数}
+\[\begin{aligned}
+\mathcal L={}&\tfrac12w^Tw+\tfrac\gamma2\sum_i e_i^2\\
+&-\sum_i\alpha_i(w^T\phi_i+b+e_i-y_i).
+\end{aligned}\]
+\textbf{3. 分别求导并置零}
+\[\begin{aligned}
+\partial_w\mathcal L&=w-\sum_i\alpha_i\phi_i=0,\\
+\partial_b\mathcal L&=-\sum_i\alpha_i=0,\\
+\partial_{e_i}\mathcal L&=\gamma e_i-\alpha_i=0,\\
+\partial_{\alpha_i}\mathcal L&=-(w^T\phi_i+b+e_i-y_i)=0.
+\end{aligned}\]
+\textbf{4. 整理}
+\[\boxed{w=\sum_i\alpha_i\phi_i,\quad\sum_i\alpha_i=0,\quad e_i=\alpha_i/\gamma}\]
+\warn{Equality multipliers satisfy $\alpha_i\in\R$; they have no box constraints. 不要把$y_i$加入$w=\sum_i\alpha_i\phi_i$。}
+\block{calcorange}{L02}{Linear system and prediction}
+\textbf{5. 代入$w$与$e_i$}
+\[y_i=\sum_j\alpha_jK_{ij}+b+\gamma^{-1}\alpha_i.\]
+\textbf{6. 按$[\alpha;b]$顺序合并方程}
+\[\boxed{\begin{bmatrix}K+\gamma^{-1}I&\mathbf1\\
+\mathbf1^T&0\end{bmatrix}\begin{bmatrix}\alpha\\b\end{bmatrix}
+=\begin{bmatrix}y\\0\end{bmatrix}.}\]
+$K,I\in\R^{n\times n}$; $\mathbf1,y,\alpha\in\R^n$; the full system is $(n+1)\times(n+1)$.
+\textbf{两样本照填模板：}
+\[\begin{bmatrix}
+K_{11}+1/\gamma&K_{12}&1\\
+K_{21}&K_{22}+1/\gamma&1\\1&1&0
+\end{bmatrix}\begin{bmatrix}\alpha_1\\\alpha_2\\b\end{bmatrix}
+=\begin{bmatrix}y_1\\y_2\\0\end{bmatrix}.\]
+
+\textbf{照做:} 算所有 $K_{ij}$ $\to$ 对角加 $1/\gamma$ $\to$ 右补一列1、下补一行 $[1,\ldots,1,0]$ $\to$ 右端填 $[y;0]$ $\to$ 消元回代求 $\alpha,b$。
+
+\textbf{7. 计算预测}
+\[\boxed{f(x)=\sum_i\alpha_iK(x_i,x)+b.}\]
+\textbf{8. 回代检查：} $\sum_i\alpha_i=0$，且
+\[e=y-K\alpha-b\mathbf1=\alpha/\gamma.\]
+For a linear kernel, $w=X^T\alpha$, where row $i$ of $X$ is $x_i^T$.
+\warn{对角加$+1/\gamma$；末行用$\mathbf1^T$。 The bias is not regularized; its diagonal entry is $0$.}
+\columnend\sepcol
+\columnstart
+\colhead{背面第5栏｜LS-SVM / 比较}
+\block{calcorange}{L03}{LS-SVM：完整计算}
+\textbf{题设：} $x=(0,1)$, $y=(0,2)$, $K(x,z)=xz$, $\gamma=1$. 求$\alpha,b$与$f(2)$。
+\[K=\begin{bmatrix}0&0\\0&1\end{bmatrix},\quad
+\left[\begin{array}{ccc|c}1&0&1&0\\0&2&1&2\\1&1&0&0\end{array}\right].\]
+行操作: $R_3\leftarrow R_3-R_1$；交换 $R_2,R_3$；$R_3\leftarrow R_3-2R_2$。
+\[\left[\begin{array}{ccc|c}1&0&1&0\\0&1&-1&0\\0&0&3&2\end{array}\right].\]
+回代: $3b=2\Rightarrow b=2/3$；$\alpha_2-b=0\Rightarrow\alpha_2=2/3$；$\alpha_1+b=0\Rightarrow\alpha_1=-2/3$。
+$w=0\alpha_1+1\alpha_2=2/3$. 由此
+\[\boxed{f(x)=\tfrac23x+\tfrac23,\quad f(2)=2.}\]
+检查: $f(X)=(2/3,4/3)$；$e=y-f(X)=(-2/3,2/3)=\alpha/\gamma$；$\sum\alpha=0$。
+\[J=\tfrac12(2/3)^2+\tfrac12[(-2/3)^2+(2/3)^2]=2/3.\]
+\textbf{换参数:} 若 $\gamma=2$，对角改加 $1/2$，重新解得 $\alpha=(-1,1)$，$b=1/2$，$f(x)=x+1/2$。
+
+\textbf{答卷句：} If $K\succeq0$ and $\gamma>0$, $K+\gamma^{-1}I\succ0$ and the bias system is invertible ($n\ge1$), even for singular $K$. LS-SVM is usually dense: $\alpha_i=\gamma e_i$. Squared loss is sensitive to outliers.
+\block{compgreen}{D06}{SVM V.S. SVR V.S. LS-SVM}
+\textbf{共同点：} All use norm regularization and can use kernels. All require model selection and can overfit.
+
+\textbf{SVM classification:} It predicts classes using a margin criterion. Soft SVM uses linear slack penalties and inequalities. Its dual is a quadratic program (QP), with $0\le\alpha_i\le C$.
+\[\hat y=\operatorname{sign}\!\left(\sum_i\alpha_i y_iK(x_i,x)+b\right).\]
+\textbf{SVR:} It predicts continuous values. Errors inside the $\varepsilon$-tube are unpenalized; outside errors incur linear loss. Its dual is a QP with $0\le\alpha_i,\alpha_i^*\le C$.
+\[f(x)=\sum_i(\alpha_i-\alpha_i^*)K(x_i,x)+b.\]
+\textbf{LS-SVM regression:} It uses squared errors, equality constraints and unrestricted multipliers. Training solves a linear system; $f(x)=\sum_i\alpha_iK(x_i,x)+b$.
+
+\textbf{限制：} SVM/SVR can be sparse. Hard SVM needs separability; SVR needs a suitable $\varepsilon$. LS-SVM also supports classification.
+\textbf{判断最大／最小：} Hard SVM maximizes geometric margin, equivalently minimizing $\|w\|^2/2$. SVM/SVR dual objectives are maximized. LS-SVM minimizes a convex quadratic objective; its stationarity equations form a linear system.
+
+\textbf{参数影响：} Larger $C$ penalizes margin/tube violations more. Larger $\gamma$ emphasizes squared-error fit. Larger $\varepsilon$ widens the zero-loss tube. None guarantees better test accuracy. Parameters are selected using validation data.
+\block{compgreen}{查找}{题干关键词 $\rightarrow$ 知识块}
+\textbf{对比题（compare/difference）：} M-P/P $\to$ D01；P/ADALINE $\to$ D02；MLP/RBF $\to$ D03；RBF/FLN/ELM $\to$ D04；hard/soft、RBF kernel $\to$ D05；SVM/SVR/LS $\to$ D06。
+
+\textbf{计算定位:} perceptron $\to$ P01；LMS $\to$ A01；forward/BP/momentum $\to$ B01--B03；features $\to$ R01/R02；gradient/equations $\to$ M02/M03。
+
+\textbf{背面定位:} margin/KKT $\to$ S01/S02；slack/$C$ $\to$ S03；kernel $\to$ K01；tube $\to$ V01/V02；LS-SVM/$\gamma$ $\to$ L01--L03。
+\warn{先看输出、损失与约束来定位。``Least squares''也可能对应LMS或RBF训练，不要只凭一个关键词选式。}
+\columnend

@@ -226,3 +226,50 @@ mark {background:var(--accent-soft);color:var(--accent);font-weight:600;border-r
   .lesson-content h2,.lesson-content h3,.lesson-content h4 {break-after:avoid;scroll-margin:0}
   .lesson-content :target {text-decoration:none!important}
 }
+
+/* Assignment pages keep source questions and personal results distinct. */
+.site-assignment-entry[aria-current] {font-weight:700;text-decoration:underline}
+.assignment-index {margin:55px 0 0}
+.assignment-header h1 {font-size:clamp(1.8rem,4vw,2.4rem);line-height:1.45;margin:0 0 20px}
+.assignment-header .site-lead {font-size:1.08rem;color:var(--muted)}
+.assignment-header>p:not(.site-eyebrow) {max-width:48rem}
+.assignment-card-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;padding:0;margin:34px 0}
+.assignment-card-grid>li {display:flex;min-width:0}
+.assignment-card {display:flex;flex-direction:column;align-items:start;gap:12px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);width:100%}
+.assignment-card:hover {border-color:var(--accent)}
+.assignment-card .site-eyebrow {margin:0}
+.assignment-card h2 {font-size:1.15rem;line-height:1.6;margin:0}
+.assignment-card>p {font-size:.83rem;color:var(--muted);margin:0 0 8px}
+.assignment-card-status {font-size:.71rem;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:4px;margin-top:auto}
+.assignment-status-pending {color:var(--caution);background:var(--caution-soft)}
+.assignment-card-meta {font-size:.72rem;color:var(--muted);width:100%;border-top:1px solid var(--line);padding-top:12px}
+.assignment-card-meta>span {float:right;color:var(--accent)}
+.assignment-source-note {font-size:.76rem!important;color:var(--muted);padding-top:24px;border-top:1px solid var(--line);margin-top:36px}
+.assignment-breadcrumb {display:flex;justify-content:space-between;gap:20px;font-size:.78rem;color:var(--muted);margin-bottom:32px}
+.assignment-facts {display:grid;grid-template-columns:1.1fr .6fr 1.5fr;gap:14px;border-block:1px solid var(--line);padding:16px 0;margin:28px 0}
+.assignment-facts dt {font-size:.68rem;color:var(--muted)}
+.assignment-facts dd {font-size:.82rem;margin:3px 0 0;font-weight:600}
+.assignment-page-nav {display:flex;flex-wrap:wrap;gap:10px 22px;font-size:.78rem;padding:12px 0}
+.assignment-document section {scroll-margin-top:100px}
+.assignment-document :is(h2,h3) {scroll-margin-top:110px}
+.assignment-document li {font-size:.9rem;margin-bottom:12px}
+.assignment-figure {padding:12px;margin:24px 0;background:var(--surface);border:1px solid var(--line);border-radius:7px}
+.assignment-figure img {display:block;width:100%;height:auto;background:#fff}
+.assignment-figure figcaption {font-size:.72rem;color:var(--muted);padding:10px 4px 0}
+.assignment-brief {max-width:38rem;margin-inline:auto}
+.assignment-table-wrap {overflow-x:auto;margin:24px 0;max-width:100%;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.assignment-table-wrap table {width:100%;border-collapse:collapse;font-size:.78rem;min-width:480px;line-height:1.75}
+.assignment-table-wrap caption {text-align:left;color:var(--muted);font-size:.72rem;padding:12px 14px}
+.assignment-table-wrap th,.assignment-table-wrap td {padding:11px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+.assignment-table-wrap thead th {color:var(--accent);background:var(--accent-soft)}
+.assignment-downloads {list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.assignment-downloads>li {border:1px solid var(--line);border-radius:6px;background:var(--surface);padding:16px;margin:0}
+.assignment-downloads a {display:flex;justify-content:space-between;align-items:start;gap:12px;text-decoration:none;min-height:40px}
+.assignment-downloads a strong {font-size:.83rem}
+.assignment-downloads a>span {font-size:.66rem;color:var(--muted);white-space:nowrap;padding-top:4px}
+.assignment-downloads p {font-size:.72rem;margin:8px 0 0;color:var(--muted)}
+.assignment-pending {background:var(--caution-soft);border-left-color:var(--caution)}
+.assignment-pending h2 {margin-top:0}
+@media(max-width:900px) {.assignment-card-grid {grid-template-columns:1fr}.assignment-card {gap:10px}.assignment-card>p {margin-bottom:6px}.assignment-card-status {margin-top:0}}
+@media(max-width:600px) {.site-header-actions>a.site-assignment-entry {margin:0;font-size:.74rem;min-height:40px;display:flex;align-items:center}.assignment-index {margin-top:35px}.assignment-facts {grid-template-columns:1fr 1fr}.assignment-facts>div:last-child {grid-column:1/-1}.assignment-downloads {grid-template-columns:1fr}.assignment-card {padding:20px}.assignment-figure {padding:7px}.assignment-table-wrap table {font-size:.73rem}.assignment-document ol,.assignment-document ul:not(.assignment-downloads) {padding-left:1.35rem}}
+@media print {.assignment-page-nav {display:none}.assignment-document {max-width:none;margin:0}.assignment-table-wrap {overflow:visible}.assignment-table-wrap table {min-width:0;font-size:9pt}.assignment-figure {break-inside:avoid}.assignment-facts {grid-template-columns:1fr 1fr 1fr}.assignment-downloads {grid-template-columns:1fr 1fr}}

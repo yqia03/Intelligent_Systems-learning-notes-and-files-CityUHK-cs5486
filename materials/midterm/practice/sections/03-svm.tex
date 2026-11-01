@@ -1,0 +1,461 @@
+\problem{Q31}{间隔、距离与缩放：哪个量真的改变？}{背面第1栏／S01}
+\qtext{一组标签为$y_i\in\{-1,+1\}$的训练样本，给定分离函数
+$g(x)=w\T x+b$，其中$w=(3,4)\T,b=-5$；已知$\min_i y_i g(x_i)=1$。求法向量、规范间隔带宽度，以及测试点$x=(1,1)\T,y=+1$的函数间隔和带符号几何间隔。再把$w,b$同时乘2：分类面、该点距离及间隔带宽度如何变化？}
+\route{圈出“标签$\pm1$、间隔、距离、缩放”。S01把函数值与真实距离分开；这是分类几何题，尚不需要SVR的连续目标或LS-SVM的平方残差系统。}
+\given{$w\in\R^2$，$b\in\R$；$m_i=y_i g_i$是函数间隔，$m_i/\norm w$是带符号几何间隔。题目给出的最小函数间隔1说明当前参数已规范化。}
+\solve
+先求$\norm w=\sqrt{3^2+4^2}=5$，指向$g>0$一侧的单位法向量为$n=(3/5,4/5)\T$。
+规范边界为$g=+1$与$g=-1$，各距决策面$1/5$，全带宽为
+\[
+M=\frac2{\norm w}=\frac25.
+\]
+对测试点，先代入函数，再乘标签，最后除范数：
+\[
+g(1,1)=3+4-5=2,\qquad m=(+1)\times2=2,\qquad
+\rho=\frac{m}{\norm w}=\frac25.
+\]
+它被判为$+1$，位于规范正类间隔边界之外。
+
+令$w'=2w,b'=2b$，则$g'=2g$且$\norm{w'}=10$。决策面$g'=0$与$g=0$相同，正负号相同；测试点的函数间隔变为4，而几何间隔仍为$4/10=2/5$。
+原来的两条间隔边界变成$g'=\pm2$，所以同一几何间隔带的宽度为$4/10=2/5$。
+新参数的最小训练函数间隔是2，\textbf{不能}把它误当成规范化参数，再直接写$2/\norm{w'}=1/5$。
+
+\ans{单位法向量为$(3/5,4/5)\T$；规范带宽$2/5$；测试点函数间隔2、几何间隔$2/5$。正比例缩放改变函数值，不改变分离面、分类或几何距离。}
+\qcheck{点到直线$3x_1+4x_2-5=0$的距离为$|3+4-5|/5=2/5$，与上式一致。}
+\pitfall{$w\T x+b$带偏置，严格说是仿射函数。总间隔宽度$2/\norm w$与单侧距离$1/\norm w$不同；前者还要求使用规范边界$g=\pm1$。}
+\transfer{更换$w,b,x$时，先重算范数与函数值；若题目给出最小函数间隔$c>0$，几何带宽为$2c/\norm w$，或先除以$c$规范化。}
+
+\problem{Q32}{从两类样本构建并解出硬间隔SVM}{背面第1栏／S01}
+\qtext{两个一维训练样本为$(x_1,y_1)=(-1,-1)$、$(x_2,y_2)=(1,+1)$。使用$g(x)=wx+b$、标签$\pm1$和硬间隔规范化。自行写目标和约束，用代数求最优$w,b$，并给出间隔宽度及$x=1/2$的类别。}
+\route{“两类标签、硬间隔、求最优分界”指向S01。目标是最大几何间隔，等价于最小化范数；不是把分类标签当连续回归目标做平方误差拟合。}
+\given{$x_i,w,b$均为标量，未知量是$w,b$。规范约束为$y_i(wx_i+b)\ge1$。不使用松弛变量，因为本题要求硬间隔且数据可分。}
+\solve
+最大化$2/|w|$可等价改写为
+\[
+\min_{w,b}\frac12w^2,
+\qquad\text{s.t.}\quad
+(-1)(-w+b)\ge1,\quad (+1)(w+b)\ge1.
+\]
+也就是
+\[
+w-b\ge1,\qquad w+b\ge1
+\quad\Longleftrightarrow\quad w\ge1+|b|.
+\]
+由此$w\ge1$。目标在可行范围内随$w$增大，因此最小可行值是$w=1$；此时两条约束要求$b\le0$且$b\ge0$，故$b=0$。
+\[
+g(x)=x,\qquad J_{\min}=\frac12,
+\qquad M=\frac2{|1|}=2.
+\]
+两个样本分别满足$g(-1)=-1,g(1)=1$，均位于间隔边界。
+对$x=1/2$，$g=1/2>0$，预测类别为$+1$。测试点可以在间隔带内；训练约束并不要求所有未来测试点都满足$yg\ge1$。
+
+\ans{硬间隔问题为$\min\tfrac12w^2$，约束$w-b\ge1,w+b\ge1$；最优解$(w,b)=(1,0)$，总间隔宽度2，$x=1/2$判为$+1$。}
+\qcheck{回代后两点的$y_i g_i$均为1，约束可行；由$w\ge1+|b|$可知不存在范数更小的可行解，因此不是仅找到一个驻点。}
+\pitfall{漏掉标签$y_i$会让负类约束写反。最小化$\tfrac12w^2$是优化目标，不能写成“所有SVM量都最大化”。}
+\transfer{若改为$x_1=-a,x_2=a$且$a>0$，同样的代数步骤给$w=1/a,b=0$、带宽$2a$。若同一个输入同时带相反标签，硬间隔约束将不可行，应重新考虑软间隔。}
+
+\problem{Q33}{拉格朗日、对偶与KKT：把求导串起来}{背面第1栏／S02，必要时S01}
+\qtext{对线性硬间隔SVM，写出Lagrangian，对$w,b$求导并推出对偶目标与约束。然后用$(-1,-1),(1,+1)$验证对偶最优解，说明怎样由乘子恢复$w,b$，并检查原始与对偶目标值。}
+\route{“Lagrangian、求导、dual、KKT”指向S02。先写清原始变量与乘子，再消元；一般矩阵求导只负责代数步骤，SVM的标签约束决定了具体符号。}
+\given{一般情形$x_i,w\in\R^d$，$y_i=\pm1$，$b\in\R$。每个不等式$y_i(w\T x_i+b)-1\ge0$对应$\alpha_i\ge0$。}
+\solve
+构造并明确鞍点方向：
+\[
+L(w,b,\alpha)=\frac12w\T w-\sum_i\alpha_i\{y_i(w\T x_i+b)-1\},
+\qquad \min_{w,b}\max_{\alpha\ge0}L.
+\]
+对原始变量求偏导：
+\[
+\frac{\partial L}{\partial w}=w-\sum_i\alpha_i y_i x_i=0,
+\qquad
+\frac{\partial L}{\partial b}=-\sum_i\alpha_i y_i=0.
+\]
+所以$w=\sum_i\alpha_i y_i x_i$、$\sum_i\alpha_i y_i=0$。代回得到
+\[
+\max_{\alpha}\ D(\alpha)=\sum_i\alpha_i-
+\frac12\sum_{i,j}\alpha_i\alpha_jy_iy_jx_i\T x_j,
+\quad \alpha_i\ge0,\quad\sum_i\alpha_i y_i=0.
+\]
+KKT还需原始可行及$\alpha_i\{y_i g_i-1\}=0$。
+对本题两个样本，和约束给$\alpha_1=\alpha_2=a$，且$w=2a$，故
+\[
+D(a)=2a-2a^2,\quad a\ge0;
+\qquad D'(a)=2-4a=0\Rightarrow a=\frac12.
+\]
+$D''=-4<0$，这是凹二次函数的全局最大值。由$w=2a$得$w=1$；因$\alpha_2>0$，$g(1)=1$，所以$b=0$。
+
+\ans{最优乘子为$(1/2,1/2)$；恢复$(w,b)=(1,0)$，原始最小值与对偶最大值均为$1/2$。对偶是最大化，L对$w,b$是最小化方向。}
+\qcheck{非负乘子、$\alpha\T y=0$、两个训练约束、互补条件全部成立；$\tfrac12w^2=D(1/2)=1/2$。}
+\pitfall{不要把L同时对$w,b,\alpha$最小化；不要把普通的$\sum_i\alpha_i=0$误写成分类约束，它必须包含$y_i$。}
+\transfer{换成核时，只把$x_i\T x_j$替换为$K(x_i,x_j)$；若改软间隔，还要加入$\alpha_i\le C$，其他标签符号不变。}
+
+\problem{Q34}{支持向量预测，以及“在边界上”的例外}{背面第1栏／S02}
+\qtext{一维硬间隔训练集按顺序为
+$x=(-2,-1,1,1,2)$，$y=(-1,-1,+1,+1,+1)$，给定一组最优乘子
+$\alpha=(0,1/2,1/2,0,0)$、$b=0$。求$w$与$g(-1/4)$；列出各训练点的函数间隔。判断：“只要样本在间隔边界上，它的$\alpha$必定大于0。”再检查有人写的$g(x)=\sum_i\alpha_i x_i x+b$。}
+\route{“support vector、给定乘子、预测、边界”对应S02。先恢复带标签的$w$，再用KKT分清单向条件；重复样本可暴露边界点与非零乘子的区别。}
+\given{样本3与4输入及标签相同，是两个训练条目。支持向量展开中采用非零乘子定义；不把所有几何边界点都强行计为非零系数。}
+\solve
+正确恢复式包含标签：
+\[
+w=\sum_i\alpha_i y_i x_i
+=\frac12(-1)(-1)+\frac12(+1)(1)=1.
+\]
+因此$g(x)=x$，$g(-1/4)=-1/4<0$，预测$-1$。
+\[
+(y_1g_1,\ldots,y_5g_5)=(2,1,1,1,2).
+\]
+点2、3、4都在规范间隔边界上，但点4的$\alpha_4=0$。这是允许的退化情形：其重复点3已承担相应系数。
+互补条件为$\alpha_i(m_i-1)=0$，它只能推出
+\[
+\alpha_i>0\Rightarrow m_i=1,
+\qquad m_i>1\Rightarrow\alpha_i=0.
+\]
+$m_i=1$时，乘积对任何非负$\alpha_i$都等于0，不能单凭这一式反推$\alpha_i>0$。
+
+错误预测式漏$y_i$，在本题得到$\sum_i\alpha_i x_i=-1/2+1/2=0$，把所有输入都预测为边界值0。应改为
+\[
+g(x)=\sum_i\alpha_i y_i\,x_i x+b.
+\]
+\ans{$w=1$、$g(-1/4)=-1/4$，预测$-1$。在间隔边界上不保证该条目的乘子非零；分类预测展开必须保留$y_i$。}
+\qcheck{$\sum\alpha_i y_i=0$，所有$m_i\ge1$，$\alpha_i(m_i-1)=0$；原始与对偶目标均为$1/2$。}
+\pitfall{支持向量条件与几何边界条件不可随意写成双向等价。若$g=0$，类别必须按题目指定的零值约定处理，不能擅自给出唯一类别。}
+\transfer{核分类中将$x_i x$换成$K(x_i,x)$，标签仍保留。SVR与本册LS-SVM回归使用的展开系数有不同定义，不能机械多乘一个$y_i$。}
+
+\problem{Q35}{软间隔的松弛：正确也可能有惩罚}{背面第2栏／S03}
+\qtext{软间隔SVM使用$y_i g_i\ge1-\xi_i$、$\xi_i\ge0$，$C>0$。五个样本的函数间隔依次为$m=(1.4,1,0.6,0,-0.4)$。求固定$w,b$时最小可行松弛，并分别说明它们是间隔外、间隔边界、正确但在间隔内、决策面或错分。若$\norm w=2,C=2$，求此时目标值。}
+\route{圈出“$\xi$、margin violation、$C$”。S03用$y_i g_i$判断分类与间隔；ADALINE的线性残差和SVR的$\varepsilon$管道均不采用这一标签乘积。}
+\given{$m_i=y_i g_i$；在固定模型下，目标含正惩罚$C\sum\xi_i$，所以应取每个样本最小可行$\xi_i=\max(0,1-m_i)$。}
+\solve
+约束逐项改写为$\xi_i\ge1-m_i$，再与$\xi_i\ge0$合并：
+\[
+\xi=(0,0,0.4,1,1.4),\qquad\sum_i\xi_i=2.8.
+\]
+\begin{center}\begin{tabular}{@{}ccl@{}}\toprule
+$m_i$&$\xi_i$&状态\\\midrule
+1.4&0&正确、在规范间隔外\\
+1&0&正确、在规范间隔边界\\
+0.6&0.4&正确、但在间隔内，存在间隔违背\\
+0&1&在决策面，最终归类取决于零值约定\\
+$-0.4$&1.4&错分，因$y_i g_i<0$\\\bottomrule
+\end{tabular}\end{center}
+代入目标时不要漏范数平方：
+\[
+J=\frac12\norm w^2+C\sum_i\xi_i
+=\frac12(2)^2+2(2.8)=7.6.
+\]
+只有在取最小松弛的约定下，$0<\xi<1$表示正确但在间隔内，$\xi>1$表示错分；可行但人为放大的松弛不能直接用于反推样本位置。
+
+\ans{最小松弛为$(0,0,0.4,1,1.4)$，固定模型的目标值为$7.6$。间隔违背不等于错分；$\xi=1$对应决策面。}
+\qcheck{逐项算$m_i+\xi_i=(1.4,1,1,1,1)$，均不小于1；松弛均非负。}
+\pitfall{不要用$|y_i-g_i|$替代$\max(0,1-y_i g_i)$；软间隔惩罚的是间隔违背，包含一部分仍被正确分类的点。}
+\transfer{若只改变$C$且固定$w,b$，松弛值不变，目标的惩罚权重改变；若重新训练，$w,b$、各$m_i$和$\xi_i$都应重算。}
+
+\problem{Q36}{C、盒约束与KKT状态：哪些能反推？}{背面第2栏／S03，背面第1栏／S02}
+\qtext{软间隔SVM取$C=2$。某候选解的三类条目为：A的$(\alpha,m,\xi)=(0,1.5,0)$；B为$(1,1,0)$；C为$(2,0.4,0.6)$。检查各自KKT互补条件。判断“$\alpha=C$必错分”和“提高$C$必使测试误差降低”。然后对$(-1,-1),(1,+1)$，改取$C=1/4$，求最优乘子、$w$及一个可用$b$。}
+\route{“$0\le\alpha\le C$、free support vector、参数$C$”对应S03。盒约束来自线性松弛惩罚；本册LS-SVM的等式乘子没有这个盒。}
+\given{软间隔KKT除可行性外含
+$\alpha_i(m_i-1+\xi_i)=0$、$(C-\alpha_i)\xi_i=0$。
+全局还需$w=\sum\alpha_i y_i x_i$和$\sum\alpha_i y_i=0$。}
+\solve
+A的两乘积均为0，且$m>1,\xi=0$；B有$0<\alpha<C$，于是必须$\xi=0,m=1$；C有$m-1+\xi=0$且$C-\alpha=0$，也满足局部互补条件。仅凭这三项仍不能确认整组数据的全局驻点关系。
+
+一般结论为
+\[
+\alpha=0\Rightarrow m\ge1,\quad
+0<\alpha<C\Rightarrow m=1,\quad
+\alpha=C\Rightarrow m\le1.
+\]
+最后一种可处在边界、正确但在间隔内、决策面或错分；C条目$m=0.4>0$即为反例。
+提高$C$使训练中的间隔违背代价更大，通常推动更紧地适配训练数据；泛化仍取决于数据、核及参数选择，不能保证测试误差降低。
+
+两样本的小题依然有$\alpha_1=\alpha_2=a$、$D(a)=2a-2a^2$，但现在
+\[
+0\le a\le\frac14.
+\]
+$D'(a)=2-4a>0$在该区间成立，所以$a=1/4$；$w=2a=1/2$。取$b=0$，两点都有$m=1/2,\xi=1/2$。
+\[
+J=\frac12(1/2)^2+\frac14(1/2+1/2)=\frac38=D(1/4).
+\]
+\ans{A、B、C的局部互补条件均可成立；$\alpha=C$不等于错分。$C=1/4$的两样本解可取$\alpha=(1/4,1/4),w=1/2,b=0$、目标$3/8$。}
+\qcheck{两乘子均在盒内，$\sum\alpha y=0$；两个原始约束取等号；原始与对偶目标相等。此题$b$不唯一，$[-1/2,1/2]$都可行且最优。}
+\pitfall{不要在$\alpha=C$时无条件用$yg=1$求$b$；该等式用于$0<\alpha<C$的自由支持向量。}
+\transfer{若$C\ge1/2$，本数据的无盒约束最优$a=1/2$已允许，恢复硬间隔解。换数据后阈值应重新求，不能普遍套$C\ge1/2$。}
+
+\problem{Q37}{多项式核：亲手展开六维映射}{背面第2栏／K01}
+\qtext{二维输入$x=(x_1,x_2)\T$采用$K(x,z)=(1+x\T z)^2$。构造一个显式特征映射$\phi(x)$使$K(x,z)=\phi(x)\T\phi(z)$。对$a=(1,0)\T,b=(0,1)\T$，分别用核公式与特征内积算$K(a,b)$、$K(a,a)$。}
+\route{“kernel trick、explicit feature map、多项式展开”查K01。不是先训练网络隐藏权重；核在此定义了内积，不需要为每个特征分量另求训练参数。}
+\given{原输入维度2，展开后可取6维。核内积中的交叉项系数必须由特征的缩放因子共同产生。为避免与偏置混淆，本题$b$仅为第二个输入向量的名称。}
+\solve
+令$u=x_1z_1,v=x_2z_2$，则
+\[
+(1+u+v)^2=1+u^2+v^2+2uv+2u+2v.
+\]
+所以可选择
+\[
+\phi(x)=\begin{bmatrix}
+1&x_1^2&\sqrt2x_1x_2&x_2^2&\sqrt2x_1&\sqrt2x_2
+\end{bmatrix}\T\in\R^6.
+\]
+对应内积逐项为
+\[
+1+x_1^2z_1^2+2x_1x_2z_1z_2+x_2^2z_2^2+2x_1z_1+2x_2z_2,
+\]
+恰等于核展开。特征顺序可改变，只要两个向量同步使用相同顺序。
+
+对给定输入，$a\T b=0,a\T a=1$，直接计算
+\[
+K(a,b)=1,\qquad K(a,a)=4.
+\]
+另一条路线为
+\[
+\phi(a)=(1,1,0,0,\sqrt2,0)\T,\quad
+\phi(b)=(1,0,0,1,0,\sqrt2)\T.
+\]
+故$\phi(a)\T\phi(b)=1$，而$\norm{\phi(a)}^2=1+1+2=4$。
+
+\ans{上述六维$\phi$给出所需内积；$K(a,b)=1,K(a,a)=4$。核技巧允许直接算核值而无需实际存储六维向量。}
+\qcheck{检查平方交叉项是否为2倍；对角核必须等于特征范数平方，因此本题$K(a,a)$不可能为负。}
+\pitfall{漏掉$\sqrt2$会把对应的2倍项变成1倍；$(x\T z)^2$是齐次核，与本题$(1+x\T z)^2$的常数及线性特征不同。}
+\transfer{改核次数或常数后，重新展开并核验系数；不直接沿用六维映射。预测依然是在特征空间做仿射函数，在原输入中一般非线性。}
+
+\problem{Q38}{Gram矩阵与无效核：对称还不够}{背面第2栏／K01}
+\qtext{对$a=(1,0)\T,b=(0,1)\T$使用$K(x,z)=(1+x\T z)^2$，构造$2\times2$的Gram矩阵并判断半正定。另一个候选“核”在某两个样本上产生矩阵
+$G=\bigl[\begin{smallmatrix}1&2\\2&1\end{smallmatrix}\bigr]$。有人认为“对称且所有元素为正，所以是有效核”，请给出反例计算。最后说明一个数据集的Gram半正定能否证明核在全域有效。}
+\route{“Gram、PSD、有效kernel”对应K01。核有效性检查是内积几何的条件；LS-SVM中的$\gamma^{-1}I$是正则项，不能用它掩盖原核定义无效。}
+\given{Gram第$(i,j)$项为$K(x_i,x_j)$，矩阵必须对称且对任意$c$满足$c\T Kc\ge0$。有效核要求对\textbf{所有有限样本集合}都满足该条件。}
+\solve
+依次计算对角与交叉项：
+\[
+K(a,a)=4,\quad K(a,b)=K(b,a)=1,\quad K(b,b)=4,
+\qquad K=\begin{bmatrix}4&1\\1&4\end{bmatrix}.
+\]
+其特征值为$4+1=5$、$4-1=3$，均为正；也可对任意$c=(c_1,c_2)\T$写
+\[
+c\T Kc=4c_1^2+2c_1c_2+4c_2^2
+=3(c_1^2+c_2^2)+(c_1+c_2)^2\ge0.
+\]
+对候选$G$，取$c=(1,-1)\T$即可否定：
+\[
+Gc=(-1,1)\T,\qquad c\T Gc=-2<0.
+\]
+尽管$G$对称且逐元素为正，它不是半正定矩阵，因而不能是实特征内积在这两点上的Gram矩阵。
+
+一个集合检查通过，仅说明该集合未发现违反条件，不能证明全域有效。本题的多项式核可借Q37的显式映射作全域证明：
+$c\T Kc=\norm{\sum_i c_i\phi(x_i)}^2\ge0$对任何有限样本都成立。
+
+\ans{多项式核Gram为$\bigl[\begin{smallmatrix}4&1\\1&4\end{smallmatrix}\bigr]$，正定；候选$G$因$c=(1,-1)\T$给出二次型$-2$而无效。逐元素正不等于矩阵半正定。}
+\qcheck{Gram的对角项应为$\norm{\phi(x_i)}^2$，矩阵与其转置相等；PSD二次型测试不能仅代$c=(1,1)\T$。}
+\pitfall{不能把“对称”或“一组样本上PSD”单独当成全域核有效的充分条件；sigmoid表达式也不是任意参数下都可直接认定为有效核。}
+\transfer{换样本时逐项重建Gram；对小对称矩阵可用特征值或二次型。维度变大时原理不变，不能只检查元素符号。}
+
+\problem{Q39}{Gaussian核预测：标签与宽度分母都要查}{背面第2栏／K01，背面第1栏／S02}
+\qtext{二类训练输入$x_1=-1,x_2=1$，标签$y=(-1,+1)$，使用
+$K(x,z)=\exp[-(x-z)^2/(2\sigma^2)]$、$\sigma=1$。给定软间隔解$\alpha_1=\alpha_2=C=1,b=0$。构造Gram矩阵，求$g(1)$及类别，并检查这组解的松弛和KKT。若误把分母写成$\sigma^2$，会得到什么不同的核值与分数？}
+\route{“Gaussian/RBF kernel、给定$\alpha$、分类预测”查K01与S02。先核对分类标签，再核对宽度约定；此处是核SVM，不能拿RBF网络的任意输出权重替代$\alpha_i y_i$。}
+\given{距离平方$(x_1-x_2)^2=4$。令$\rho=e^{-2}\approx0.135335$，则Gram非对角项为$\rho$。}
+\solve
+\[
+K=\begin{bmatrix}1&\rho\\\rho&1\end{bmatrix},\qquad
+g(z)=\sum_i\alpha_i y_iK(x_i,z)+b=-K(-1,z)+K(1,z).
+\]
+在$z=1$处，
+\[
+g(1)=1-e^{-2}\approx0.864665>0,
+\]
+故类别为$+1$。两训练点的函数间隔都为$1-\rho$，最小松弛均为$\rho$。它们仍被正确分类，但在间隔内。
+两乘子在盒的上界，$\sum_i\alpha_i y_i=0$；$m_i-1+\xi_i=0$，且$(C-\alpha_i)\xi_i=0$。核空间范数平方为
+\[
+\norm w^2=\sum_{i,j}\alpha_i\alpha_jy_iy_jK_{ij}=2(1-\rho).
+\]
+原始目标为$(1-\rho)+2\rho=1+\rho$，对偶值为$2-(1-\rho)=1+\rho$，相等。
+
+若错误改分母为$\sigma^2$而仍声称$\sigma=1$不变，交叉核变为$e^{-4}\approx0.018316$，分数变为$1-e^{-4}\approx0.981684$。这实际上改了核宽度，不能视为同一数值计算。
+
+\ans{按题目约定，Gram为$\bigl[\begin{smallmatrix}1&e^{-2}\\e^{-2}&1\end{smallmatrix}\bigr]$，$g(1)=1-e^{-2}>0$判$+1$。宽度分母改变后须重新解释参数。}
+\qcheck{对角核都为1；$g(-1)=-g(1)$；原始与对偶均为$1+e^{-2}$。}
+\pitfall{分类核展开漏$y_i$会把两项都加正；RBF核相似度是非负数，但判别分数可以为负。}
+\transfer{若输入缩放或改变$\sigma$，重算距离与核；较小$\sigma$使相似度更局部。选择$C,\sigma$应使用验证资料，不能保证越小$\sigma$泛化越好。}
+
+\problem{Q40}{两组比较：相同Gaussian不等于相同模型}{背面第2栏／D05；RBF细节见正面第5栏／R01}
+\qtext{用完整句子比较：(a) Hard-margin V.S. Soft-margin SVM；(b) RBF network V.S. RBF-kernel SVM。每组写共同点、明确维度的差异、适用任务及限制。说明为什么“都使用Gaussian，所以训练方法与中心选择完全相同”不正确。}
+\route{“compare、共同点、区别”先查D05；见Gaussian时继续辨认是网络隐层还是核分类器。仅凭函数名称不能完成模型识别。}
+\given{本题RBF网络为$f(x)=\sum_{j=1}^{M}v_j h_j(x)+b$，$h_j$由中心$c_j$与宽度控制；核SVM分类为$g(x)=\sum_i\alpha_i y_iK(x_i,x)+b$。}
+\solve
+\textbf{(a) 可写成答卷的比较。}两者都用范数惩罚控制分类面的复杂度，并依据带标签间隔训练；都可以在特征空间构造分类面。硬间隔要求所有训练点满足$y_i g_i\ge1$，所以必须在选定特征空间可分；它不允许间隔违背。软间隔加入$\xi_i\ge0$，满足$y_i g_i\ge1-\xi_i$，并最小化$\tfrac12\norm w^2+C\sum\xi_i$，适合有噪声、重叠或不能完全分开的数据。软间隔允许一部分训练误差，$C$控制惩罚强度。硬间隔可能被离群点拉动，软间隔也需选择$C$和核参数，均不保证任何测试集上最优。
+
+\textbf{(b) 可写成答卷的比较。}两者都可用Gaussian相似度表示输入的局部关系，最终输出都可写成若干基函数的加权和。RBF网络显式设置有限个隐藏单元，中心与宽度可以预选或通过数据学习，再训练输出权重；可用于回归或分类。RBF-kernel SVM通过核内积和间隔目标解受约束二次优化；核中心在展开中对应训练样本，只有非零乘子的支持向量进入分类预测，系数为$\alpha_i y_i$且受训练约束。它通常用于分类；同族SVR处理回归。RBF网络的任意输出权重不受同一套SVM盒约束；RBF-kernel SVM也不是先独立训练一组可自由移动的隐藏中心。
+
+\ans{共同Gaussian给出相似的基函数形式；隐藏中心/系数的来源、损失与约束、训练方法不同，所以不能认定是同一个模型。关键词：maximum margin、slack、box constraint、center、basis function、support vector。}
+\qcheck{每组都应明确“按哪个维度比较”，而且同时写共同点、任务与限制；不只写“都是机器学习”。}
+\pitfall{BP是计算梯度的训练方法，不是与RBF或SVM并列的同类模型；同一个公式形式也可能来自不同训练原则。}
+\transfer{题目换成预测数值时，先检查使用平方误差、$\varepsilon$不敏感损失还是其他目标；RBF这一名称本身不能决定损失和训练算法。}
+
+\problem{Q41}{SVR：由连续输出与残差建立两侧管道}{背面第3栏／V01}
+\qtext{希望用$f(x)=w\T\phi(x)+b$预测连续值，允许绝对残差在$\varepsilon=1/2$以内不计损失，超出部分线性惩罚，同时控制$\norm w$。写出目标、两类松弛与约束。固定模型后，四点残差$r_i=y_i-f_i$依次为$0,0.3,1.2,-0.9$，计算$\xi_i,\xi_i^*$及总$\varepsilon$不敏感损失。}
+\route{圈出“continuous output、$\varepsilon$、tube、超出线性惩罚”。V01对应SVR；分类SVM的$y_i g_i$用于$\pm1$标签，LS-SVM则使用平方误差与等式约束。}
+\given{$r=y-f$是有符号残差，$\xi$负责预测偏低的一侧$r>\varepsilon$，$\xi^*$负责预测偏高的一侧$r<-\varepsilon$。$C>0,\varepsilon\ge0$。}
+\solve
+写模型后构建优化问题：
+\[
+\min_{w,b,\xi,\xi^*}\frac12\norm w^2+C\sum_i(\xi_i+\xi_i^*),
+\qquad
+\begin{cases}
+y_i-f_i\le\varepsilon+\xi_i,\\
+f_i-y_i\le\varepsilon+\xi_i^*,\\
+\xi_i,\xi_i^*\ge0.
+\end{cases}
+\]
+固定模型的最小可行松弛为
+\[
+\xi_i=\max(0,r_i-\varepsilon),\quad
+\xi_i^*=\max(0,-r_i-\varepsilon),\quad
+\ell_\varepsilon(r_i)=\max(0,|r_i|-\varepsilon).
+\]
+\begin{center}\begin{tabular}{@{}cccc@{}}\toprule
+$r_i$&$\xi_i$&$\xi_i^*$&$\ell_\varepsilon(r_i)$\\\midrule
+0&0&0&0\\
+0.3&0&0&0\\
+1.2&0.7&0&0.7\\
+$-0.9$&0&0.4&0.4\\\bottomrule
+\end{tabular}\end{center}
+总损失为$1.1$，松弛惩罚为$1.1C$，还须加$\tfrac12\norm w^2$才是总目标。管道的全高度是$2\varepsilon=1$；这里按输出轴的误差定义管道，不是把二维图上任意斜率的垂直距离直接当几何正交距离。
+
+\ans{SVR在$|r|\le1/2$时不惩罚，外部线性惩罚；本题$\xi=(0,0,0.7,0)$、$\xi^*=(0,0,0,0.4)$，总损失$1.1$。}
+\qcheck{逐项检查$r_i\le1/2+\xi_i$及$-r_i\le1/2+\xi_i^*$；两侧绝不能漏一条。}
+\pitfall{本册统一$f=w\T\phi+b$，残差是$y-f$；不要混用减$b$的另一个偏置约定。$\xi^*$不是$\xi$的复共轭，而是另一侧松弛。}
+\transfer{换$\varepsilon$要重新判断哪些点位于管道内；若只固定模型改$C$，松弛不变，但重新训练后模型和残差都可能改变。}
+
+\problem{Q42}{SVR的对偶：为什么是差系数？}{背面第3栏／V01、V02}
+\qtext{沿用$f_i=w\T\phi_i+b$、$r_i=y_i-f_i$与两侧SVR约束，给第一侧乘子$\alpha_i\ge0$、第二侧$\alpha_i^*\ge0$，非负松弛乘子为$\eta_i,\eta_i^*\ge0$。构建Lagrangian，求导并写出核对偶及预测式；解释为什么预测用$\alpha_i-\alpha_i^*$，不能用分类SVM的$\alpha_i y_i$。}
+\route{“两侧约束、dual、Lagrangian、差系数”查V01；恢复偏置与边界条件查V02。不要只因为模型名称含SVM，就移植分类标签乘子。}
+\given{$\phi_i=\phi(x_i)$，$K_{ij}=\phi_i\T\phi_j$；两组$\alpha$对应两个不等式，$y_i\in\R$是连续目标。令$d_i=\alpha_i-\alpha_i^*$。}
+\solve
+\begin{align*}
+L={}&\frac12\norm w^2+C\sum_i(\xi_i+\xi_i^*)-\sum_i(\eta_i\xi_i+\eta_i^*\xi_i^*)\\
+&-\sum_i\alpha_i(\varepsilon+\xi_i-y_i+w\T\phi_i+b)\\
+&-\sum_i\alpha_i^*(\varepsilon+\xi_i^*+y_i-w\T\phi_i-b).
+\end{align*}
+原始变量取最小、非负乘子取最大。驻点条件为
+\[
+w-\sum_i(\alpha_i-\alpha_i^*)\phi_i=0,\quad
+\sum_i(\alpha_i^*-\alpha_i)=0,
+\quad C-\alpha_i^{(*)}-\eta_i^{(*)}=0.
+\]
+所以$w=\sum_i d_i\phi_i$、$\sum_i d_i=0$，并由乘子非负得到$0\le\alpha_i,\alpha_i^*\le C$。消元后
+\[
+\max_{\alpha,\alpha^*}\left\{
+-\frac12d\T Kd-\varepsilon\sum_i(\alpha_i+\alpha_i^*)+y\T d\right\},
+\quad\mathbf1\T d=0,\quad0\le\alpha_i,\alpha_i^*\le C.
+\]
+预测为$f(x)=\sum_i d_iK(x_i,x)+b$。两侧误差作用相反，因此形成差系数；连续$y_i$只在对偶的$y\T d$里，不额外乘进预测系数。
+
+两组互补条件还必须保留：
+\[
+\alpha_i(\varepsilon+\xi_i-r_i)=0,\quad
+\alpha_i^*(\varepsilon+\xi_i^*+r_i)=0,
+\quad(C-\alpha_i)\xi_i=(C-\alpha_i^*)\xi_i^*=0.
+\]
+\ans{SVR预测系数是$d=\alpha-\alpha^*$，满足和为0；对偶的$\varepsilon$项用两组乘子的\textbf{和}，二次项与目标数据项用两组乘子的\textbf{差}。}
+\qcheck{从$\partial L/\partial b=0$检查差系数之和；从$\partial L/\partial w$检查预测符号，不能仅凭记忆调换两组乘子。}
+\pitfall{把$-\varepsilon\sum(\alpha+\alpha^*)$误写为差会改变优化问题；同样不能漏掉任一组盒约束。}
+\transfer{换核只替换$K$；若更换残差的符号定义，必须同步交换两类松弛与乘子，不能只改预测一处。}
+
+\problem{Q43}{自由支持向量恢复偏置：完整SVR小例题}{背面第3栏／V01、V02}
+\qtext{两点为$(x_1,y_1)=(0,0),(x_2,y_2)=(2,2)$，线性核$K(x,z)=xz$，$\varepsilon=1/2,C=1$。已知$\alpha=(0,1/4)$、$\alpha^*=(1/4,0)$。恢复$w,b$并预测$x=1$；求训练残差和两组松弛，逐项核验KKT及原始、对偶目标。}
+\route{“$0<\alpha<C$、恢复$b$、SVR”查V02。SVR的边界是$r=\pm\varepsilon$；分类SVM的边界$yg=1$不适用于连续目标。}
+\given{$d=(-1/4,1/4)\T$，$K=\bigl[\begin{smallmatrix}0&0\\0&4\end{smallmatrix}\bigr]$。写$q_i=\sum_jd_jK(x_j,x_i)$，于是$f_i=q_i+b$。}
+\solve
+先恢复线性系数与不含偏置的训练分数：
+\[
+w=\sum_i d_ix_i=\frac12,\qquad q=(0,1)\T.
+\]
+点2有$0<\alpha_2<C$，所以$\xi_2=0,r_2=\varepsilon$，可用
+\[
+b=y_2-q_2-\varepsilon=2-1-\frac12=\frac12.
+\]
+点1有$0<\alpha_1^*<C$，所以$\xi_1^*=0,r_1=-\varepsilon$，独立给出
+\[
+b=y_1-q_1+\varepsilon=0-0+\frac12=\frac12.
+\]
+故$f(x)=x/2+1/2$，$f(1)=1$；训练预测$(1/2,3/2)$，残差$r=(-1/2,1/2)$，两类松弛全部为0。
+
+检查乘子均在$[0,1]$、$\sum d=0$、$w=\sum d_ix_i$。非零$\alpha_2$所乘的管道约束在上侧取等号，非零$\alpha_1^*$所乘的约束在下侧取等号；其他乘子为0，所有互补乘积均为0。
+\[
+J=\frac12(1/2)^2=\frac18,
+\]
+\[
+D=-\frac12\left(\frac14\right)-\frac12\left(\frac12\right)
++\left[0\left(-\frac14\right)+2\left(\frac14\right)\right]
+=\frac18.
+\]
+这里$d\T Kd=1/4$，$\sum(\alpha+\alpha^*)=1/2$。
+
+\ans{$w=b=1/2$，$f(1)=1$；训练残差为$(-1/2,1/2)$，零松弛，原始和对偶目标均为$1/8$。}
+\qcheck{两类自由SV各给相同$b$；把$b$代回检查残差的正负比单独记一个偏置公式可靠。}
+\pitfall{$\alpha$侧给$b=y-q-\varepsilon$，$\alpha^*$侧给$b=y-q+\varepsilon$，不能交换。管道边界可有非零系数，不能写成“只有管道外才是SV”。}
+\transfer{如果改变数据、核、$C$或$\varepsilon$，原乘子不一定仍最优。必须先重新确认$0<\alpha^{(*)}<C$，才沿用自由SV偏置公式。}
+
+\problem{Q44}{无自由SV的偏置区间与零管宽例外}{背面第3栏／V02}
+\qtext{(a) 两点$(0,0),(1,2)$，线性核，$C=1/2,\varepsilon=1/2$；给定$\alpha=(0,1/2)$、$\alpha^*=(1/2,0)$。求$w$和所有可行最优$b$，选$b=3/4$检查残差、松弛和目标。(b) 当$\varepsilon=0$时，“同一点$\alpha_i,\alpha_i^*$绝不能同时正”是否仍成立？用单点$(x,y)=(0,2)$、$C=1$构造或否定一个反例。}
+\route{“no free support vector、乘子在盒端点、$\varepsilon=0$”查V02。此题没有$0<\alpha^{(*)}<C$，所以不能无条件把残差设为管道边界。}
+\given{(a)$d=(-1/2,1/2)$，$w=\sum d_ix_i=1/2$、$q=(0,1/2)$。四条KKT偏置规则分别来自两侧约束与松弛互补。}
+\solve
+在没有自由系数时收集以下界：
+\[
+\begin{array}{ll}
+\alpha_i=0:\ b\ge y_i-q_i-\varepsilon,&
+\alpha_i=C:\ b\le y_i-q_i-\varepsilon,\\
+\alpha_i^*=0:\ b\le y_i-q_i+\varepsilon,&
+\alpha_i^*=C:\ b\ge y_i-q_i+\varepsilon.
+\end{array}
+\]
+点1给$b\ge-1/2$和$b\ge1/2$；点2给$b\le1$和$b\le2$，交集为
+\[
+\boxed{\frac12\le b\le1}.
+\]
+取$b=3/4$，则$f=(3/4,5/4)$，$r=(-3/4,3/4)$。
+$\xi=(0,1/4)$、$\xi^*=(1/4,0)$；正松弛对应的乘子均在上界$C$，所乘约束取等号。
+\[
+J=\frac12(1/2)^2+\frac12(1/4+1/4)=\frac38,
+\]
+\[
+D=-\frac12(1/4)-\frac12(1)+2(1/2)=\frac38.
+\]
+所以区间内的$b$都能完成同一最优$d$对应的原始解；其中端点也须按KKT检查，不能只用某个“平均值公式”。
+
+\textbf{(b)}若$\varepsilon>0$且两乘子都正，两个互补等式相加会要求
+$2\varepsilon+\xi+\xi^*=0$，与非负松弛冲突。
+但$\varepsilon=0$时这一排除理由失效。对给定单点取
+\[
+w=0,\ b=2,\ \xi=\xi^*=0,\ \alpha=\alpha^*=1/4.
+\]
+差系数为0，和约束、驻点与所有互补条件均成立，原始及对偶值均为0；两乘子确实可同时为正。
+\ans{(a)$w=1/2,b\in[1/2,1]$，所选$b=3/4$给目标$3/8$。(b)“两乘子不能同时正”需$\varepsilon>0$；$\varepsilon=0$应重新检查，预测始终使用差系数。}
+\qcheck{不要只验$\sum d=0$；本题通过原始约束、互补和目标相等共同验证。}
+\pitfall{把所有非零乘子都当自由SV，会在(a)误得唯一$b$；在(b)忽略$\varepsilon=0$会误删合法的对偶解。}
+\transfer{换数据后仍逐项收集$b$的下界与上界；若最大下界大于最小上界，说明候选系数或数值容差存在问题，应重新检查，不能随意平均。}
+
+\problem{Q45}{SVM、SVR、LS-SVM：用任务、损失和约束辨认}{背面第5栏／D06；S01、V01、L01辅助}
+\qtext{辨认并比较三种训练描述：(A)输出二类标签$\pm1$，约束$y_i g_i\ge1-\xi_i$，惩罚$C\sum\xi_i$；(B)预测实数，管道内不罚，外部线性惩罚；(C)预测实数，$y_i=f_i+e_i$，目标含$\gamma\sum e_i^2/2$。写出模型名称、共同点、关键差异与限制。判断：“SVM只能分类，LS-SVM只能回归”“求解线性方程组意味着目标不是二次优化”。}
+\route{先圈出标签类型和输出，再检查损失及约束。A的标签间隔指向SVM；B的$\varepsilon$管道指向SVR；C的平方误差加等式指向本课件的LS-SVM回归。仅出现$\gamma$或kernel一词不足以确定模型。}
+\given{三者均可用$f=w\T\phi+b$并通过核求内积；分类时再对判别分数按符号给标签。比较“标准稀疏性”指常见最优展开性质，不是每个数据集的绝对保证。}
+\solve
+\textbf{完整句子答案。}A是软间隔支持向量分类机，采用hinge形式的间隔违背惩罚；B是$\varepsilon$不敏感支持向量回归SVR；C是最小二乘支持向量机（Least-Squares Support Vector Machine，LS-SVM）的回归形式。三者共同用范数惩罚控制函数复杂度，核技巧可表达非线性关系；它们都要选择正则及核参数并评估泛化。
+
+三者在明确维度上的差异如下：
+\begin{center}\small\begin{tabular}{@{}p{24mm}p{40mm}p{40mm}p{44mm}@{}}\toprule
+维度&SVM分类&SVR&本课LS-SVM回归\\\midrule
+输出与损失&类别；$\max(0,1-yg)$&实数；$\max(0,|y-f|-\varepsilon)$&实数；平方残差$e^2$\\
+约束&标签间隔不等式&上下管道不等式&$y=f+e$等式\\
+求解&受约束二次优化&受约束二次优化&二次优化条件化为线性系统\\
+展开系数&$\alpha_i y_i$&$\alpha_i-\alpha_i^*$&$\alpha_i=\gamma e_i$\\
+乘子范围&$0\le\alpha_i\le C$&两组均在$[0,C]$&等式乘子可正可负\\
+展开性质&通常稀疏&通常稀疏&通常稠密\\\bottomrule
+\end{tabular}\end{center}
+两句判断都错误。SVM方法族包括分类与SVR回归，LS-SVM也可用于分类；本课件只对回归给出完整训练推导，分类应用图不等于只能做回归。LS-SVM原目标仍是带等式约束的二次优化，求导消元后能直接解线性方程组。
+
+\ans{A＝SVM分类，B＝SVR，C＝LS-SVM回归。共同点应写“范数正则、核内积、模型选择”；差异应落到输出、损失、约束、系数与训练求解上。}
+\qcheck{检查是否误写“等式要求穿过全部样本”：C中$e$允许非零；是否误把LS-SVM乘子也限制为非负或盒约束。}
+\pitfall{目标含平方项不代表只能做线性预测；线性系统描述未知参数的求解，核仍可使输入到输出非线性。}
+\transfer{遇到新任务先问输出是类别还是数值，再据损失、约束和参数条件选择方法。模型选择理由应联系噪声、误差容忍与可用验证资料，而非只凭模型名称。}

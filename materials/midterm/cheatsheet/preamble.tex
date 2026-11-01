@@ -1,0 +1,25 @@
+\documentclass[UTF8,a4paper,landscape,fontset=fandol]{ctexart}
+\usepackage[left=6mm,right=6mm,top=6mm,bottom=6mm]{geometry}
+\input{../common.tex}
+\usepackage[unicode,pdftitle={CS5486 期中双面五栏速查表},pdfauthor={CS5486 revision materials}]{hyperref}
+\pagestyle{empty}
+\setlength{\parskip}{.8pt}
+\setlength{\parindent}{0pt}
+\setlength{\abovedisplayskip}{2pt}
+\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{1pt}
+\setlength{\belowdisplayshortskip}{1pt}
+\setlength{\jot}{1pt}
+\setlength{\arraycolsep}{2pt}
+\setlist{nosep,leftmargin=1.1em}
+\DeclareMathSizes{5.3}{5.3}{4.5}{4.5}
+\newcommand{\bodyfont}{\linespread{1}\fontsize{5.3}{6.3}\selectfont\raggedright\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}\setlength{\abovedisplayshortskip}{1pt}\setlength{\belowdisplayshortskip}{1pt}}
+\newcommand{\sheethead}[2]{\noindent{\fontsize{8}{9}\selectfont\textbf{CS5486 期中速查｜#1}}\hfill{\fontsize{5.5}{7}\selectfont #2}\par\vspace{1mm}\hrule\vspace{1.2mm}}
+\newcommand{\colhead}[1]{{\color{defblue}\fontsize{6.8}{8}\selectfont\textbf{#1}}\par\vspace{1pt}}
+\newcommand{\block}[3]{\par\vspace{1.2pt}{\color{#1}\fontsize{6.2}{7.2}\selectfont\textbf{#2\quad #3}}\par\vspace{.6pt}}
+\newcommand{\findit}[1]{{\color{compgreen}\textbf{题干定位：}}#1\par}
+\newcommand{\warn}[1]{{\color{warnred}\textbf{注意：}}#1\par}
+\newcommand{\mini}[1]{{\color{calcorange}\textbf{微例：}}#1\par}
+\newsavebox{\colbox}\newcounter{colnum}\newcommand{\columnstart}{\begin{lrbox}{\colbox}\begin{minipage}[t]{54.5mm}\bodyfont}
+\newcommand{\columnend}{\end{minipage}\end{lrbox}\stepcounter{colnum}\typeout{COLUMN \thecolnum\space HEIGHT \the\dimexpr\ht\colbox+\dp\colbox\relax}\usebox{\colbox}}
+\newcommand{\sepcol}{\hfill{\color{black!25}\vrule width .2pt}\hfill}

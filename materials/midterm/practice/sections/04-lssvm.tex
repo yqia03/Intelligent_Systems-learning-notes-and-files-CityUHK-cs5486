@@ -1,0 +1,178 @@
+\problem{Q46}{从电负荷预测文字构建LS-SVM回归}{背面第4栏 L01、L02；正面第1栏 M02}
+\qtext{有$n\ge1$个训练样本$(x_i,y_i)$，其中$x_i\in\R^d$为预测前已经可用的特征，$y_i\in\R$为实际电负荷。指定有效核$K(x,z)=\phi(x)^T\phi(z)$、$\gamma>0$，要求预测包含常数偏置，并同时控制权重范数和训练平方误差。请自行写出预测函数、目标、约束、Lagrangian、四组导数及最终线性系统。采用未知顺序$[\alpha;b]$。解释等式是否强制插值，以及模型最终输出什么。}
+\route{圈“连续电负荷、平方误差、范数、偏置、有效核、$\gamma$”。这些条件共同指向LS-SVM回归；只有“least squares”一词并不足以区分LMS或固定RBF输出拟合。这里指定核和带范数惩罚的等式建模，使用L01；不是分类SVM的$y_i=\pm1$间隔。}
+\given{$\phi_i=\phi(x_i)\in\R^h$；未知$w\in\R^h,b\in\R,e,\alpha\in\R^n$；$K\in\R^{n\times n}$。$e_i$定义为实际减预测，$\gamma$为正的误差权重。}
+\solve
+先写$f(x)=w^T\phi(x)+b$，由“实际=预测+残差”得到
+\[
+\min_{w,b,e}\frac12w^Tw+\frac\gamma2\sum_{i=1}^ne_i^2,
+\qquad y_i=w^T\phi_i+b+e_i.
+\]
+范数项限制复杂度，平方项衡量拟合；$1/2$让求导时的2消去。等式允许$e_i\ne0$，所以不强制通过全部样本。
+\[
+\mathcal L=\frac12w^Tw+\frac\gamma2\sum_i e_i^2-\sum_i\alpha_i(w^T\phi_i+b+e_i-y_i).
+\]
+逐组令偏导为零：
+\begin{align*}
+\partial_w\mathcal L=0&\Rightarrow w=\sum_i\alpha_i\phi_i, &
+\partial_b\mathcal L=0&\Rightarrow\sum_i\alpha_i=0,\\
+\partial_{e_i}\mathcal L=0&\Rightarrow e_i=\alpha_i/\gamma, &
+\partial_{\alpha_i}\mathcal L=0&\Rightarrow y_i=w^T\phi_i+b+e_i.
+\end{align*}
+代入最后一式：$y_i=\sum_jK_{ij}\alpha_j+b+\alpha_i/\gamma$。再加上乘子和为零，得到
+\[
+\boxed{\begin{bmatrix}K+\gamma^{-1}I&\mathbf1\\\mathbf1^T&0\end{bmatrix}
+\begin{bmatrix}\alpha\\b\end{bmatrix}=\begin{bmatrix}y\\0\end{bmatrix}},
+\qquad f(x)=\sum_i\alpha_iK(x_i,x)+b.
+\]
+\ans{LS-SVM回归最小化范数与平方残差之和，等式为$y=f+e$。消去$w,e$后求上述$(n+1)$阶系统；预测是连续值，等式乘子可正可负。}
+\qcheck{上方$n$行给$n$个训练等式，最后一行来自bias导数；维度和未知数都为$n+1$。回代检验$e=y-K\alpha-b\mathbf1=\alpha/\gamma$以及$\mathbf1^T\alpha=0$。}
+\pitfall{不能在预测中额外乘分类标签$y_i$；不能给等式乘子加$\alpha_i\ge0$；不能漏掉bias导数。}
+\transfer{换核或数据只改变$K,y$；换$\gamma$改变对角$1/\gamma$。若题目明确不允许bias，则删掉$b$及对应末行末列，不能继续套同一系统。}
+
+\problem{Q47}{两样本LS-SVM：增广消元与完整回代}{背面第4栏 L01、L02；背面第5栏 L03；正面第1栏 M03}
+\qtext{训练样本为$(x_1,y_1)=(0,0)$、$(x_2,y_2)=(1,2)$。取线性核$K(x,z)=xz$、$\gamma=1$，包含不惩罚的偏置$b$。求$K$、增广系统、$\alpha,b,w$、$f(2)$、训练残差及最优目标值。必须展示行变换，不能仅写矩阵求逆。}
+\route{圈“线性核、$\gamma$、平方回归、包含bias”。L02给系统，L03是同题的压缩版；M03指导行变换。目标连续，不能套分类的$y^T\alpha=0$。}
+\given{$n=2$，$y=(0,2)^T$，未知$q=(\alpha_1,\alpha_2,b)^T$，$\phi(x)=x$，$w$为标量。}
+\solve
+先逐项算核：$K_{11}=0,K_{12}=K_{21}=0,K_{22}=1$。对角加1，补偏置行列：
+\[
+K=\begin{bmatrix}0&0\\0&1\end{bmatrix},\quad
+A=\begin{bmatrix}1&0&1\\0&2&1\\1&1&0\end{bmatrix},\quad Aq=\begin{bmatrix}0\\2\\0\end{bmatrix}.
+\]
+增广消元按以下顺序进行，右端必须跟随整行变化：
+\[
+\left[\begin{array}{ccc|c}1&0&1&0\\0&2&1&2\\1&1&0&0\end{array}\right]
+\xrightarrow{R_3\leftarrow R_3-R_1}
+\left[\begin{array}{ccc|c}1&0&1&0\\0&2&1&2\\0&1&-1&0\end{array}\right]
+\xrightarrow{R_2\leftrightarrow R_3}
+\left[\begin{array}{ccc|c}1&0&1&0\\0&1&-1&0\\0&2&1&2\end{array}\right].
+\]
+\[
+\xrightarrow{R_3\leftarrow R_3-2R_2}
+\left[\begin{array}{ccc|c}1&0&1&0\\0&1&-1&0\\0&0&3&2\end{array}\right].
+\]
+从末行回代：$3b=2$，所以$b=2/3$；第二行$\alpha_2-b=0$给$\alpha_2=2/3$；第一行$\alpha_1+b=0$给$\alpha_1=-2/3$。
+\[
+w=\sum_i\alpha_ix_i=2/3,\qquad f(x)=\frac23x+\frac23,\qquad f(2)=2.
+\]
+训练预测为$(2/3,4/3)^T$，故$e=y-f=(-2/3,2/3)^T$。目标值
+\[
+J=\tfrac12(2/3)^2+\tfrac12\big[(-2/3)^2+(2/3)^2\big]=\frac23.
+\]
+\ans{$\alpha=(-2/3,2/3)^T,b=w=2/3,f(2)=2$，训练残差$(-2/3,2/3)^T$，最优目标值$2/3$。}
+\qcheck{$Aq=(0,2,0)^T$；$\alpha_1+\alpha_2=0$；$\gamma e=\alpha$；对$w$求导条件$w-\sum\alpha_i x_i=0$。四组条件全满足，凸问题中足以确认最优。}
+\pitfall{最后一行右端为0；不能给$b$的右下角写1。$f(2)$是新点预测，不能用第二个训练残差代替。负乘子在这里正常。}
+\transfer{数据顺序可交换，但$K$的行列、$y$、$\alpha$顺序必须同步；核换成非线性后仍按同一框架求解。}
+
+\problem{Q48}{改变正则权重：哪些量要重算}{背面第5栏 L03；背面第4栏 L02；正面第4栏 B03}
+\qtext{沿用Q47的两个样本和线性核，先把$\gamma$改为2，再对一般$\gamma>0$解出$w,b,\alpha$。比较训练平方误差和权重范数随$\gamma$的变化，并判断“$\gamma$越大测试必越准”是否正确。}
+\route{圈“同一数据、改变$\gamma$、训练与测试”。L03提示只改$K+\gamma^{-1}I$的对角，但必须重新求整个系统；B03区分拟合和泛化。}
+\given{$K=\operatorname{diag}(0,1)$，$y=(0,2)^T$；$\gamma$是平方残差惩罚的权重，非核宽度。令$\alpha_2=a$。}
+\solve
+由末行$\alpha_1+\alpha_2=0$得$\alpha_1=-a$。前两行分别是
+\[
+-a/\gamma+b=0,\qquad (1+1/\gamma)a+b=2.
+\]
+第一式给$b=a/\gamma$，代第二式得到$a(1+2/\gamma)=2$，所以
+\[
+\alpha=\left(-\frac{2\gamma}{\gamma+2},\frac{2\gamma}{\gamma+2}\right)^T,
+\quad b=\frac2{\gamma+2},\quad w=\frac{2\gamma}{\gamma+2}.
+\]
+当$\gamma=2$：$\alpha=(-1,1)^T,b=1/2,w=1$；训练预测$(1/2,3/2)$，残差$(-1/2,1/2)$，$f(2)=5/2$。
+\[
+\sum e_i^2=\frac8{(\gamma+2)^2},\qquad
+\|w\|^2=\frac{4\gamma^2}{(\gamma+2)^2}.
+\]
+本数据中前者随$\gamma$增大而减小，后者增大。$\gamma\to0^+$时$w\to0,b\to1$，接近常数均值预测；$\gamma\to\infty$时$w\to2,b\to0$，趋向插值。这些极限来自本题可插值数据，不是任意数据都能零残差。
+\ans{$\gamma=2$时$w=1,b=1/2,\alpha=(-1,1)^T$。更大$\gamma$更重视训练平方误差，可能使用更大范数；测试表现必须独立验证。}
+\qcheck{代回新矩阵的首行$\alpha_1/2+b=-1/2+1/2=0$；次行$(3/2)\alpha_2+b=2$；$e=\alpha/2$。}
+\pitfall{不要把$1/\gamma$写成$\gamma$。一般问题可证明最优总训练SSE随该权重增加不增，但不能据此断言每一个样本的残差都单调缩小。}
+\transfer{换数据后仍保留“算核、加对角、加bias、消元、回代”的流程；具体单调公式和极限必须重新推导。核宽度变化还会改变非对角元素，不能只修改对角。}
+
+\problem{Q49}{找出LS-SVM推导中的六类错误}{背面第4栏 L01、L02；背面第5栏 L03；背面第1栏 S02}
+\qtext{同学拟合连续目标$y_i\in\R$，声称LS-SVM必须穿过全部样本。他写
+\[
+\mathcal L=\tfrac12\|w\|^2+\tfrac\gamma2\sum e_i^2-\sum\alpha_i(w^T\phi_i+b+e_i-y_i),
+\]
+却得到$w=\sum\alpha_i y_i\phi_i$、$e_i=\gamma\alpha_i$、$0\le\alpha_i\le C$，并列出
+\[
+\begin{bmatrix}K-\gamma I&\mathbf1\\y^T&1\end{bmatrix}
+\begin{bmatrix}\alpha\\b\end{bmatrix}=\begin{bmatrix}y\\0\end{bmatrix}.
+\]
+逐类改正，并解释为什么把未知向量改成$[b;\alpha]$而不改矩阵也不对。}
+\route{圈“连续目标、等式、LS-SVM”，回L01按给出的L重新求导；不要从错误结果倒猜。S02只用作与分类公式的对照。}
+\given{$K_{ij}=\phi_i^T\phi_j$，$\gamma>0$；题中L本身正确，错误从导数及解释开始。$C$并非本模型给定参数。}
+\solve
+\begin{enumerate}
+\item 等式$y_i=f_i+e_i$允许非零残差，不能推成必须插值。
+\item $\partial_w\mathcal L=w-\sum\alpha_i\phi_i$，故$w=\sum\alpha_i\phi_i$，没有分类标签因子。
+\item $\partial_{e_i}\mathcal L=\gamma e_i-\alpha_i$，故$e_i=\alpha_i/\gamma$；不是$\gamma\alpha_i$。
+\item 等式乘子$\alpha_i\in\R$，没有非负或盒约束；不能引入不存在的$C$。
+\item 代入$e$产生$+\gamma^{-1}I$，既不是减号，也不是$\gamma I$。
+\item bias导数给$\sum_i\alpha_i=0$，所以末行是$[\mathbf1^T,0]$，不是$[y^T,1]$。
+\end{enumerate}
+\[
+\text{正确系统：}\quad
+\begin{bmatrix}K+\gamma^{-1}I&\mathbf1\\\mathbf1^T&0\end{bmatrix}
+\begin{bmatrix}\alpha\\b\end{bmatrix}=\begin{bmatrix}y\\0\end{bmatrix}.
+\]
+未知向量换成$[b;\alpha]$，若也把bias方程排第一行，则应同时得到
+\[
+\begin{bmatrix}0&\mathbf1^T\\\mathbf1&K+\gamma^{-1}I\end{bmatrix}
+\begin{bmatrix}b\\\alpha\end{bmatrix}=\begin{bmatrix}0\\y\end{bmatrix}.
+\]
+\ans{等式允许残差；$w=\sum\alpha_i\phi_i,e=\alpha/\gamma,\alpha\in\R^n$；左上$K+I/\gamma$，末行$[\mathbf1^T,0]$。未知顺序变动必须匹配矩阵列，方程顺序变动必须匹配行及右端。}
+\qcheck{Q47的$\alpha=(-2/3,2/3)$直接否定“全非负”。正确系统维度为$(n+1)\times(n+1)$，每行能还原对应导数或训练等式。}
+\pitfall{“核方法”并不意味着所有模型的预测都含$y_i$；“SVM”后缀也不意味着所有乘子约束一致。}
+\transfer{若选择相反的Lagrangian乘子符号，可整体重新定义乘子并同步改所有式子；不能只反转某一条导数或预测符号。}
+
+\problem{Q50}{三样本非线性核：矩阵秩低仍可唯一求解}{背面第2栏 K01；背面第4栏 L02；背面第5栏 L03；正面第1栏 M03}
+\qtext{样本$x=(-1,0,1)$、$y=(1,0,1)$，核$K(x,z)=(xz)^2$，$\gamma=1$，包含bias。说明核有效，计算Gram矩阵、完整系统及解，写出$f(x)$、$f(2)$和训练残差。不能因为$K$奇异就停止求解。}
+\route{圈“连续目标、非线性核、平方残差”；用K01确认特征映射，用L02搭系统。不是FLN的无正则精确插值；本题带范数惩罚。}
+\given{可取$\phi(x)=x^2\in\R$，所以特征权重$w$为标量。未知按$(\alpha_1,\alpha_2,\alpha_3,b)$排列。}
+\solve
+$K_{ij}=x_i^2x_j^2$，故$K=vv^T$，$v=(1,0,1)^T$；任意$c$有$c^TKc=(v^Tc)^2\ge0$，核有效。
+\[
+K=\begin{bmatrix}1&0&1\\0&0&0\\1&0&1\end{bmatrix},\quad
+[A|r]=\left[\begin{array}{cccc|c}2&0&1&1&1\\0&1&0&1&0\\1&0&2&1&1\\1&1&1&0&0\end{array}\right].
+\]
+依次做$R_1\leftarrow R_1-R_3$，再$R_3\leftarrow R_3-R_1$、$R_4\leftarrow R_4-R_1$（此时用新$R_1$），再$R_4\leftarrow R_4-R_2$：
+\[
+\left[\begin{array}{cccc|c}1&0&-1&0&0\\0&1&0&1&0\\0&0&3&1&1\\0&0&2&-1&0\end{array}\right]
+\xrightarrow{R_3\leftrightarrow R_4,\ R_4\leftarrow R_4-\frac32R_3}
+\left[\begin{array}{cccc|c}1&0&-1&0&0\\0&1&0&1&0\\0&0&2&-1&0\\0&0&0&5/2&1\end{array}\right].
+\]
+回代得$b=2/5$，$\alpha_3=b/2=1/5$，$\alpha_2=-b=-2/5$，$\alpha_1=\alpha_3=1/5$。
+\[
+w=\sum\alpha_ix_i^2=2/5,\quad
+f(x)=\tfrac25x^2+\tfrac25,\quad f(2)=2.
+\]
+训练预测为$(4/5,2/5,4/5)$，残差$(1/5,-2/5,1/5)$。目标$J=\frac12(2/5)^2+\frac12(1+4+1)/25=1/5$。
+\ans{$\alpha=(1/5,-2/5,1/5)^T,b=2/5$；$f(x)=2x^2/5+2/5$，$f(2)=2$。$K$秩1，但$K+I$正定，含bias系统仍唯一可解。}
+\qcheck{$\sum\alpha_i=0$；残差等于$\alpha$；$K\alpha+b\mathbf1+\alpha=y$。核预测与显式一维特征预测得到相同$f$。}
+\pitfall{不能把$K(x,z)$写成$(x-z)^2$，后者不是本题核；不能去掉中间$x=0$样本，它仍影响bias及残差。}
+\transfer{换成另一个有效核时，不一定能手写有限维$\phi$，但Gram系统流程不变。增加样本会同时增加未知乘子和训练方程。}
+
+\problem{Q51}{唯一解、二次优化与“最大”辨析}{背面第5栏 L03、D06；正面第1栏 M02；背面第1栏 S01}
+\qtext{设$n\ge1$，$K$为对称半正定Gram矩阵，$\gamma>0$。证明$H=K+\gamma^{-1}I$正定，进而说明LS-SVM含bias系统可逆。判断并改正：“分块矩阵右下为0，所以不可逆”；“用线性方程组训练，所以目标是线性的”；“老师提到最大，因此所有模型都最大化损失”；“LS-SVM所有乘子都非零，所以永远稠密”。}
+\route{圈“PSD、正定、唯一、目标方向、通常”。L03给条件，M02帮助区分驻点与极值；S01解释最大间隔的具体含义。此题是条件与证明，不需要虚构数值。}
+\given{$H\in\R^{n\times n}$；令齐次系统未知为$(a,c)$，$a\in\R^n,c\in\R$。用齐次系统只有零解判断方阵可逆。}
+\solve
+任意$a\ne0$，有
+\[
+a^THa=a^TKa+\gamma^{-1}\|a\|^2\ge\gamma^{-1}\|a\|^2>0.
+\]
+因此$H$正定。考虑$Ha+c\mathbf1=0$、$\mathbf1^Ta=0$；第一式左乘$a^T$得
+\[
+a^THa+c\,a^T\mathbf1=0\Rightarrow a^THa=0\Rightarrow a=0.
+\]
+代回得$c\mathbf1=0$，由于$n\ge1$，所以$c=0$。于是含bias方阵只有零齐次解，故可逆，任意右端有唯一解。右下一个元素为0不代表整矩阵奇异；该分块矩阵也不必正定。
+
+LS-SVM原目标仍为范数平方和残差平方的\textbf{二次凸优化}；等式约束使最优条件可整理成线性系统。hard SVM最大化几何间隔等价于最小化范数；LMS、BP平方损失、LS-SVM均采用相应最小化问题。用户提供的“最高／最大”未说明具体量，不能当作所有题的方向。
+
+最后，$\alpha_i=\gamma e_i$，一般残差不全为0，因此标准LS-SVM通常有很多非零系数；特殊数据可出现零系数，不能把“通常稠密”写成“每个系数必非零”。
+\ans{$K\succeq0,\gamma>0,n\ge1$保证$H\succ0$及含bias系统可逆。线性驻点系统源于二次优化；最大或最小必须看题目目标；LS-SVM通常稠密但允许零系数。}
+\qcheck{Q47的$K$奇异却有唯一解，符合结论。若所有$y_i$相同，可取$w=0,b=y_i,e=0,\alpha=0$，直接反驳“所有乘子都非零”。}
+\pitfall{不能从$K$对称就推出PSD；也不能省略$\gamma>0$后继续使用正定证明。不要把所有无约束驻点都叫全局最小。}
+\transfer{若题给无效核，需先查假设；若不含bias，系统变为$H\alpha=y$，正定性直接保证唯一。模型比较仍按任务、目标、约束、求解及限制五个维度组织。}

@@ -1,0 +1,22 @@
+\documentclass[11pt,a4paper,fontset=fandol]{ctexart}
+\usepackage[left=19mm,right=19mm,top=18mm,bottom=18mm]{geometry}
+\input{../common.tex}
+\usepackage{fancyhdr,lastpage,needspace}
+\usepackage[unicode,colorlinks=true,linkcolor=defblue,urlcolor=defblue,bookmarksnumbered=true]{hyperref}
+\hypersetup{pdftitle={CS5486 期中 Cheatsheet 配套复习题与解析},pdfauthor={CS5486 revision materials}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small CS5486｜配套复习题与解析}
+\fancyhead[R]{\small 新课件实际页码 1--187}
+\fancyfoot[C]{\small\thepage\ / \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{4pt}
+\setlist{nosep,leftmargin=1.7em}
+\linespread{1.08}
+\newcommand{\problem}[3]{\clearpage\section{#1\texorpdfstring{\quad}{ }#2}\label{#1}\noindent\textcolor{compgreen}{\textbf{查表定位：}#3}\par}
+\newcommand{\qtext}[1]{\par\textcolor{defblue}{\textbf{复习题题目}}\par #1\par\medskip\hrule\medskip}
+\newcommand{\route}[1]{\textbf{圈词与选法：}#1\par}
+\newcommand{\given}[1]{\textbf{符号对应：}#1\par}
+\newcommand{\solve}{\par\textcolor{calcorange}{\textbf{详细解析}}\par}
+\newcommand{\qcheck}[1]{\par\textbf{检查：}#1\par}
+\newcommand{\pitfall}[1]{\textcolor{warnred}{\textbf{易错：}}#1\par}
+\newcommand{\transfer}[1]{\textbf{换题迁移：}#1\par}

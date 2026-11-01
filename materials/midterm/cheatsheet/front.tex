@@ -1,0 +1,205 @@
+\sheethead{正面：基础／神经网络}{正文5.3pt｜英文答句＋中文操作｜蓝=概念；绿=比较；橙=计算；红=条件}
+\noindent
+\columnstart
+\colhead{正面第1栏｜基础／数学}
+\findit{定义查F01/F02；维度查M01；求导查M02；方程组查M03。}
+\block{defblue}{F01}{Intelligent systems; AI V.S. CI}
+An intelligent system exhibits learning, adaptation, inference or planning. \textbf{Deduction} applies rules to facts; \textbf{induction} generalizes from examples and needs unseen-data checks.
+
+AI includes learning and rule-based methods. CI emphasizes neural learning, fuzzy representation and evolutionary optimization; they overlap. Traditional hard computing emphasizes precision; soft computing tolerates uncertainty.
+
+Classification predicts a class; regression predicts a number. Associative memory retrieves patterns from partial/noisy cues.
+\block{defblue}{F02}{ANN: architecture, rules and learning}
+$\mathrm{ANN}=(\mathrm{ARCH},\mathrm{RULE})$, ARCH=$(u,v,w,x,y)$: $u,v\in\R^N$ are net inputs/activations; $w\in\R^M$ stores connection parameters; $x\in\R^d,y\in\R^m$ are external inputs/outputs.
+
+\textbf{G} aggregates: $u=Wx+b$. \textbf{F} activates: $v=f(u)$. \textbf{H} reads out: $y=h(v)$. \textbf{E} evaluates, e.g. $\frac12\|z-y\|^2$. \textbf{L} updates parameters. 按G$\to$F$\to$H计算。Training adds E$\to$L.
+
+Supervised learning uses targets $z$; unsupervised learning finds structure without labels. Training changes parameters; inference fixes them. States $u,v$ change fast; weights change slowly.
+
+Classification axes: deterministic/stochastic activation; feedforward/recurrent connections; supervised/unsupervised learning. Semilinear aggregation uses weighted sums; higher-order aggregation adds input products.
+
+Discrete: $w_{t+1}=w_t+L$; continuous: $\dot w=L$, $\Delta w\approx\Delta tL$. NNs can offer nonlinear mappings, adaptive weights and distributed knowledge.
+\block{calcorange}{M01}{Dimensions; linear V.S. affine}
+使用列向量。 $w^Tx=\sum_jw_jx_j\in\R$; $A\in\R^{m\times d}$ gives $Ax\in\R^m$. 先核对内维； $(AB)^T=B^TA^T$, usually $AB\ne BA$.
+
+$Ax$ is linear; $Ax+b$ is affine, linear only if $b=0$. 矩阵乘法按行乘列计算： $(AB)_{ij}=\sum_k A_{ik}B_{kj}$.
+
+\mini{给定$w=(2,-1)^T,x=(1,3)^T,b=2$：代入算$u=2(1)-1(3)+2=1$，再得$H(u)=1$。}
+\block{calcorange}{M02}{Derivatives; gradients; extrema}
+基本导数： $(u^p)'=pu^{p-1}$, $(e^u)'=e^u$, $(\ln u)'=1/u$ ($u>0$). 链式求导：沿同一路径把导数相乘，多条分支的贡献相加。 For $a=a(\theta)$, $\partial_\theta\frac12(z-a)^2=(a-z)\partial_\theta a$.
+按$\theta^+=\theta-\eta\nabla E$做梯度下降，$\eta>0$。
+\[\begin{gathered}
+\nabla_w\tfrac12\|Xw-y\|^2=X^T(Xw-y),\\
+\nabla_w(w^TAw)=(A+A^T)w.
+\end{gathered}\]
+For symmetric $A$, $\nabla\frac12w^TAw=Aw$; $\nabla\frac12\|w\|^2=w$. 先解$\nabla E=0$。 Scalar $E''>0$: local minimum; $E''<0$: local maximum; zero: inconclusive. Multivariable Hessian $\nabla^2E$: positive definite gives a local minimum; negative definite a local maximum; indefinite a saddle; semidefinite is inconclusive. Convex least squares has global minima; full column rank gives uniqueness.
+
+\mini{设$E=\frac12(1-2w)^2$：求导得$E'=4w-2=0\Rightarrow w=1/2$；再查$E''=4>0$。}
+\block{calcorange}{M03}{消元／回代／检查}
+先将未知量按顺序排入$q$，写成$Aq=c$。对$[A|c]$的\textbf{整行}交换、乘非零常数或加另一行的倍数；消元后回代，再查原方程。
+
+\mini{给定$u+v=3$、$2u-v=0$：做$R_2-2R_1$得$-3v=-6$；回代得$v=2$、$u=3-2=1$。}
+$[0\ \cdots\ 0|c\ne0]$ means no solution. 记$r=\operatorname{rank}A$、$r_a=\operatorname{rank}[A|c]$、$n=\dim q$： $r\ne r_a$ gives no solution; $r=r_a=n$ gives one; $r=r_a<n$ gives infinitely many (free unknowns).
+\columnend\sepcol
+\columnstart
+\colhead{正面第2栏｜逻辑／Perceptron}
+\block{calcorange}{N01}{M-P veto; gates; decoders}
+M-P inputs/outputs are $0/1$. \textbf{先查抑制}：Any active inhibitory input forces output 0. \textbf{否则数兴奋输入$s$}：The output is 1 iff $s\ge\theta$。 Excitation cannot cancel veto.
+
+An ordinary TLU uses $u=w^Tx-\theta=w^Tx+b$, $b=-\theta$, and $H(u)=1$ iff $u\ge0$; negative weights only reduce the sum.
+
+\mini{给定$x=(1,1,1),w=(1,1,-1),\theta=1$：普通TLU的加权和$=1\Rightarrow1$；若M-P的第3路为抑制，得0。}
+
+AND uses $n$ excitatory inputs, $\theta=n$; OR uses $\theta=1$. NOT uses one inhibitory input, $\theta=0$; NOR uses all inhibitory inputs, $\theta=0$.
+
+\textbf{Decoder构造：}对目标模式$r$，1位接兴奋、0位接抑制，取$\theta=\sum_jr_j$。普通TLU取$w_j=2r_j-1$，沿用同一$\theta$。Every mismatch lowers the score by 1.
+
+\mini{目标101：取$w=(1,-1,1)$、$\theta=2$。输入101得分2，输出1；输入111得分1，输出0。}
+
+\textbf{构造：}为各输出1的行建decoder，再接OR。Any Boolean function can be implemented with two computational layers. Uninhibited networks are monotone: increasing inputs cannot turn 1 into 0. One unit need not represent all monotone functions.
+\warn{Positive scaling of both $w,\theta$ preserves predictions.}
+\block{defblue}{N02}{Feedforward V.S. recurrent}
+A feedforward network has no feedback cycle; a recurrent network uses old state and current input. Both compute through connected units.
+
+Recurrent M-P networks can simulate any finite automaton (finite state/input sets). \textbf{同步计算：}先写初态和时序；固定旧状态；算完全部新状态后统一替换。
+\block{compgreen}{D01}{M-P V.S. Perceptron}
+Both threshold aggregated inputs. M-P uses fixed connections/veto for logic design; a perceptron learns real weights/bias from labels for linear classification, without veto. Neither single unit represents XOR.
+\block{calcorange}{P01}{Perceptron：逐样本更新}
+Inputs and targets satisfy $x\in\R^d,z\in\{0,1\}$。先算旧$u=w^Tx+b$、$\hat y=H(u)$（$H(0)=1$），再算$e=z-\hat y$：
+\[w^+=w+\eta ex,\qquad b^+=b+\eta e.\]
+按样本顺序计算，下一样本用新参数；每轮后重查全部样本。增广为$\tilde x=[x;1]$、$\tilde w=[w;b]$可一起更新。
+
+\mini{初值$w=(0,0),b=0,\eta=1$。OR样本$00,z=0$：算得$u=0,e=-1$，更新得$b=-1$。下一样本$01,z=1$：算得$u=-1,e=1$，更新得$w=(0,1),b=0$。}
+\warn{标签为$\pm1$时，错分的$z-\hat y=\pm2$；若题目规定只在错分时加$\eta zx$，注意步长约定不同。若$b=-\theta$，按$\theta^+=\theta-\eta e$更新阈值。}
+For bipolar inputs $s=2x-1$, equivalent parameters are $w_s=w/2$, $b_s=b+\frac12\sum_jw_j$.
+\block{defblue}{P02}{Separability; weight space; counts}
+Standard perceptron learning makes finitely many corrections on a finite linearly separable set; it does not maximize margin. One hyperplane cannot separate XOR/XNOR.
+
+Fixed parameters define an input-space boundary; a fixed sample defines the weight-space boundary $\tilde w^T\tilde x_i=0$. This is geometric, not SVM Lagrangian, duality.
+
+$d$ binary inputs give $2^d$ rows and $2^{2^d}$ functions. For $m$ central hyperplanes in general position in $\R^D$, $D=d+1$:
+\[R=2\sum_{k=0}^{D-1}\binom{m-1}{k}.\]
+Out-of-range binomials are zero; degeneracy can reduce $R$. 代入$m=4,D=3$，得$R=2(1+3+3)=14$。14/16 two-input functions are threshold functions.
+\columnend\sepcol
+\columnstart
+\colhead{正面第3栏｜LMS／前向计算}
+\findit{类别误差查P01；线性残差查A01；多层梯度查B02。先核对输出和损失。}
+\block{calcorange}{A01}{ADALINE; LMS; least squares}
+ADALINE (adaptive linear element) trains \textbf{linear output} $a=w^Tx+b$ with $e=z-a$. 先算训练残差，仅在分类输出时阈值化。本处取$E=\tfrac12\sum_i e_i^2$：
+\[\nabla_wE=-\sum_i e_ix_i,\qquad \partial_b E=-\sum_i e_i.\]
+\textbf{Online逐样本：}算一个残差，更新$w^+=w+\eta ex$、$b^+=b+\eta e$。\textbf{Batch整批：}固定旧参数，算全部残差并累加更新量，最后统一更新一次。均值损失的梯度再除样本数。
+
+\mini{给定$x=(1,2),z=1,w=(.1,-.1),b=0$、$\eta=.1$：算$a=.1-.2=-.1$；$e=1.1$；$\Delta w=.1(1.1)(1,2)=(.11,.22)$；更新得$w^+=(.21,.12),b^+=.11$。回代查$a^+=.21+.24+.11=.56$。}
+
+\textbf{代数求解：}将第$i$个样本写成$X$的行$[x_i^T,1]$，取$\beta=[w;b]$，解$X^TX\beta=X^Tz$。 Full column rank gives uniqueness; rank deficiency requires free variables or a pseudoinverse.
+
+\mini{XOR各行为$00,01,10,11$，目标$(-1,1,1,-1)$，代入得$X^Tz=0$。利用满列秩得$\beta=0$。The best linear square fit still cannot classify XOR.}
+\warn{目标没有$1/2$时，梯度乘2。若$a=\kappa(w^Tx+b)$，求导时别漏因子$\kappa$。}
+\block{compgreen}{D02}{Perceptron V.S. ADALINE}
+\textbf{共性：} Both learn one affine layer from labels for linear classification. \textbf{差异：} A perceptron corrects \textbf{hard class errors}; ADALINE minimizes \textbf{linear-output squared error}, supporting regression or thresholded classification.
+
+\textbf{限制：} Perceptron convergence requires separability and does not guarantee maximum margin. ADALINE's linear least-squares objective is convex, but minimizing it need not minimize classification errors. Neither single unit represents XOR. Online/batch specify update timing, not exclusive models.
+\block{defblue}{B01}{MLP；activation／前向计算}
+An MLP is a model with nonlinear hidden units and an output layer. BP computes gradients; it is a training method, not a competing model. Hidden units normally have no direct labels.
+
+先取$a^0=x$。 For layer $l$, $W^l\in\R^{m_l\times m_{l-1}}$, $b^l,u^l,a^l\in\R^{m_l}$:
+\[u^l=W^la^{l-1}+b^l,\qquad a^l=f_l(u^l).\]
+\textbf{前向计算：}先列维度；算净输入；代入激活函数；逐层继续；最后算输出和损失。
+
+Sigmoid $a=(1+e^{-u})^{-1}$ has $a'=a(1-a)$. Tanh $a=(1-e^{-2u})/(1+e^{-2u})$ has $a'=1-a^2$.
+For $a=\sigma(cu)$, $a'=c\,a(1-a)$. For $a=(1-e^{-u})/(1+e^{-u})=\tanh(u/2)$, $a'=\frac12(1-a^2)$. Saturation gives small derivatives. 分段激活的折点需写明导数约定。
+
+Affine layers alone remain affine. Nonlinear hidden units can represent XOR:
+$h_1=H(x_1-x_2-.5)$, $h_2=H(-x_1+x_2-.5)$, $\hat y=H(h_1+h_2-.5)$.
+
+\mini{代入$x=(1,0)$，净输入为$(.5,-1.5)$，隐藏输出$(1,0)$，输出层净输入$.5$，故输出1。代入$(1,1)$，隐藏输出$(0,0)$，故输出0。}
+注明层数是否计输入层；按实际跳连计算。
+\columnend\sepcol
+\columnstart
+\colhead{正面第4栏｜BP／泛化}
+
+\block{calcorange}{B02}{BP：逐单元求梯度与更新}
+\textbf{答句：} Backpropagation (BP, generalized delta rule) computes gradients by the chain rule. An optimizer uses them to update parameters; BP is not a network architecture.
+
+本处取$E=\frac12\sum_k(z_k-o_k)^2$，$z_k$代入目标、$o_k$代入输出，取$\delta_j=-\partial E/\partial u_j$。
+\[\begin{gathered}
+\delta_k=(z_k-o_k)f_k'(u_k)\quad\text{(output)},\\
+\delta_j=f_j'(u_j)\sum_kv_{kj}\delta_k\quad\text{(hidden)},\\
+\frac{\partial E}{\partial w_{ji}}=-\delta_ja_i,\qquad
+\frac{\partial E}{\partial b_j}=-\delta_j,\\
+w_{ji}^+=w_{ji}+\eta\delta_ja_i,\quad b_j^+=b_j+\eta\delta_j.
+\end{gathered}\]
+$a_i$代入前层输出（首个可训练层用$x_i$）；$v_{kj}$取\textbf{从$j$到$k$的旧权重}。For sigmoid $f'=a(1-a)$; for a linear output $f'=1$.
+
+\textbf{计算步骤：}(1)固定全部旧参数；(2)前向算完并保存各$u,a$；(3)算输出层delta；(4)逐隐藏层向后算，\textbf{全部下游贡献相加}；(5)列出所有梯度；(6)统一更新全部参数一次；(7)重新计算输出和损失。
+\warn{隐藏delta用下游\textbf{旧权重}；原始输入不另求sigmoid导数。若题目将delta定义为正导数，更新时改用减号。}
+
+\mini{Sigmoid隐藏／输出单元；给定$x=z=\eta=1$，输入至隐藏层$(w,b_h)=(0,0)$，隐藏至输出层$(v,b_o)=(2,-1)$。
+
+$u_h=wx+b_h=0$, $h=.5$; $u_o=vh+b_o=0$, $o=.5$; $E=1/8$.
+\[\begin{gathered}\delta_o=(1-.5)(.5)(.5)=1/8,\\
+\delta_h=(.5)(.5)2(1/8)=1/16.\end{gathered}\]
+梯度按$(w,b_h,v,b_o)$顺序排列为$(-1/16,-1/16,-1/16,-1/8)$。代入更新式得
+\[(w^+,b_h^+,v^+,b_o^+)=(1/16,1/16,33/16,-7/8).\]
+回代检查$h^+=\sigma(1/8)$及$o^+=\sigma((33/16)h^+-7/8)\approx.5549$，得$E^+\approx.0990$。}
+\textbf{分支检查：}给定$h=.5$、下游权重$(2,-1)$及delta $(.1,.2)$，代入得$\delta_h=.25[2(.1)-1(.2)]=0$。
+
+\textbf{Batch计算：}各样本用同一旧参数算梯度，累加后统一更新；均值损失再除$n$。Inference uses only the forward pass.
+
+\block{calcorange}{B03}{Momentum／模型判断}
+\[\begin{gathered}
+\Delta\theta_t=-\eta g_t+\mu\Delta\theta_{t-1},\quad0\le\mu<1,\\
+\theta_{t+1}=\theta_t+\Delta\theta_t.
+\end{gathered}\]
+\textbf{计算步骤：}将旧\textbf{增量}乘$\mu$，再加$-\eta g_t$，最后把新增量加到$\theta_t$；不要把旧参数当增量。
+
+\mini{给定$g=.3,\eta=.1,\mu=.8,\Delta\theta_{t-1}=.02$：代入得$\Delta\theta=-.03+.016=-.014$。}
+\textbf{答句：} Momentum can reduce oscillation, but guarantees neither a global minimum nor loss reduction at every step.
+
+Representation concerns whether suitable parameters exist; optimization concerns finding them; generalization concerns unseen-data performance. One does not guarantee another.
+
+Kolmogorov's representation is an existence result using univariate functions and sums, not a training guarantee. With suitable activation and sufficient capacity, networks approximate continuous functions on compact domains arbitrarily well. This does not guarantee a fixed small network or successful BP training.
+
+Overfitting means fitting training details while predicting unseen data poorly. Falling training loss with rising validation loss suggests overfitting. Validation data guide capacity and stopping-time selection; test data are reserved for final evaluation. A stationary point of a nonconvex loss need not be a global minimum.
+\columnend\sepcol
+\columnstart
+\colhead{正面第5栏｜RBF、FLN、ELM}
+
+\block{calcorange}{R01}{RBF：计算特征与输出权重}
+\textbf{答句：} A radial basis function depends only on distance from its center. A Gaussian RBF network uses radial hidden features and a linear output:
+\[\begin{gathered}h_j(x)=e^{-\|x-c_j\|^2/s_j^2},\quad s_j>0,\\
+f(x)=\sum_j\beta_jh_j(x)+b.\end{gathered}\]
+Centers set response locations; larger widths give slower decay. Other radial bases include $r^k$ ($k=1,3,\ldots$), $r^2\log r$ (limit 0 at $r=0$), $\sqrt{r^2+s^2}$ and its reciprocal; not all are local.
+
+\textbf{计算步骤：}固定中心／宽度；算\textbf{平方}距离；核对分母；令$H_{ij}=h_j(x_i)$；只在拟合输出bias时加一列1；解系数后回代检查。Each row is one sample. With $n$ samples and $h$ features, $H\in\R^{n\times h}$ and $\beta\in\R^h$ before adding bias.
+
+最小二乘时解$H^TH\beta=H^Ty$；特征秩亏时用伪逆，不要默认$H^{-1}$存在。
+
+\mini{无bias；从第2行消去$\beta_1$：
+\[\left[\begin{array}{cc|c}1&1/2&1\\1/2&1&0\end{array}\right]
+\xrightarrow{R_2\leftarrow R_2-\frac12R_1}
+\tfrac34\beta_2=-\tfrac12.\]
+回代得$\beta_2=-2/3$、$\beta_1=1-\beta_2/2=4/3$。}
+\textbf{XOR代入：}中心$c_1=(1,1)$、$c_2=(0,0)$，宽度1：
+\[\begin{gathered}00\mapsto(e^{-2},1),\quad11\mapsto(1,e^{-2}),\\
+01,10\mapsto(e^{-1},e^{-1}).\end{gathered}\]
+取$g=.9-h_1-h_2$，XOR正类点得$.164>0$，负类点得$-.235<0$。
+
+\textbf{Cover / $\phi$-separability:} The condition is $w^T\phi>0$ for positive points and $w^T\phi<0$ for negative points; bias can be augmented. Suitable nonlinear features may allow separation; arbitrary mappings guarantee neither separation nor generalization.
+\warn{按题设使用$s^2$或$2s^2$分母。Optimizing centers/widths changes the fixed-feature linear problem.}
+
+\block{calcorange}{R02}{FLN／ELM：拟合哪些参数}
+\textbf{答句：} FLN prescribes functional expansions and fits output coefficients. Basic ELM randomly initializes and fixes hidden weights/biases, then fits output weights. ELM has one hidden layer; it does not lack hidden units.
+
+\textbf{计算步骤：}固定ELM隐藏参数，算$H_{ij}=f(a_j^Tx_i+b_j)$，再解$H\beta\approx y$；预测时沿用同一组特征。
+
+\mini{FLN取$\psi=(1,x_1,x_2,x_1x_2)$、$\beta=(0,1,1,-2)$，代入得XOR $f=x_1+x_2-2x_1x_2$。}
+
+\mini{ELM给定$h_1=\sigma((\log3)x)$、$h_2=\sigma(- (\log3)x)$，数据$(x,y)=(0,0),(1,1)$，输出无bias。$H$的两行为$(1/2,1/2)$和$(3/4,1/4)$。联立$\beta_1+\beta_2=0$、$3\beta_1+\beta_2=4$，得$\beta=(2,-2)^T$。回代查$H\beta=(0,1)^T$。}
+
+\block{compgreen}{D03}{MLP V.S. RBF}
+Both are feedforward models for classification or regression. MLP applies activations to affine weighted sums and usually trains layers jointly with BP. Gaussian RBF uses distances to centers and commonly fixes centers/widths before fitting linear outputs. Joint training is generally nonconvex; fixed-feature squared-output fitting is convex. Neither is always faster or more accurate.
+
+\block{compgreen}{D04}{RBF V.S. FLN V.S. ELM}
+All can fit linear outputs on fixed nonlinear features. RBF uses distances/centers/widths; FLN uses prescribed functions; ELM uses random fixed hidden parameters. All support classification/regression. Fixed-feature least squares has no bad local minima, but uniqueness and good generalization are not guaranteed.
+\columnend

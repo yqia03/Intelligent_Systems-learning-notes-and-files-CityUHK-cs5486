@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "description": "Categorized original course materials. Academic PDF bytes are preserved. Publication copies may have portable links or privacy-clean paths; source_sha256 identifies the original input bytes.",
+  "files": [
+    {
+      "path": "materials/lectures/CS5486-2026.pdf",
+      "source_relative_path": "course_files_export/CS5486-2026.pdf",
+      "bytes": 154006,
+      "sha256": "e4aedaf610f9e662be19f52fb31f03e648f7128f3ec949b46548af9a8755af10",
+      "source_sha256": "e4aedaf610f9e662be19f52fb31f03e648f7128f3ec949b46548af9a8755af10",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course slides and course overview"
+    },
+    {
+      "path": "materials/lectures/CS5486a-2026.pdf",
+      "source_relative_path": "CS5486a-2026.pdf",
+      "bytes": 5285583,
+      "sha256": "356313954fe7b8e3449c94c877ca5aa1c74ee00d482b5ffbda8878fb7be94697",
+      "source_sha256": "356313954fe7b8e3449c94c877ca5aa1c74ee00d482b5ffbda8878fb7be94697",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course slides and course overview"
+    },
+    {
+      "path": "materials/lectures/Lecture_slides_full semester.pdf",
+      "source_relative_path": "Lecture_slides_full semester.pdf",
+      "bytes": 8971568,
+      "sha256": "fb01c2a5a8967520263c37c7dc0e4f8c85e552dc2908044257f5d3334fd86ec7",
+      "source_sha256": "fb01c2a5a8967520263c37c7dc0e4f8c85e552dc2908044257f5d3334fd86ec7",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course slides and course overview"
+    },
+    {
+      "path": "materials/midterm/CS5486-期中Cheatsheet-双面五栏.pdf",
+      "source_relative_path": "作业归档/期中考试资料/CS5486-期中Cheatsheet-双面五栏.pdf",
+      "bytes": 278712,
+      "sha256": "6a26d0b216c238bc186e319d3c12f7ae0edb1accbb246548023da345e4922fe2",
+      "source_sha256": "6a26d0b216c238bc186e319d3c12f7ae0edb1accbb246548023da345e4922fe2",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/CS5486-期中Cheatsheet-配套例题与解析.pdf",
+      "source_relative_path": "作业归档/期中考试资料/CS5486-期中Cheatsheet-配套例题与解析.pdf",
+      "bytes": 764397,
+      "sha256": "54bd30d74aa6be35167ae90b460654aa279191e580f05af4e3f90e2689eda5f1",
+      "source_sha256": "54bd30d74aa6be35167ae90b460654aa279191e580f05af4e3f90e2689eda5f1",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/CS5486-期中考试资料-LaTeX项目.zip",
+      "source_relative_path": "作业归档/期中考试资料/CS5486-期中考试资料-LaTeX项目.zip",
+      "bytes": 1184168,
+      "sha256": "4e791414878d956047a4b79deafe499a44cdfe2174909334d957e07d809fe041",
+      "source_sha256": "2e6939a6b513d49e660078aac114312347f280f19f26bde3e216ee52807495ee",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Portable complete LaTeX project package, including publication-clean validation evidence"
+    },
+    {
+      "path": "materials/midterm/README-构建与打印.md",
+      "source_relative_path": "作业归档/期中考试资料/README-构建与打印.md",
+      "bytes": 5441,
+      "sha256": "3f779a35e42585c68df4515aebfa2efc6f1c67c1158c0879080841880893bf17",
+      "source_sha256": "3f779a35e42585c68df4515aebfa2efc6f1c67c1158c0879080841880893bf17",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/build.sh",
+      "source_relative_path": "作业归档/期中考试资料/build.sh",
+      "bytes": 1184,
+      "sha256": "cbb7013f02b5b36167e71ec5bfd64e9ae641d790e8a492b6b7dbd726d4c3777b",
+      "source_sha256": "cbb7013f02b5b36167e71ec5bfd64e9ae641d790e8a492b6b7dbd726d4c3777b",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/cheatsheet/back.tex",
+      "source_relative_path": "作业归档/期中考试资料/cheatsheet/back.tex",
+      "bytes": 16438,
+      "sha256": "49eb323d30caf5815d61f51e2880c5baaa38fcd38a7a24073ce8c2c1e7904125",
+      "source_sha256": "49eb323d30caf5815d61f51e2880c5baaa38fcd38a7a24073ce8c2c1e7904125",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/cheatsheet/front.tex",
+      "source_relative_path": "作业归档/期中考试资料/cheatsheet/front.tex",
+      "bytes": 17374,
+      "sha256": "c55163d311ecbd28de6c18d3ba037c423bf53244a42fd8d5e3ca21ea259e55dc",
+      "source_sha256": "c55163d311ecbd28de6c18d3ba037c423bf53244a42fd8d5e3ca21ea259e55dc",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/cheatsheet/main.tex",
+      "source_relative_path": "作业归档/期中考试资料/cheatsheet/main.tex",
+      "bytes": 107,
+      "sha256": "7a52cf4d810124ca1bf1611a4f842abda7ff0902ac2c04ba22abee4322951211",
+      "source_sha256": "7a52cf4d810124ca1bf1611a4f842abda7ff0902ac2c04ba22abee4322951211",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/cheatsheet/preamble.tex",
+      "source_relative_path": "作业归档/期中考试资料/cheatsheet/preamble.tex",
+      "bytes": 1798,
+      "sha256": "7f1b61114f5efbdd44e29172eb3c8f3edc6e2f9a7ae7dead25b02e8775e53a04",
+      "source_sha256": "7f1b61114f5efbdd44e29172eb3c8f3edc6e2f9a7ae7dead25b02e8775e53a04",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/common.tex",
+      "source_relative_path": "作业归档/期中考试资料/common.tex",
+      "bytes": 560,
+      "sha256": "690550a0dfb95274fddb51bf93ad138c90e5d46053b966e0d336f820b8e379da",
+      "source_sha256": "690550a0dfb95274fddb51bf93ad138c90e5d46053b966e0d336f820b8e379da",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/main.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/main.tex",
+      "bytes": 2606,
+      "sha256": "23ff768f11c0e4dc6ab3831d61492f532c4f1a229afc718d6f2ea6eee99ebf0e",
+      "source_sha256": "23ff768f11c0e4dc6ab3831d61492f532c4f1a229afc718d6f2ea6eee99ebf0e",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/preamble.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/preamble.tex",
+      "bytes": 1319,
+      "sha256": "df32839c9fd7313f3846c60a1779e02be18da90aada5490ce8bbfc2f01496450",
+      "source_sha256": "df32839c9fd7313f3846c60a1779e02be18da90aada5490ce8bbfc2f01496450",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/sections/01-foundations.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/sections/01-foundations.tex",
+      "bytes": 37452,
+      "sha256": "87fc5829bb2d31c304ad8005b947cbf12d2d64b2ad6c206c0026f741686bd769",
+      "source_sha256": "87fc5829bb2d31c304ad8005b947cbf12d2d64b2ad6c206c0026f741686bd769",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/sections/02-neural.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/sections/02-neural.tex",
+      "bytes": 50630,
+      "sha256": "e70843817bdcabfc755458d6a0ec4d48adfffcef7f34a3cb927b1fdf17175742",
+      "source_sha256": "e70843817bdcabfc755458d6a0ec4d48adfffcef7f34a3cb927b1fdf17175742",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/sections/03-svm.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/sections/03-svm.tex",
+      "bytes": 33389,
+      "sha256": "81aeb19693fc6a833f20334550002400d1721736866b3060cc799eceb5b936b7",
+      "source_sha256": "81aeb19693fc6a833f20334550002400d1721736866b3060cc799eceb5b936b7",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/sections/04-lssvm.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/sections/04-lssvm.tex",
+      "bytes": 14335,
+      "sha256": "8def1225049b5644cdb2601f26ae519dc5a3b128af51cf70eccf0f0ca9556334",
+      "source_sha256": "8def1225049b5644cdb2601f26ae519dc5a3b128af51cf70eccf0f0ca9556334",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/practice/sections/05-mixed.tex",
+      "source_relative_path": "作业归档/期中考试资料/practice/sections/05-mixed.tex",
+      "bytes": 11815,
+      "sha256": "d161d09e7219111275cad6f73c7dbc00b65cfec10ff3bffd26f5cb719862b9ed",
+      "source_sha256": "d161d09e7219111275cad6f73c7dbc00b65cfec10ff3bffd26f5cb719862b9ed",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/audit_outputs.py",
+      "source_relative_path": "作业归档/期中考试资料/validation/audit_outputs.py",
+      "bytes": 5050,
+      "sha256": "246e75db0c168ee87efa67efd5160d4350ff084f293f76b756d0166c5b3c074f",
+      "source_sha256": "246e75db0c168ee87efa67efd5160d4350ff084f293f76b756d0166c5b3c074f",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/calculation-results.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/calculation-results.json",
+      "bytes": 28400,
+      "sha256": "55fe67a011a004fb3cc3b2842c2d6b0a63a071f0aacfc9c9b8d8c3eb17d304e2",
+      "source_sha256": "55fe67a011a004fb3cc3b2842c2d6b0a63a071f0aacfc9c9b8d8c3eb17d304e2",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/cheatsheet-compile-summary.txt",
+      "source_relative_path": "作业归档/期中考试资料/validation/cheatsheet-compile-summary.txt",
+      "bytes": 534,
+      "sha256": "7022ad0226c94b756d6abca1f67648e6fe38f5a7f031c681638ca204d284384c",
+      "source_sha256": "7022ad0226c94b756d6abca1f67648e6fe38f5a7f031c681638ca204d284384c",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/cheatsheet-rebuild.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/cheatsheet-rebuild.json",
+      "bytes": 323,
+      "sha256": "b5e77318eaea912bd8efadfb377a4680d95ef369051ddb1d774ccc2b54ef4f91",
+      "source_sha256": "b5e77318eaea912bd8efadfb377a4680d95ef369051ddb1d774ccc2b54ef4f91",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/coverage.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/coverage.json",
+      "bytes": 48264,
+      "sha256": "568f1a5f04600311470cbf9bfa36b6f0db0d8629da8341fc0173a29fb2e83dee",
+      "source_sha256": "568f1a5f04600311470cbf9bfa36b6f0db0d8629da8341fc0173a29fb2e83dee",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/language-revision.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/language-revision.json",
+      "bytes": 445,
+      "sha256": "a40bed591ed2c05c3a7859c27ce8062c56d3b711bb1496f6725af27de25f679d",
+      "source_sha256": "a40bed591ed2c05c3a7859c27ce8062c56d3b711bb1496f6725af27de25f679d",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/pdf-audit.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/pdf-audit.json",
+      "bytes": 5626,
+      "sha256": "5a73f410cea3a95ef187b3fc036d5064d9b897d922496fc266b5cb18bb5cb3d3",
+      "source_sha256": "5a73f410cea3a95ef187b3fc036d5064d9b897d922496fc266b5cb18bb5cb3d3",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/practice-compile-summary.txt",
+      "source_relative_path": "作业归档/期中考试资料/validation/practice-compile-summary.txt",
+      "bytes": 832,
+      "sha256": "d22bb38417d5df03e87fb8b577d54c89374e15f9bbe3b939e114cf96adb4691e",
+      "source_sha256": "e437f8a88c3d3496195b75c3ab564ad68087b76b14df25a4a916a05c2112da3f",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/sha256.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/sha256.json",
+      "bytes": 2757,
+      "sha256": "2918ec1d036ec83546a7c0ce2afbaaaf896071e272f07ac10558af4632c72e18",
+      "source_sha256": "18d20a6bb0c60c2ba48ab6b1ef8ac26b5079d32d73cc158d6a09bdbe7fae89b7",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/verify_calculations.py",
+      "source_relative_path": "作业归档/期中考试资料/validation/verify_calculations.py",
+      "bytes": 28461,
+      "sha256": "1866a5ffa71e800abb4e974ab6a60dda946cdee228cdc89c211d4c22d6b92e28",
+      "source_sha256": "1866a5ffa71e800abb4e974ab6a60dda946cdee228cdc89c211d4c22d6b92e28",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/validation/visual-review.json",
+      "source_relative_path": "作业归档/期中考试资料/validation/visual-review.json",
+      "bytes": 2041,
+      "sha256": "221c1a035fc7020f370d3f157769f26b89daaccc688b5dd9bd8c8cb4da671359",
+      "source_sha256": "aba0c398bbf720798bdcd4c538b8c54e7b69ce65878b6ced51216260cb47c81b",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/midterm/内容覆盖与验证说明.md",
+      "source_relative_path": "作业归档/期中考试资料/内容覆盖与验证说明.md",
+      "bytes": 44545,
+      "sha256": "d0dd4b577d6887b6e46d2e96458b82d854052ffbc5fc30a8c1b2743d11066118",
+      "source_sha256": "d0dd4b577d6887b6e46d2e96458b82d854052ffbc5fc30a8c1b2743d11066118",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Midterm revision PDFs, editable LaTeX sources, build instructions and validation evidence"
+    },
+    {
+      "path": "materials/papers/ASSPM-Lippmann1987.pdf",
+      "source_relative_path": "course_files_export/ASSPM-Lippmann1987.pdf",
+      "bytes": 8558910,
+      "sha256": "287a70f602123c8c1d15dfc8b9eba6a812b8282e6f46170e5e839ea8d7f279cb",
+      "source_sha256": "287a70f602123c8c1d15dfc8b9eba6a812b8282e6f46170e5e839ea8d7f279cb",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original supplementary paper or technical reference"
+    },
+    {
+      "path": "materials/papers/Adaptive Resonance Theory.pdf",
+      "source_relative_path": "new-study-files/Adaptive Resonance Theory.pdf",
+      "bytes": 275465,
+      "sha256": "253b0ddc2683c58bf355906921597acda5e640c7824f5efcaff7c9e66acc602e",
+      "source_sha256": "253b0ddc2683c58bf355906921597acda5e640c7824f5efcaff7c9e66acc602e",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original added paper or technical reference"
+    },
+    {
+      "path": "materials/papers/CS-Broomhead-Lowe1988.pdf",
+      "source_relative_path": "course_files_export/CS-Broomhead-Lowe1988.pdf",
+      "bytes": 5723182,
+      "sha256": "35c53de0663759607a24361b1b3a51e073cbb7688640fc78d17bd3b6dfdac4a1",
+      "source_sha256": "35c53de0663759607a24361b1b3a51e073cbb7688640fc78d17bd3b6dfdac4a1",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original supplementary paper or technical reference"
+    },
+    {
+      "path": "materials/papers/LS-SVM-load.pdf",
+      "source_relative_path": "new-study-files/LS-SVM-load.pdf",
+      "bytes": 377670,
+      "sha256": "b3b3ca21d2979d440c5472556bf2b1015c8fcf78e6242275b5ff71b424a76071",
+      "source_sha256": "b3b3ca21d2979d440c5472556bf2b1015c8fcf78e6242275b5ff71b424a76071",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original added paper or technical reference"
+    },
+    {
+      "path": "materials/papers/NPL-LS_SVM.pdf",
+      "source_relative_path": "new-study-files/NPL-LS_SVM.pdf",
+      "bytes": 97032,
+      "sha256": "21807ca59512bbea3789160a7ff3d1a27bc1687de0f624b27acd08bfa41cc2ba",
+      "source_sha256": "21807ca59512bbea3789160a7ff3d1a27bc1687de0f624b27acd08bfa41cc2ba",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original added paper or technical reference"
+    },
+    {
+      "path": "materials/papers/Nature1986.pdf",
+      "source_relative_path": "course_files_export/Nature1986.pdf",
+      "bytes": 1376827,
+      "sha256": "1f7b0339d34bb6dac27d6433a7b271e161251c641d1ca67242284f0a5d6ac19e",
+      "source_sha256": "1f7b0339d34bb6dac27d6433a7b271e161251c641d1ca67242284f0a5d6ac19e",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original supplementary paper or technical reference"
+    },
+    {
+      "path": "materials/papers/SVR-tutorial.pdf",
+      "source_relative_path": "new-study-files/SVR-tutorial.pdf",
+      "bytes": 407426,
+      "sha256": "acc07921ddf2ccb24ff354e3b4f6cfd9ceac92af29edfa9520bfa1b0d545e636",
+      "source_sha256": "acc07921ddf2ccb24ff354e3b4f6cfd9ceac92af29edfa9520bfa1b0d545e636",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original added paper or technical reference"
+    },
+    {
+      "path": "materials/papers/SVR.pdf",
+      "source_relative_path": "new-study-files/SVR.pdf",
+      "bytes": 144056,
+      "sha256": "927bb29c0c306eba333d94378ed57c47670ddaf54c915cbed5f1308e4765ce63",
+      "source_sha256": "927bb29c0c306eba333d94378ed57c47670ddaf54c915cbed5f1308e4765ce63",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original added paper or technical reference"
+    },
+    {
+      "path": "materials/papers/TLU.pdf",
+      "source_relative_path": "course_files_export/TLU.pdf",
+      "bytes": 470562,
+      "sha256": "1bbf7abd15cabed62064cc8d72cd0cf1139ee4fbfc55494a1259b1dd96d7175f",
+      "source_sha256": "1bbf7abd15cabed62064cc8d72cd0cf1139ee4fbfc55494a1259b1dd96d7175f",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original supplementary paper or technical reference"
+    },
+    {
+      "path": "materials/prompts/CS5486-12周教材生成提示词.txt",
+      "source_relative_path": "cs5486-learning-notes/CS5486-12周教材生成提示词.txt",
+      "bytes": 58251,
+      "sha256": "3ab087b6aee4c23a13bf1e335e16d7eca11058d35d5ef63a5c231e7e9f3b4eb1",
+      "source_sha256": "0f494afdeb024551178eb5d9312474c4d5aebdcf22330deed661a587fd4f68f2",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Original learning-material generation prompt with portable publication paths"
+    },
+    {
+      "path": "materials/prompts/CS5486-新增资料更新笔记与网站-提示词.txt",
+      "source_relative_path": "cs5486-learning-notes/CS5486-新增资料更新笔记与网站-提示词.txt",
+      "bytes": 11873,
+      "sha256": "e4a7a860b3e4358f307017dd4e5b0f1e27b3f094e6a587059cee8dd3a3ce5ef2",
+      "source_sha256": "a8c7209210d684838bb05f3b4d65f6c339754e4b731e8b4ea34cb04786e1cbac",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Original learning-material generation prompt with portable publication paths"
+    },
+    {
+      "path": "materials/prompts/CS5486-期中复习特别篇-Maxnet截止-提示词.txt",
+      "source_relative_path": "cs5486-learning-notes/CS5486-期中复习特别篇-Maxnet截止-提示词.txt",
+      "bytes": 19558,
+      "sha256": "a600d13b3674d369eb1d32e62ad64b5414f581abb29a80a57eee426baac26916",
+      "source_sha256": "d454790544983bfbcb2699feb69f9e721d7c08c4c87718a6c97cbe6d04b688a9",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Original learning-material generation prompt with portable publication paths"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week01-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week01-学习教材.html",
+      "bytes": 147772,
+      "sha256": "544d56d4cbde8d350796ad97df6ad171b880357e9f7ec43503a7d6d0c5d0f024",
+      "source_sha256": "ecfbb5cfd14778d68a97daa8088d4efc107c7f76a4f62f3e660053776ac67d66",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week02-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week02-学习教材.html",
+      "bytes": 818167,
+      "sha256": "e755b4b92039f5914870e101646cc615c182a922913a6ce7f5b01f3d611e75ae",
+      "source_sha256": "2f15f9922abafa22d328e1c44ead7b3104805b098cc43489ba630a9a04ca7fc3",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week03-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week03-学习教材.html",
+      "bytes": 1248721,
+      "sha256": "0e64e6af699b06fa0fa227a260af2faa51c8f3182ad432dab822300eac7834de",
+      "source_sha256": "14bcce3fa1caf6c4442d81c1e603f70c5fc593895fe08d61c7b2ca537fdc7b5e",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week04-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week04-学习教材.html",
+      "bytes": 252026,
+      "sha256": "7ee2e9fad8d5e94994e08f82c40cab57ff2c569ce304c387c4217e94d8bc412c",
+      "source_sha256": "3db986d4e81901a931de45e50bb2e814b83cdfc3c0a06d1268cee92d0542efc7",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week05-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week05-学习教材.html",
+      "bytes": 1066897,
+      "sha256": "0095b0d426f34913f0ea9ce9d7940c04b2726c0ea60bd2550f68abc798f5afc7",
+      "source_sha256": "c873241c263988bb3865cf68db21f82ff23895e25b29ce18483c3df4d76f4183",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week06-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week06-学习教材.html",
+      "bytes": 2279095,
+      "sha256": "0ea279be49a47703dd2844dd31a0feef0f7594fcb7da9b0dd4392e4f8edcc0a7",
+      "source_sha256": "266b072778ae5cb8860cea8b10a35ad2c7dcfdc5740105eff0a1e109c5563460",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week07-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week07-学习教材.html",
+      "bytes": 297453,
+      "sha256": "3ef26e55f8fb2e822cb3b9e81e0163e663d833d5d4598f06058d1e8e7edd8d29",
+      "source_sha256": "5abbfb783657953f77b4f547474d6065d44c62d7e74bcf70f14ce5f031007d3d",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week08-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week08-学习教材.html",
+      "bytes": 1051864,
+      "sha256": "322e2e40340b848f1e01d66913c1d9dddfa60dfed206e544665c3e41bd7ac643",
+      "source_sha256": "a0b19ac89d59189b696bc768b6f6fb254b2fedfe89df30e3273550500cb07857",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week09-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week09-学习教材.html",
+      "bytes": 336480,
+      "sha256": "3b2d0315208f656100decc3663b38b17ca638a9db83ae100d29f089e1c676460",
+      "source_sha256": "1a234d4046c17752cfb4990bc3a897204a0364a0335e33978c599b66f7bc004f",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week10-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week10-学习教材.html",
+      "bytes": 266779,
+      "sha256": "d4654dd11ec387c44fbdd03c666acb7d3f8739ea69ba0a8e818ea2cae3002417",
+      "source_sha256": "b8335b99d7c0bdbef2335030c0a0c1ffe1d2fb7ef3f8b37f7358e1f6a831a70a",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week11-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week11-学习教材.html",
+      "bytes": 268201,
+      "sha256": "0fc3bfed61c820937a2cee5c6d849bd03228b696de56fa13711bc55fe59802a8",
+      "source_sha256": "af5eae0c68aa0beb6e7027da4917d8a1d4e458e4c57787129d31d0eb646618cc",
+      "sanitized": true,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-Week12-学习教材.html",
+      "source_relative_path": "学习笔记/CS5486-Week12-学习教材.html",
+      "bytes": 1002613,
+      "sha256": "b64462c419aa0598c6947d6374daa89a677fe9247e08998b5b2ea21d1627e338",
+      "source_sha256": "b3bb7501ecadbfd7d0edb16f5dfc61de8c62e7ef0d24063abc8529379f30a180",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/study-notes/CS5486-期中考试复习特别篇-至MAXNET.html",
+      "source_relative_path": "学习笔记/CS5486-期中考试复习特别篇-至MAXNET.html",
+      "bytes": 571866,
+      "sha256": "d53a917af82e75f4969fce46f311242a2165ad2a3c9896a664cf7622b268c263",
+      "source_sha256": "c4cc3a3072ef258dc397bc14cba2b8d202c3131fc4cf066cef4b861a346d51a7",
+      "sanitized": false,
+      "modified": true,
+      "purpose": "Original self-contained HTML learning notes; source links made portable"
+    },
+    {
+      "path": "materials/tutorials/Perceptron_Adaline.pdf",
+      "source_relative_path": "course_files_export/Tutorials/Perceptron_Adaline.pdf",
+      "bytes": 1295529,
+      "sha256": "40c4ba9f8f3df7416485941f640148995831a6db866e68eb30ec3ec11a9b9592",
+      "source_sha256": "40c4ba9f8f3df7416485941f640148995831a6db866e68eb30ec3ec11a9b9592",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course tutorial"
+    },
+    {
+      "path": "materials/tutorials/Tutorial 1.pdf",
+      "source_relative_path": "course_files_export/Tutorials/Tutorial 1.pdf",
+      "bytes": 8902595,
+      "sha256": "d55223574b7b59be7f34e15a86dafa9f37e4b1c37f8e4bf63da979d08143f009",
+      "source_sha256": "d55223574b7b59be7f34e15a86dafa9f37e4b1c37f8e4bf63da979d08143f009",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course tutorial"
+    },
+    {
+      "path": "materials/tutorials/Tutorial 2- M-P neuron.pdf",
+      "source_relative_path": "course_files_export/Tutorials/Tutorial 2- M-P neuron.pdf",
+      "bytes": 1632499,
+      "sha256": "5c90916d84b6fdb872f36312991a380a8dc41324fdf7675b94626f906e43b560",
+      "source_sha256": "5c90916d84b6fdb872f36312991a380a8dc41324fdf7675b94626f906e43b560",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course tutorial"
+    },
+    {
+      "path": "materials/tutorials/Tutorial 7 - SVM and LS-SVM_1.pdf",
+      "source_relative_path": "course_files_export/Tutorials/Tutorial 7 - SVM and LS-SVM_1.pdf",
+      "bytes": 1099887,
+      "sha256": "b3623015e119fa69d8e3a6eef30f6eca894f06b62988950469b875bbf5df9d62",
+      "source_sha256": "b3623015e119fa69d8e3a6eef30f6eca894f06b62988950469b875bbf5df9d62",
+      "sanitized": false,
+      "modified": false,
+      "purpose": "Original course tutorial"
+    }
+  ]
+}

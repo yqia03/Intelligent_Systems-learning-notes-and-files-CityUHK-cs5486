@@ -1,0 +1,16 @@
+{
+  "front.tex": {
+    "math_blocks_before": 248,
+    "math_blocks_after": 248,
+    "formulas_and_numbers_unchanged": true,
+    "differences": []
+  },
+  "back.tex": {
+    "math_blocks_before": 283,
+    "math_blocks_after": 283,
+    "formulas_and_numbers_unchanged": true,
+    "differences": []
+  },
+  "scope": "Chinese calculation, navigation, example setup and operational guidance; English answer-ready knowledge retained.",
+  "passed": true
+}
